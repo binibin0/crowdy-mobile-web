@@ -10,17 +10,15 @@ const Home = () => {
   return (
     <div>
       <h1>This page is for Crowdy's Map</h1>
-      <form>
-        <input value={store} onChange={onChange} type="text" placeholder="type any store"></input>
-        <button
-          onClick={() => {
-            navigate("/" + store);
-          }}
-        >
-          {" "}
-          Move to page
-        </button>
-      </form>
+      <input value={store} onChange={onChange} type="text" placeholder="type any store"></input>
+      <button
+        onClick={() => {
+          navigate("/" + store);
+        }}
+      >
+        {" "}
+        Move to page
+      </button>
     </div>
   );
 };

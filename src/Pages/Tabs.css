@@ -1,0 +1,187 @@
+@font-face {
+  font-family: "SF Pro Display ";
+  src: url(../fonts/sf-pro-display/SF-Pro-Display-Regular.otf), format("opentype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(../fonts/sf-pro-display/SF-Pro-Display-Semibold.otf), format("opentype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(../fonts/sf-pro-display/SF-Pro-Display-Bold.otf), format("opentype");
+  font-weight: bolder;
+}
+
+* {
+  font-family: SF sf-pro-display;
+  font-weight: normal;
+}
+
+.tab-buttons {
+  display: flex;
+}
+
+.tab-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.33%;
+  height: 40px;
+  background-color: antiquewhite;
+  color: rgba(0, 0, 0, 0.345);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.372);
+}
+
+.tab-button-active {
+  border-bottom: 2px solid black;
+}
+
+.tab-button-text {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.tab-button-text-active {
+  color: black;
+}
+
+.tab-info-deactive {
+  display: none;
+}
+
+.menu-tab {
+  height: 800px;
+  background-color: aquamarine;
+}
+
+.menu-title-box {
+  display: flex;
+  align-items: center;
+  height: 62px;
+  padding-left: 40px;
+  background-color: aqua;
+  border-bottom: 1px solid grey;
+}
+
+.title-add-margin-top {
+  padding-top: 10px;
+}
+
+.menu-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.menu-map {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding-left: 40px;
+  border-bottom: 1px solid grey;
+}
+.menu-name {
+  font-size: 14px;
+}
+.menu-price {
+  margin-left: 30px;
+  font-size: 12px;
+}
+
+.store-tab {
+  height: 900px;
+  background-color: aquamarine;
+}
+.store-title-box {
+  display: flex;
+  align-items: center;
+  height: 62px;
+  padding-left: 40px;
+  background-color: aqua;
+  border-bottom: 1px solid grey;
+}
+.store-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.store-seat-image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 228px;
+  background-color: antiquewhite;
+}
+.store-seat-image {
+  width: 322px;
+  height: 184px;
+  background-color: white;
+  border-radius: 12px;
+}
+
+.store-furniture {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 20px 34px;
+}
+.store-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.store-table-text {
+  font-size: 16px;
+  font-weight: bold;
+}
+.store-chair {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 14px;
+}
+
+.store-chair-text {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.store-images-box {
+  display: flex;
+  justify-content: center;
+}
+.store-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 334px;
+  height: 314px;
+
+  background-color: beige;
+}
+
+.store-image {
+  width: 160px;
+  height: 150px;
+  background-color: white;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.review-tab {
+  height: 800px;
+  background-color: aquamarine;
+}
+
+.review-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  background-color: antiquewhite;
+}
+
+.review-text {
+  font-weight: bold;
+  font-size: 14px;
+}
