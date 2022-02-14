@@ -2,21 +2,16 @@ import * as React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const [store, setStore] = React.useState("");
   const navigate = useNavigate();
-  const onChange = (event) => {
-    setStore(event.target.value);
-  };
   return (
     <div>
       <h1>This page is for Crowdy's Map</h1>
-      <input value={store} onChange={onChange} type="text" placeholder="type any store"></input>
+      <input type="text" placeholder="type any store"></input>
       <button
         onClick={() => {
-          navigate("/" + store);
+          navigate("/twosomeSeohyeonRodeo");
         }}
       >
-        {" "}
         Move to page
       </button>
     </div>

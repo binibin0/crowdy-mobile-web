@@ -24,6 +24,9 @@ html {
   background-color: darkseagreen;
 }
 
+.page {
+  width: 500px;
+}
 .detail-container {
   width: 334px;
   margin: 0 auto;

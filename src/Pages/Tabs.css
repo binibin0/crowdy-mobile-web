@@ -1,24 +1,3 @@
-@font-face {
-  font-family: "SF Pro Display ";
-  src: url(../fonts/sf-pro-display/SF-Pro-Display-Regular.otf), format("opentype");
-  font-weight: normal;
-}
-@font-face {
-  font-family: "SF Pro Display";
-  src: url(../fonts/sf-pro-display/SF-Pro-Display-Semibold.otf), format("opentype");
-  font-weight: bold;
-}
-@font-face {
-  font-family: "SF Pro Display";
-  src: url(../fonts/sf-pro-display/SF-Pro-Display-Bold.otf), format("opentype");
-  font-weight: bolder;
-}
-
-* {
-  font-family: SF sf-pro-display;
-  font-weight: normal;
-}
-
 .tab-buttons {
   display: flex;
 }

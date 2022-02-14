@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import { storeDatas } from "../datas/storeDatas";
 import "./Tabs.css";
 import tableIcon from "../images/table-icon.svg";
 import chairIcon from "../images/chair-icon.svg";
 
 function Tabs() {
-  const { store } = useParams();
   const [activeTab, setActiveTab] = useState("menu");
 
   return (
@@ -57,16 +55,16 @@ function Tabs() {
         <div className="store-furniture">
           <div className="store-table">
             <img width="32px" src={tableIcon} alt="table-icon"></img>
-            <span className="store-table-text">x {storeDatas[store].tableNumber}</span>
+            <span className="store-table-text">x {storeDatas.twosomeSeohyeonRodeo.tableNumber}</span>
           </div>
           <div className="store-chair">
             <img width="32px" src={chairIcon} alt="chair-icon"></img>
-            <span className="store-chair-text">x {storeDatas[store].chairNumber}</span>
+            <span className="store-chair-text">x {storeDatas.twosomeSeohyeonRodeo.chairNumber}</span>
           </div>
         </div>
         <div className="store-images-box">
           <div className="store-images">
-            {storeDatas[store].images.map((image, key) => {
+            {storeDatas.twosomeSeohyeonRodeo.images.map((image, key) => {
               return <img key={key} className="store-image" src={image} alt="seat-table"></img>;
             })}
           </div>

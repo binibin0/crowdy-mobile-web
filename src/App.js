@@ -6,10 +6,10 @@ import StoreDetail from "./Pages/StoreDetail";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/crowdy-mobile-web">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:store" element={<StoreDetail />} />
+        <Route path="/twosomeSeohyeonRodeo" element={<StoreDetail />} />
       </Routes>
     </Router>
   );
