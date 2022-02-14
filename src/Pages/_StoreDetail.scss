@@ -19,25 +19,31 @@
   font-weight: normal;
 }
 
-body,
-html {
-  background-color: darkseagreen;
+.page {
+  width: 414px;
+  margin: 0 auto;
 }
 
-.page {
-  width: 500px;
-}
 .detail-container {
   width: 334px;
   margin: 0 auto;
   padding: 0;
-  background-color: aquamarine;
 }
 .detail-header {
+  position: relative;
   display: flex;
   align-items: center;
-  margin: 74px 0 8px 0;
-  background-color: rgb(59, 177, 177);
+  padding: 74px 0 16px 0;
+}
+
+.back-button {
+  position: absolute;
+  top: 46px;
+  left: -10px;
+}
+
+.back-button-icon {
+  margin-left: 10px;
 }
 
 .detail-header-logo {
@@ -48,18 +54,16 @@ html {
   display: flex;
   flex-direction: column;
   width: 130px;
-  margin-left: 18px;
+  margin-left: 14px;
 }
 .detail-header-title {
   margin-bottom: 4px;
-  background-color: blanchedalmond;
   font-weight: bold;
   font-size: 20px;
 }
 .detail-header-review {
   display: flex;
   align-items: center;
-  background-color: blueviolet;
 }
 .detail-header-space {
   flex: 1;
@@ -72,16 +76,16 @@ html {
   width: 90px;
   height: 38px;
   border-radius: 10px;
-  background-color: aqua;
+  background-color: $primaryColor;
 }
 .detail-header-crowdy-status {
+  color: white;
   font-weight: bolder;
   font-size: 18px;
 }
 .detail-sub-header {
   display: flex;
   flex-direction: column;
-  background-color: cornflowerblue;
   margin-bottom: 20px;
 }
 
@@ -94,7 +98,6 @@ html {
   justify-content: space-between;
   height: 20px;
   margin-bottom: 6px;
-  background-color: antiquewhite;
 }
 .detail-sub-header-phone {
   display: flex;
@@ -126,7 +129,6 @@ html {
   justify-content: space-between;
   align-items: center;
   height: 20px;
-  background-color: antiquewhite;
 }
 .detail-sub-header-address {
   display: flex;
@@ -177,14 +179,5 @@ html {
   margin-right: 4px;
   font-weight: bold;
   font-size: 12px;
-}
-.back-button {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-}
-
-.back-button-icon {
-  margin-left: 10px;
-  background-color: antiquewhite;
+  color: $defaultGrey;
 }

@@ -1,3 +1,8 @@
+.tab-container {
+  width: 414px;
+  margin: 0 auto;
+}
+
 .tab-buttons {
   display: flex;
 }
@@ -8,13 +13,12 @@
   align-items: center;
   width: 33.33%;
   height: 40px;
-  background-color: antiquewhite;
-  color: rgba(0, 0, 0, 0.345);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.372);
+  color: $defaultGrey;
+  border-bottom: 1px solid $defaultGrey;
 }
 
 .tab-button-active {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid $primaryColor;
 }
 
 .tab-button-text {
@@ -23,7 +27,7 @@
 }
 
 .tab-button-text-active {
-  color: black;
+  color: $primaryColor;
 }
 
 .tab-info-deactive {
@@ -32,7 +36,6 @@
 
 .menu-tab {
   height: 800px;
-  background-color: aquamarine;
 }
 
 .menu-title-box {
@@ -40,8 +43,7 @@
   align-items: center;
   height: 62px;
   padding-left: 40px;
-  background-color: aqua;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid $defaultGrey;
 }
 
 .title-add-margin-top {
@@ -51,13 +53,14 @@
 .menu-title {
   font-size: 20px;
   font-weight: bold;
+  color: $primaryColor;
 }
 .menu-map {
   display: flex;
   align-items: center;
   height: 50px;
   padding-left: 40px;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid $defaultGrey;
 }
 .menu-name {
   font-size: 14px;
@@ -65,23 +68,23 @@
 .menu-price {
   margin-left: 30px;
   font-size: 12px;
+  color: $defaultGrey;
 }
 
 .store-tab {
-  height: 900px;
-  background-color: aquamarine;
+  height: 1000px;
 }
 .store-title-box {
   display: flex;
   align-items: center;
   height: 62px;
   padding-left: 40px;
-  background-color: aqua;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid $defaultGrey;
 }
 .store-title {
   font-size: 20px;
   font-weight: bold;
+  color: $primaryColor;
 }
 
 .store-seat-image-box {
@@ -89,12 +92,11 @@
   justify-content: center;
   align-items: center;
   height: 228px;
-  background-color: antiquewhite;
 }
 .store-seat-image {
   width: 322px;
   height: 184px;
-  background-color: white;
+  background-color: $defaultGrey;
   border-radius: 12px;
 }
 
@@ -149,7 +151,6 @@
 
 .review-tab {
   height: 800px;
-  background-color: aquamarine;
 }
 
 .review-box {
@@ -157,10 +158,10 @@
   justify-content: center;
   align-items: center;
   height: 600px;
-  background-color: antiquewhite;
 }
 
 .review-text {
   font-weight: bold;
   font-size: 14px;
+  color: $primaryColor;
 }

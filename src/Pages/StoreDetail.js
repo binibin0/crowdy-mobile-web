@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
-import "./StoreDetail.css";
+import "./style.css";
 import tableIcon from "../images/table-icon.svg";
 import chairIcon from "../images/chair-icon.svg";
 import phoneIcon from "../images/phone-icon.svg";
@@ -23,21 +23,28 @@ const StoreDetail = () => {
   const getCurrentTime = () => {
     const days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
     const today = new Date();
-    const getTime = today.getHours().toString() + today.getMinutes().toString();
+    let minutes = null;
+    if (today.getMinutes() < 10) {
+      minutes = "0" + today.getMinutes().toString();
+    } else {
+      minutes = today.getMintues();
+    }
+    const getTime = today.getHours().toString() + minutes;
     const getDay = days[today.getDay()];
-
     setCurrentTime(parseInt(getTime));
     setCurrentDay(getDay);
   };
   useEffect(() => {
     getCurrentTime();
   }, []);
-
   return (
     <>
       <div className="page">
         <div className="detail-container">
           <div className="detail-header">
+            <div className="back-button">
+              <img width="18px" src={goBackChevronIcon} alt="go-back-icon" className="back-button-icon" onClick={() => navigate("/")}></img>
+            </div>
             <img className="detail-header-logo" src={storeDatas.twosomeSeohyeonRodeo.logo} alt="Logo" />
             <div className="detail-header-center">
               <span className="detail-header-title">{storeDatas.twosomeSeohyeonRodeo.name}</span>
@@ -98,10 +105,6 @@ const StoreDetail = () => {
           <div className="detail-see-more-image">
             <span className="detail-see-more-image-text detail-default-text">사진 더보기</span>
             <img width="6px" src={moreImageChevronIcon} alt="phone-icon"></img>
-          </div>
-
-          <div className="back-button">
-            <img width="22px" src={goBackChevronIcon} alt="go-back-icon" className="back-button-icon" onClick={() => navigate("/")}></img>
           </div>
         </div>
         <Tabs />

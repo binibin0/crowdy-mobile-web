@@ -1,0 +1,10 @@
+$primaryColor: #00705b;
+$defaultGrey: #adadad;
+
+@import "./StoreDetail";
+@import "./Tabs";
+
+:export {
+  primaryColor: $primaryColor;
+  defaultGrey: $defaultGrey;
+}

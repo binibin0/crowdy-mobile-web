@@ -1,9 +1,14 @@
-import logo from "../images/twosomeplace-logo.png";
+import logo from "../images/twosome/twosome-logo.png";
 
-import twesomeRodeoImageOne from "../images/twesome-rodeo-image-1.svg";
-import twesomeRodeoImageTwo from "../images/twesome-rodeo-image-2.svg";
-import twesomeRodeoImageThree from "../images/twesome-rodeo-image-3.svg";
-import twesomeRodeoImageFour from "../images/twesome-rodeo-image-4.svg";
+import twesomeRodeoImageOne from "../images/twosome/twesome-rodeo-image-1.svg";
+import twesomeRodeoImageTwo from "../images/twosome/twesome-rodeo-image-2.svg";
+import twesomeRodeoImageThree from "../images/twosome/twesome-rodeo-image-3.svg";
+import twesomeRodeoImageFour from "../images/twosome/twesome-rodeo-image-4.svg";
+
+import twosomeFurnitureOne from "../images/twosome/twosome-rodeo-funiture-1.svg";
+import twosomeFurnitureTwo from "../images/twosome/twosome-rodeo-funiture-2.svg";
+import twosomeFurnitureThree from "../images/twosome/twosome-rodeo-funiture-3.svg";
+import twosomeFurnitureFour from "../images/twosome/twosome-rodeo-funiture-4.svg";
 
 export const storeDatas = {
   twosomeSeohyeonRodeo: {
@@ -64,5 +69,7 @@ export const storeDatas = {
         },
       ],
     },
+    seatMap: {},
+    seatImages: [twosomeFurnitureOne, twosomeFurnitureTwo, twosomeFurnitureThree, twosomeFurnitureFour],
   },
 };
