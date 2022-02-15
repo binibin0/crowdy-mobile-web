@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
 import "./style.css";
-import tableIcon from "../images/table-icon.svg";
-import chairIcon from "../images/chair-icon.svg";
-import phoneIcon from "../images/phone-icon.svg";
-import addressIcon from "../images/address-icon.svg";
-import hoursIcon from "../images/hours-icon.svg";
-import hoursChevronIcon from "../images/hours-chevron-icon.svg";
-import moreImageChevronIcon from "../images/see-more-image-chevron-icon.svg";
-import goBackChevronIcon from "../images/go-back-chevron-icon.svg";
+import tableIcon from "../images/table.svg";
+import chairIcon from "../images/chair.svg";
+import phoneIcon from "../images/phone.svg";
+import addressIcon from "../images/address.svg";
+import moreImageChevronIcon from "../images/see-more-image-chevron.svg";
+import goBackChevronIcon from "../images/go-back-chevron.svg";
 import Tabs from "./Tabs";
 import { storeDatas } from "../datas/storeDatas";
 
@@ -19,6 +17,7 @@ const StoreDetail = () => {
   //도메인 param에 저장된 매장 이름과 일치하는 정보를 storeDatas에서 불러와 페이지 render.
   const [currentDay, setCurrentDay] = useState("mon");
   const [currentTime, setCurrentTime] = useState("900");
+  const [storeOpen, setStoreOpen] = useState(null);
 
   const getCurrentTime = () => {
     const days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
@@ -27,7 +26,7 @@ const StoreDetail = () => {
     if (today.getMinutes() < 10) {
       minutes = "0" + today.getMinutes().toString();
     } else {
-      minutes = today.getMintues();
+      minutes = today.getMinutes();
     }
     const getTime = today.getHours().toString() + minutes;
     const getDay = days[today.getDay()];
@@ -36,7 +35,13 @@ const StoreDetail = () => {
   };
   useEffect(() => {
     getCurrentTime();
-  }, []);
+    if (currentTime >= storeDatas.twosomeSeohyeonRodeo.openHours[currentDay][0] && currentTime <= storeDatas.twosomeSeohyeonRodeo.openHours[currentDay][1]) {
+      setStoreOpen(true);
+    } else {
+      setStoreOpen(false);
+    }
+  }, [currentDay, currentTime]);
+  console.log(storeOpen);
   return (
     <>
       <div className="page">
@@ -53,12 +58,12 @@ const StoreDetail = () => {
                 <AiFillStar size={16} color="#00705B" />
                 <AiFillStar size={16} color="#00705B" />
                 <AiFillStar size={16} color="#00705B" />
-                <span>(35)</span>
+                <span className="detail-header-review-text">(35)</span>
               </span>
             </div>
             <div className="detail-header-space" />
-            <div className="detail-header-crowdy-box">
-              <span className="detail-header-crowdy-status">여유로움</span>
+            <div className={storeOpen ? "detail-header-crowdy-box-default crowdy-box-active" : "detail-header-crowdy-box-default "}>
+              <span className="detail-header-crowdy-status">{storeOpen ? "여유로움" : "CLOSED"}</span>
             </div>
           </div>
           <div className="detail-sub-header">
@@ -66,7 +71,15 @@ const StoreDetail = () => {
               <div className="detail-sub-header-phone">
                 <img width="20px" src={phoneIcon} alt="phone-icon"></img>
                 <span className="detail-sub-header-phone-number detail-default-text">{storeDatas.twosomeSeohyeonRodeo.phone}</span>
+                {storeOpen ? <span className="detail-sub-header-open">OPEN</span> : null}
               </div>
+            </div>
+            <div className="detail-sub-header-second">
+              <div className="detail-sub-header-address">
+                <img width="20px" src={addressIcon} alt="address-icon"></img>
+                <span className="detail-sub-header-address-text detail-default-text">{storeDatas.twosomeSeohyeonRodeo.address}</span>
+              </div>
+
               <div className="detail-sub-header-furniture">
                 <div className="detail-sub-header-table">
                   <img width="20px" src={tableIcon} alt="table-icon"></img>
@@ -76,22 +89,6 @@ const StoreDetail = () => {
                   <img width="20px" src={chairIcon} alt="chair-icon"></img>
                   <span className="detail-default-text">x {storeDatas.twosomeSeohyeonRodeo.chairNumber}</span>
                 </div>
-              </div>
-            </div>
-            <div className="detail-sub-header-second">
-              <div className="detail-sub-header-address">
-                <img width="20px" src={addressIcon} alt="address-icon"></img>
-                <span className="detail-sub-header-address-text detail-default-text">{storeDatas.twosomeSeohyeonRodeo.address}</span>
-              </div>
-              <div className="detail-sub-header-hours">
-                <img width="20px" src={hoursIcon} alt="hours-icon"></img>
-                <span className="detail-sub-header-open-hours detail-default-text">
-                  {currentTime >= storeDatas.twosomeSeohyeonRodeo.openHours[currentDay][0] &&
-                  currentTime <= storeDatas.twosomeSeohyeonRodeo.openHours[currentDay][1]
-                    ? "영업중"
-                    : "문닫음"}
-                </span>
-                <img width="10px" src={hoursChevronIcon} alt="hours-chevron-icon"></img>
               </div>
             </div>
           </div>

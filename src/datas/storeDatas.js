@@ -1,9 +1,9 @@
 import logo from "../images/twosome/twosome-logo.png";
 
-import twesomeRodeoImageOne from "../images/twosome/twesome-rodeo-image-1.svg";
-import twesomeRodeoImageTwo from "../images/twosome/twesome-rodeo-image-2.svg";
-import twesomeRodeoImageThree from "../images/twosome/twesome-rodeo-image-3.svg";
-import twesomeRodeoImageFour from "../images/twosome/twesome-rodeo-image-4.svg";
+import twesomeRodeoImageOne from "../images/twosome/twesome-rodeo-1.svg";
+import twesomeRodeoImageTwo from "../images/twosome/twesome-rodeo-2.svg";
+import twesomeRodeoImageThree from "../images/twosome/twesome-rodeo-3.svg";
+import twesomeRodeoImageFour from "../images/twosome/twesome-rodeo-4.svg";
 
 import twosomeFurnitureOne from "../images/twosome/twosome-rodeo-funiture-1.svg";
 import twosomeFurnitureTwo from "../images/twosome/twosome-rodeo-funiture-2.svg";
@@ -21,7 +21,7 @@ export const storeDatas = {
     address: "강남구 봉은사로 4길 20 2층",
     openHours: {
       mon: [900, 2100],
-      tue: [900, 2100],
+      tue: [900, 1000],
       wed: [900, 2100],
       thu: [900, 2100],
       fri: [900, 2100],

@@ -96,7 +96,7 @@
 .store-seat-image {
   width: 322px;
   height: 184px;
-  background-color: $defaultGrey;
+  object-fit: cover;
   border-radius: 12px;
 }
 
