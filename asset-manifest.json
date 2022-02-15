@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/crowdy-mobile-web/static/css/main.91954481.css",
-    "main.js": "/crowdy-mobile-web/static/js/main.3e47fc61.js",
+    "main.css": "/crowdy-mobile-web/static/css/main.a4ed55c5.css",
+    "main.js": "/crowdy-mobile-web/static/js/main.de143599.js",
     "static/js/787.6034394b.chunk.js": "/crowdy-mobile-web/static/js/787.6034394b.chunk.js",
     "static/media/SF-Pro-Display-Semibold.otf": "/crowdy-mobile-web/static/media/SF-Pro-Display-Semibold.95ff372863d5af04528e.otf",
     "static/media/SF-Pro-Display-Bold.otf": "/crowdy-mobile-web/static/media/SF-Pro-Display-Bold.1363ff9a736f49c6f93b.otf",
@@ -24,12 +24,12 @@
     "index.html": "/crowdy-mobile-web/index.html",
     "static/media/see-more-image-chevron.svg": "/crowdy-mobile-web/static/media/see-more-image-chevron.a7aab23af1364a30d85f91bb0356a004.svg",
     "static/media/go-back-chevron.svg": "/crowdy-mobile-web/static/media/go-back-chevron.541b856c06e660b3eec53cfc7712345f.svg",
-    "main.91954481.css.map": "/crowdy-mobile-web/static/css/main.91954481.css.map",
-    "main.3e47fc61.js.map": "/crowdy-mobile-web/static/js/main.3e47fc61.js.map",
+    "main.a4ed55c5.css.map": "/crowdy-mobile-web/static/css/main.a4ed55c5.css.map",
+    "main.de143599.js.map": "/crowdy-mobile-web/static/js/main.de143599.js.map",
     "787.6034394b.chunk.js.map": "/crowdy-mobile-web/static/js/787.6034394b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.91954481.css",
-    "static/js/main.3e47fc61.js"
+    "static/css/main.a4ed55c5.css",
+    "static/js/main.de143599.js"
   ]
 }
