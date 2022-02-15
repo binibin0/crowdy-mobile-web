@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/crowdy-mobile-web/static/css/main.380dfdf8.css",
-    "main.js": "/crowdy-mobile-web/static/js/main.42574cea.js",
+    "main.css": "/crowdy-mobile-web/static/css/main.91954481.css",
+    "main.js": "/crowdy-mobile-web/static/js/main.3e47fc61.js",
     "static/js/787.6034394b.chunk.js": "/crowdy-mobile-web/static/js/787.6034394b.chunk.js",
     "static/media/SF-Pro-Display-Semibold.otf": "/crowdy-mobile-web/static/media/SF-Pro-Display-Semibold.95ff372863d5af04528e.otf",
     "static/media/SF-Pro-Display-Bold.otf": "/crowdy-mobile-web/static/media/SF-Pro-Display-Bold.1363ff9a736f49c6f93b.otf",
+    "static/media/SF-Pro-Display-Thin.otf": "/crowdy-mobile-web/static/media/SF-Pro-Display-Thin.c57c61930d483b2278ae.otf",
     "static/media/SF-Pro-Display-Regular.otf": "/crowdy-mobile-web/static/media/SF-Pro-Display-Regular.14cc64260a1185db38e9.otf",
     "static/media/twesome-rodeo-1.svg": "/crowdy-mobile-web/static/media/twesome-rodeo-1.f1007f0350e728085b069dd4961ed8a3.svg",
     "static/media/twesome-rodeo-2.svg": "/crowdy-mobile-web/static/media/twesome-rodeo-2.8ba4741f408960330fa3254c587f35e8.svg",
@@ -16,18 +17,19 @@
     "static/media/twosome-rodeo-seat.jpeg": "/crowdy-mobile-web/static/media/twosome-rodeo-seat.e3cf372932c8467d8a88.jpeg",
     "static/media/twosome-rodeo-funiture-4.svg": "/crowdy-mobile-web/static/media/twosome-rodeo-funiture-4.dced66a648945f3134a9d61688dc1bce.svg",
     "static/media/table.svg": "/crowdy-mobile-web/static/media/table.78db96baec1e6259eddf2e3d3a19b76d.svg",
+    "static/media/crowdy-logo.png": "/crowdy-mobile-web/static/media/crowdy-logo.11eebcb89347c619b8f1.png",
     "static/media/phone.svg": "/crowdy-mobile-web/static/media/phone.85bb5f653a8317c753fdae6dc6f1e9e7.svg",
     "static/media/chair.svg": "/crowdy-mobile-web/static/media/chair.29ecd1f32e886fdb781ea19841c9eb69.svg",
     "static/media/address.svg": "/crowdy-mobile-web/static/media/address.cecc3544bd21bd693f7ddcad892cc0bc.svg",
     "index.html": "/crowdy-mobile-web/index.html",
     "static/media/see-more-image-chevron.svg": "/crowdy-mobile-web/static/media/see-more-image-chevron.a7aab23af1364a30d85f91bb0356a004.svg",
     "static/media/go-back-chevron.svg": "/crowdy-mobile-web/static/media/go-back-chevron.541b856c06e660b3eec53cfc7712345f.svg",
-    "main.380dfdf8.css.map": "/crowdy-mobile-web/static/css/main.380dfdf8.css.map",
-    "main.42574cea.js.map": "/crowdy-mobile-web/static/js/main.42574cea.js.map",
+    "main.91954481.css.map": "/crowdy-mobile-web/static/css/main.91954481.css.map",
+    "main.3e47fc61.js.map": "/crowdy-mobile-web/static/js/main.3e47fc61.js.map",
     "787.6034394b.chunk.js.map": "/crowdy-mobile-web/static/js/787.6034394b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.380dfdf8.css",
-    "static/js/main.42574cea.js"
+    "static/css/main.91954481.css",
+    "static/js/main.3e47fc61.js"
   ]
 }
