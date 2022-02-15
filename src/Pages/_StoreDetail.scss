@@ -65,20 +65,27 @@
   display: flex;
   align-items: center;
 }
+.detail-header-review-text {
+  font-size: 14px;
+}
 .detail-header-space {
   flex: 1;
 }
 
-.detail-header-crowdy-box {
+.detail-header-crowdy-box-default {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 90px;
-  height: 38px;
+  height: 40px;
   border-radius: 10px;
+  background-color: $defaultGrey;
+}
+.crowdy-box-active {
   background-color: $primaryColor;
 }
 .detail-header-crowdy-status {
+  margin-top: 2px;
   color: white;
   font-weight: bolder;
   font-size: 18px;
@@ -102,11 +109,38 @@
 .detail-sub-header-phone {
   display: flex;
   align-items: center;
-  width: 150px;
 }
 .detail-sub-header-phone-number {
   margin-left: 16px;
 }
+
+.detail-sub-header-open {
+  display: flex;
+  align-items: center;
+  color: $defaultRed;
+}
+
+.detail-sub-header-open-text {
+  font-size: 16px;
+  font-weight: normal;
+  margin-left: 8px;
+}
+
+.detail-sub-header-second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+}
+.detail-sub-header-address {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.detail-sub-header-address-text {
+  margin-left: 16px;
+}
+
 .detail-sub-header-furniture {
   display: flex;
   justify-content: space-between;
@@ -124,26 +158,6 @@
   align-items: center;
   margin-left: 8px;
 }
-.detail-sub-header-second {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 20px;
-}
-.detail-sub-header-address {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.detail-sub-header-address-text {
-  margin-left: 16px;
-}
-.detail-sub-header-hours {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 84px;
-}
 
 .detail-images-box {
   display: flex;
@@ -157,8 +171,6 @@
   align-content: space-between;
   width: 328px;
   height: 308px;
-
-  background-color: beige;
 }
 
 .detail-image {
@@ -171,7 +183,7 @@
 
 .detail-see-more-image {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-bottom: 20px;
 }
 

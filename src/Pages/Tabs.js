@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { storeDatas } from "../datas/storeDatas";
 import "./style.css";
-import variables from "./style.css";
 
-import tableIcon from "../images/table-icon.svg";
-import chairIcon from "../images/chair-icon.svg";
+import tableIcon from "../images/table.svg";
+import chairIcon from "../images/chair.svg";
+import jpeg from "../images/twosome/twosome-rodeo-seat.jpeg";
 
 function Tabs() {
   const [activeTab, setActiveTab] = useState("menu");
@@ -50,7 +50,7 @@ function Tabs() {
             <span className="store-title">자리배치도</span>
           </div>
           <div className="store-seat-image-box">
-            <div className="store-seat-image"></div>
+            <img src={jpeg} alt="store-seat" className="store-seat-image"></img>
           </div>
           <div className="store-title-box title-add-margin-top">
             <span className="store-title">좌석 및 테이블 정보</span>
