@@ -1,9 +1,40 @@
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(../fonts/SF-Pro-Display/SF-Pro-Display-Thin.otf), format("opentype");
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: "SF Pro Display ";
+  src: url(../fonts/SF-Pro-Display/SF-Pro-Display-Regular.otf), format("opentype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(../fonts/SF-Pro-Display/SF-Pro-Display-Semibold.otf), format("opentype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(../fonts/SF-Pro-Display/SF-Pro-Display-Bold.otf), format("opentype");
+  font-weight: bolder;
+}
+
 $primaryColor: #00705b;
 $defaultGrey: #adadad;
 $defaultRed: #ff2c65;
 
+.primary-color {
+  color: $primaryColor;
+}
+.font-bold {
+  font-weight: bold;
+}
+
 @import "./StoreDetail";
 @import "./Tabs";
+@import "./Menus";
+@import "./AdminLogin";
 
 :export {
   primaryColor: $primaryColor;

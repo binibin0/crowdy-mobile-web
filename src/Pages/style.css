@@ -1,29 +1,48 @@
 @font-face {
+  font-family: "SF Pro Display";
+  src: url(../fonts/SF-Pro-Display/SF-Pro-Display-Thin.otf), format("opentype");
+  font-weight: lighter;
+}
+
+@font-face {
   font-family: "SF Pro Display ";
-  src: url(../fonts/sf-pro-display/SF-Pro-Display-Regular.otf), format("opentype");
+  src: url(../fonts/SF-Pro-Display/SF-Pro-Display-Regular.otf), format("opentype");
   font-weight: normal;
 }
 
 @font-face {
   font-family: "SF Pro Display";
-  src: url(../fonts/sf-pro-display/SF-Pro-Display-Semibold.otf), format("opentype");
+  src: url(../fonts/SF-Pro-Display/SF-Pro-Display-Semibold.otf), format("opentype");
   font-weight: bold;
 }
 
 @font-face {
   font-family: "SF Pro Display";
-  src: url(../fonts/sf-pro-display/SF-Pro-Display-Bold.otf), format("opentype");
+  src: url(../fonts/SF-Pro-Display/SF-Pro-Display-Bold.otf), format("opentype");
   font-weight: bolder;
 }
 
+.primary-color {
+  color: #00705b;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
 * {
-  font-family: SF sf-pro-display;
+  font-family: "SF-Pro-Display";
   font-weight: normal;
+}
+
+#root {
+  background-color: #00705b;
 }
 
 .page {
   width: 414px;
   margin: 0 auto;
+  background-color: white;
 }
 
 .detail-container {
@@ -530,6 +549,175 @@
   font-weight: bold;
   font-size: 14px;
   color: #00705b;
+}
+
+.menu-container {
+  position: relative;
+  width: 414px;
+  height: 1000px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.menu-back-button-icon {
+  position: absolute;
+  top: 52px;
+  left: 46px;
+}
+
+.menu-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.crowdy-header-logo {
+  width: 100px;
+  height: 100px;
+  margin: 60px 0 20px 0;
+}
+
+.menu-header-text {
+  font-size: 22px;
+  color: #00705b;
+  margin-bottom: 60px;
+}
+
+.menu-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 334px;
+  margin: 0 auto;
+}
+
+.menu-content-title {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.menu-content-text {
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.menu-content-title-space {
+  margin-bottom: 40px;
+}
+
+.menu-content-text-space {
+  margin-bottom: 30px;
+}
+
+.menu-content-paragraph-space {
+  margin-bottom: 60px;
+}
+
+.admin-login-container {
+  position: relative;
+  width: 414px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.admin-login-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.admin-login-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 354px;
+  height: 300px;
+}
+
+.admin-login-header {
+  font-size: 14px;
+  margin-bottom: 48px;
+}
+
+.admin-login-input {
+  width: 210px;
+  padding: 4px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: solid 1px #adadad;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.admin-login-input:focus {
+  outline-style: none;
+  outline-color: transparent;
+  border-bottom: solid 1.6px #00705b;
+}
+
+.admin-login-input:focus::-webkit-input-placeholder {
+  color: #00705b;
+}
+
+.admin-login-input:focus:-ms-input-placeholder {
+  color: #00705b;
+}
+
+.admin-login-input:focus::-ms-input-placeholder {
+  color: #00705b;
+}
+
+.admin-login-input:focus::placeholder {
+  color: #00705b;
+}
+
+.admin-login-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 210px;
+  height: 44px;
+  border-radius: 8px;
+  background-color: #00705b;
+  margin-top: 10px;
+}
+
+.admin-login-button-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
 }
 
 :export {
