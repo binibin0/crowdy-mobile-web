@@ -9,18 +9,10 @@ function getMaxSnap(maxHeight) {
   return Math.max(maxHeight - 400, maxHeight / 2);
 }
 
-const maxSnap = {
-  1: getMaxSnap,
-  2: getMaxSnap / 3,
-};
-
-// const changeBSheet = () => {
-//     snapPoints =
-// }
-
 function BSheet({ userLocationButton, BSheetRef }) {
   const maxHeight = useWindowHeight();
   const maxSnap = getMaxSnap(maxHeight);
+  console.log(maxSnap);
 
   return (
     <BottomSheet
