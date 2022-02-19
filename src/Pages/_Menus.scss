@@ -1,7 +1,15 @@
-.menu-container {
+.crowdy-container {
   position: relative;
   width: 414px;
-  height: 1000px;
+  height: 840px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.survey-container {
+  position: relative;
+  width: 414px;
+  height: 1120px;
   margin: 0 auto;
   background-color: white;
 }
@@ -10,6 +18,7 @@
   position: absolute;
   top: 52px;
   left: 46px;
+  cursor: pointer;
 }
 .menu-header {
   display: flex;
@@ -18,15 +27,14 @@
 }
 
 .crowdy-header-logo {
-  width: 100px;
-  height: 100px;
-  margin: 60px 0 20px 0;
+  height: 62px;
+  margin: 40px 0 20px 0;
 }
 
 .menu-header-text {
   font-size: 22px;
   color: $primaryColor;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .menu-content {
@@ -37,13 +45,13 @@
 }
 
 .menu-content-title {
+  font-family: "NotoSantsKR-Medium";
   font-size: 18px;
-  font-weight: normal;
 }
 
 .menu-content-text {
+  font-family: "NotoSantsKR-Light";
   font-size: 16px;
-  font-weight: lighter;
 }
 
 .menu-content-title-space {

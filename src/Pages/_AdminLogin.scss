@@ -8,7 +8,7 @@
 
 .admin-login-flex {
   display: flex;
-  height: 100vh;
+  height: 800px;
   justify-content: center;
   align-items: center;
 }
@@ -29,6 +29,7 @@
 .admin-login-input {
   width: 210px;
   padding: 4px;
+
   margin-bottom: 30px;
   border: none;
   border-bottom: solid 1px $defaultGrey;
@@ -51,6 +52,7 @@
   width: 210px;
   height: 44px;
   border-radius: 8px;
+  cursor: pointer;
   background-color: $primaryColor;
 
   margin-top: 10px;
@@ -58,6 +60,111 @@
 
 .admin-login-button-text {
   font-size: 16px;
-  font-weight: bold;
+  font-family: "NotoSantsKR-Bold";
   color: white;
+}
+
+.admin-control-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 354px;
+  border: 1px solid $primaryColor;
+  border-radius: 8px;
+}
+.admin-control-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 40px 0 36px 0;
+}
+.admin-control-header-logo {
+  width: 70px;
+  border-radius: 35px;
+}
+.admin-control-header-center {
+  display: flex;
+  flex-direction: column;
+  width: 130px;
+  margin-left: 16px;
+}
+.admin-control-header-title {
+  font-family: "NotoSantsKR-Medium";
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+.admin-control-header-branch {
+  font-family: "NotoSantsKR-Regular";
+  font-size: 10px;
+}
+
+.admin-control-header-space {
+  flex: 1;
+}
+
+.admin-control-header-toggle-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: $defaultGrey;
+  cursor: pointer;
+}
+.admin-control-header-toggle-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  margin: 0 22px 0 0;
+  background-color: white;
+}
+
+.toggle-on {
+  background-color: $primaryColor;
+  div {
+    margin: 0 0 0 22px;
+  }
+}
+
+.admin-control-main {
+  display: flex;
+  justify-content: space-between;
+  width: 228px;
+}
+
+.admin-control-status-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.admin-control-status-first {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.admin-control-status-second {
+  font-family: "NotoSantsKR-Bold";
+  font-size: 22px;
+  color: $primaryColor;
+  margin-bottom: 42px;
+}
+
+.admin-control-count-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 94px;
+  height: 62px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+.white-minus {
+  transform: rotate(90deg);
+}
+
+.background-red {
+  background-color: $defaultRed;
+}
+.background-green {
+  background-color: $primaryColor;
 }

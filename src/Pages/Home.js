@@ -1,12 +1,11 @@
 import * as React from "react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div style={{ height: "900px" }}>
+    <div style={{ height: "100vh", backgroundColor: "#00705b" }}>
       <h1 style={{ display: "flex", justifyContent: "center", alignItems: "center", color: "white", margin: "0 auto", paddingTop: "60px" }}>
         <div>
           This page is for <br />

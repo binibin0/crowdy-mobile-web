@@ -3,6 +3,48 @@
   margin: 0 auto;
 }
 
+.fixed-active {
+  position: fixed;
+  top: 80px;
+  width: 414px;
+  padding-top: 10px;
+  background-color: white;
+  z-index: 1;
+}
+
+.tab-content-anchor {
+  width: 100%;
+  height: 82px;
+  background-color: white;
+}
+
+.tab-content-anchor-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.tab-content-anchor-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.16);
+}
+.tab-content-anchor-text {
+  font-family: "NotoSansKR-Regular";
+  font-size: 12px;
+  color: $primaryColor;
+  padding: 7.4px 14px;
+}
+
+.empty-tab-buttons {
+  width: 100%;
+  height: 123px;
+}
 .tab-buttons {
   display: flex;
 }
@@ -30,39 +72,61 @@
   color: $primaryColor;
 }
 
-.tab-info-deactive {
+.deactivated {
   display: none;
 }
 
 .menu-tab {
-  height: 800px;
+  padding-bottom: 30px;
 }
 
-.menu-title-box {
+.tab-content-title-box {
+  position: relative;
   display: flex;
   align-items: center;
-  height: 62px;
-  padding-left: 40px;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0 40px;
   border-bottom: 1px solid $defaultGrey;
+  border-top: 1px solid $defaultGrey;
 }
 
 .title-add-margin-top {
   padding-top: 10px;
 }
 
-.menu-title {
+.tab-title {
+  font-family: "NotoSantsKR-Bold";
   font-size: 20px;
-  font-weight: bold;
   color: $primaryColor;
 }
+
+.menu-size {
+  position: absolute;
+  right: 30px;
+  font-family: "NotoSansKR-Light";
+  font-size: 12px;
+  color: $primaryColor;
+}
+
+.menu-scroll-box {
+  height: 334px;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .menu-map {
+  position: relative;
   display: flex;
   align-items: center;
-  height: 50px;
+  height: 110px;
   padding-left: 40px;
   border-bottom: 1px solid $defaultGrey;
 }
 .menu-name {
+  font-family: "NotoSansKR-Medium";
   font-size: 14px;
 }
 .menu-price {
@@ -70,33 +134,35 @@
   font-size: 12px;
   color: $defaultGrey;
 }
+.menu-image {
+  position: absolute;
+  right: 40px;
+  width: 80px;
+  height: 72px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
 
-.store-tab {
-  height: 1000px;
-}
-.store-title-box {
-  display: flex;
-  align-items: center;
-  height: 62px;
-  padding-left: 40px;
-  border-bottom: 1px solid $defaultGrey;
-}
 .store-title {
+  font-family: "NotoSantsKR-Medium";
   font-size: 20px;
-  font-weight: bold;
+
   color: $primaryColor;
 }
 
-.store-seat-image-box {
+.store-view-image-box {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 228px;
+  padding: 40px 0 10px 0;
 }
-.store-seat-image {
-  width: 322px;
-  height: 184px;
+.store-view-image {
+  width: 290px;
+  height: 164px;
   object-fit: cover;
+  margin-bottom: 30px;
   border-radius: 12px;
 }
 
@@ -105,15 +171,18 @@
   align-items: center;
   margin: 20px 0 20px 34px;
 }
+
+.store-furniture-text {
+  font-size: 16px;
+  font-family: "NotoSantsKR-Medium";
+}
+
 .store-table {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.store-table-text {
-  font-size: 16px;
-  font-weight: bold;
-}
+
 .store-chair {
   display: flex;
   justify-content: center;
@@ -121,47 +190,42 @@
   margin-left: 14px;
 }
 
-.store-chair-text {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.store-images-box {
+.store-seat-images {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 30px;
 }
-.store-images {
+
+.store-seat-image-box {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
-  width: 334px;
-  height: 314px;
-
-  background-color: beige;
+  align-items: center;
+  padding: 30px 0;
+  padding-left: 64px;
+  border-bottom: 1px solid $defaultGrey;
 }
 
-.store-image {
-  width: 160px;
-  height: 150px;
-  background-color: white;
+.store-seat-image {
+  width: 202px;
+  height: 114px;
   border-radius: 12px;
   object-fit: cover;
+  margin-right: 40px;
 }
-
-.review-tab {
-  height: 800px;
+.store-seat-image-text {
+  font-family: "NotoSansKR-Medium";
+  font-size: 20px;
+  color: $primaryColor;
 }
 
 .review-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px;
+  padding: 374px 0 370px 0;
 }
 
 .review-text {
-  font-weight: bold;
+  font-family: "NotoSantsKR-Medium";
   font-size: 14px;
   color: $primaryColor;
 }

@@ -1,12 +1,3 @@
-* {
-  font-family: "SF-Pro-Display";
-  font-weight: normal;
-}
-
-#root {
-  background-color: #00705b;
-}
-
 .page {
   width: 414px;
   margin: 0 auto;
@@ -16,15 +7,34 @@
 .detail-container {
   width: 334px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 10px;
 }
+
+.detail-see-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 334px;
+  height: 42px;
+  margin: 24px 0 24px 0;
+  border-radius: 8px;
+  box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.16);
+}
+
+.detail-see-map-text {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
 .detail-header {
   position: relative;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 74px 0 16px 0;
+  width: 310px;
+  margin: 0 auto;
+  margin-bottom: 24px;
 }
-
 .back-button {
   position: absolute;
   top: 46px;
@@ -43,22 +53,26 @@
   display: flex;
   flex-direction: column;
   width: 130px;
-  margin-left: 14px;
+  margin-left: 18px;
 }
+
+.detail-header-hashtag {
+  font-size: 9px;
+  color: $primaryColor;
+  margin-bottom: -2px;
+}
+
 .detail-header-title {
-  margin-bottom: 4px;
-  font-weight: bold;
-  font-size: 20px;
+  font-family: "NotoSantsKR-Medium";
+  margin-bottom: 3px;
+  font-size: 18px;
 }
 .detail-header-review {
   display: flex;
   align-items: center;
 }
 .detail-header-review-text {
-  font-size: 14px;
-}
-.detail-header-space {
-  flex: 1;
+  font-size: 12px;
 }
 
 .detail-header-crowdy-box-default {
@@ -66,23 +80,45 @@
   justify-content: center;
   align-items: center;
   width: 90px;
-  height: 40px;
-  border-radius: 10px;
-  background-color: $defaultGrey;
+  height: 32px;
+  border: 0.6px solid $defaultGrey;
+  border-radius: 6px;
+  margin-bottom: 5px;
 }
 .crowdy-box-active {
-  background-color: $primaryColor;
+  border: 0.6px solid $primaryColor;
 }
-.detail-header-crowdy-status {
-  margin-top: 2px;
-  color: white;
-  font-weight: bolder;
-  font-size: 18px;
+
+.detail-header-crowdy-open {
+  color: $primaryColor;
+  font-size: 15px;
 }
+
+.detail-header-crowdy-close {
+  color: $defaultGrey;
+  font-size: 15px;
+}
+
+.detail-header-crowdy-status-live {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-header-crowdy-status-live-text {
+  font-size: 10px;
+  color: $defaultGrey;
+}
+
 .detail-sub-header {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.detail-sub-header-margin-left {
+  margin-left: 8px;
 }
 
 .detail-default-text {
@@ -92,60 +128,39 @@
 .detail-sub-header-first {
   display: flex;
   justify-content: space-between;
+  width: 310px;
   height: 20px;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 .detail-sub-header-phone {
   display: flex;
   align-items: center;
 }
-.detail-sub-header-phone-number {
-  margin-left: 16px;
-}
-
-.detail-sub-header-open {
-  display: flex;
-  align-items: center;
-  color: $defaultRed;
-}
-
-.detail-sub-header-open-text {
-  font-size: 16px;
-  font-weight: normal;
-  margin-left: 8px;
-}
 
 .detail-sub-header-second {
+  width: 310px;
+  height: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 20px;
 }
 .detail-sub-header-address {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.detail-sub-header-address-text {
-  margin-left: 16px;
+
+.detail-sub-header-open {
+  display: flex;
+  align-items: center;
+}
+.detail-sub-header-open-text-box {
+  font-size: 14px;
+  margin-left: 6px;
 }
 
-.detail-sub-header-furniture {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 94px;
-}
-.detail-sub-header-table {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.detail-sub-header-chair {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 8px;
+.detail-sub-header-open-text {
+  margin-left: 4px;
 }
 
 .detail-images-box {
@@ -173,12 +188,16 @@
 .detail-see-more-image {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   margin-bottom: 20px;
 }
 
 .detail-see-more-image-text {
   margin-right: 4px;
-  font-weight: bold;
   font-size: 12px;
   color: $defaultGrey;
+}
+
+.detail-see-more-image-icon {
+  margin-top: 3px;
 }

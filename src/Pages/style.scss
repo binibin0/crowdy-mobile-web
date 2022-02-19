@@ -1,40 +1,71 @@
 @font-face {
-  font-family: "SF Pro Display";
-  src: url(../fonts/SF-Pro-Display/SF-Pro-Display-Thin.otf), format("opentype");
-  font-weight: lighter;
-}
-
-@font-face {
-  font-family: "SF Pro Display ";
-  src: url(../fonts/SF-Pro-Display/SF-Pro-Display-Regular.otf), format("opentype");
-  font-weight: normal;
+  font-family: "NotoSantsKR-Thin";
+  src: url(../fonts/NotoSansKR/NotoSansKR-Thin.otf) format("opentype");
 }
 @font-face {
-  font-family: "SF Pro Display";
-  src: url(../fonts/SF-Pro-Display/SF-Pro-Display-Semibold.otf), format("opentype");
-  font-weight: bold;
+  font-family: "NotoSantsKR-Light";
+  src: url(../fonts/NotoSansKR/NotoSansKR-Light.otf) format("opentype");
 }
 @font-face {
-  font-family: "SF Pro Display";
-  src: url(../fonts/SF-Pro-Display/SF-Pro-Display-Bold.otf), format("opentype");
-  font-weight: bolder;
+  font-family: "NotoSantsKR-Regular";
+  src: url(../fonts/NotoSansKR/NotoSansKR-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "NotoSantsKR-Medium";
+  src: url(../fonts/NotoSansKR/NotoSansKR-Medium.otf) format("opentype");
+}
+@font-face {
+  font-family: "NotoSantsKR-Bold";
+  src: url(../fonts/NotoSansKR/NotoSansKR-Bold.otf) format("opentype");
+}
+@font-face {
+  font-family: "NotoSantsKR-Black";
+  src: url(../fonts/NotoSansKR/NotoSansKR-Black.otf) format("opentype");
 }
 
 $primaryColor: #00705b;
 $defaultGrey: #adadad;
 $defaultRed: #ff2c65;
+$defaultBlue: #2c55ff;
+
+* {
+  font-family: "NotoSantsKR-Regular";
+  overscroll-behavior: none;
+  &::-webkit-scrollbar {
+    scroll-behavior: smooth;
+  }
+}
+
+#root {
+  background-color: #00705bb9;
+}
 
 .primary-color {
   color: $primaryColor;
 }
-.font-bold {
-  font-weight: bold;
+
+.font-light {
+  font-family: "NotoSantsKR-Light";
 }
 
+.font-regular {
+  font-family: "NotoSantsKR-Regular";
+}
+
+.font-semibold {
+  font-family: "NotoSantsKR-Medium";
+}
+
+.font-bold {
+  font-family: "NotoSantsKR-Bold";
+}
+
+@import "./Header";
 @import "./StoreDetail";
 @import "./Tabs";
 @import "./Menus";
 @import "./AdminLogin";
+@import "./ImageModal";
 
 :export {
   primaryColor: $primaryColor;
