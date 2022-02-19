@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/crowdy-mobile-web/static/css/main.01e498dd.css",
-    "main.js": "/crowdy-mobile-web/static/js/main.59731a2a.js",
+    "main.css": "/crowdy-mobile-web/static/css/main.4fe6346d.css",
+    "main.js": "/crowdy-mobile-web/static/js/main.d883cd4f.js",
     "static/js/787.6034394b.chunk.js": "/crowdy-mobile-web/static/js/787.6034394b.chunk.js",
     "static/media/NotoSansKR-Black.otf": "/crowdy-mobile-web/static/media/NotoSansKR-Black.dba005b6b1bed712b472.otf",
     "static/media/NotoSansKR-Bold.otf": "/crowdy-mobile-web/static/media/NotoSansKR-Bold.c252383c4f70753be0e7.otf",
@@ -24,12 +24,12 @@
     "static/media/go-back-white-chevron.svg": "/crowdy-mobile-web/static/media/go-back-white-chevron.bdccca9f9987b1271cf50dc0d229962a.svg",
     "static/media/white-plus.svg": "/crowdy-mobile-web/static/media/white-plus.5be9ba6a5e74b07262d0969393c1868f.svg",
     "static/media/white-minus.svg": "/crowdy-mobile-web/static/media/white-minus.883065225a646239763b8d40bd08eef1.svg",
-    "main.01e498dd.css.map": "/crowdy-mobile-web/static/css/main.01e498dd.css.map",
-    "main.59731a2a.js.map": "/crowdy-mobile-web/static/js/main.59731a2a.js.map",
+    "main.4fe6346d.css.map": "/crowdy-mobile-web/static/css/main.4fe6346d.css.map",
+    "main.d883cd4f.js.map": "/crowdy-mobile-web/static/js/main.d883cd4f.js.map",
     "787.6034394b.chunk.js.map": "/crowdy-mobile-web/static/js/787.6034394b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.01e498dd.css",
-    "static/js/main.59731a2a.js"
+    "static/css/main.4fe6346d.css",
+    "static/js/main.d883cd4f.js"
   ]
 }
