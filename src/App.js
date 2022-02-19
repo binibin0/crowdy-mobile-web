@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
+import Map from "./Pages/Map";
 import StoreDetail from "./Pages/StoreDetail";
 import Crowdy from "./Pages/Crowdy";
 import Survey from "./Pages/Survey";
@@ -32,7 +32,7 @@ function App() {
     <CrowdyContext.Provider value={{ openImageModal, setOpenImageModal, currentImageForModal, setCurrentImageForModal }}>
       <Router basename="/crowdy-mobile-web">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Map />} />
           <Route path="/crowdy" element={<Crowdy />} />
           <Route path="/survey" element={<Survey />} />
           <Route path="/admin-login" element={<AdminLogin />} />

@@ -38,6 +38,7 @@
 }
 
 #root {
+  overscroll-behavior: none;
   background-color: #00705bb9;
 }
 
