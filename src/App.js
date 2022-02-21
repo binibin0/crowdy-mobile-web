@@ -30,7 +30,7 @@ function App() {
 
   return (
     <CrowdyContext.Provider value={{ openImageModal, setOpenImageModal, currentImageForModal, setCurrentImageForModal }}>
-      <Router basename="/crowdy-mobile-web">
+      <Router>
         <Routes>
           <Route path="/" element={<Map />} />
           <Route path="/crowdy" element={<Crowdy />} />
