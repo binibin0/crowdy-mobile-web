@@ -1,16 +1,64 @@
-#my-location {
-  z-index: 10;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
+.bottom-sheet {
+  position: relative;
+}
+
+.bottom-sheet-store-list-button {
+  position: absolute;
+  top: -60px;
+  left: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  top: -65px;
+  width: 118px;
+  height: 42px;
+  border-radius: 8px;
+  background-color: white;
+}
+.bottom-sheet-store-list-button-text {
+  margin-left: 10px;
+}
+.bottom-sheet-current-location-button {
+  position: absolute;
+  top: -60px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 20px;
+  background-color: white;
 }
 
-.detail-form {
-  position: absolute;
-  right: 15px;
+.bottom-sheet-store-images-box {
+  display: flex;
+  justify-content: center;
+}
+.bottom-sheet-store-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 292px;
+  height: 208px;
+}
+.bottom-sheet-store-image {
+  width: 142px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.bottom-sheet-detail-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 234px;
+  height: 36px;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.bottom-sheet-detail-button-text {
+  font-family: "NotoSansKR-Medium";
+  font-size: 14px;
 }

@@ -45,7 +45,7 @@ const Header = ({ path, page }) => {
           {location.pathname === "/" ? (
             <img width="20px" color="white" src={hambergerMenu} alt="menu" className="header-menu-button" onClick={() => navigate("/")} />
           ) : (
-            <img width="20px" color="white" src={goBackWhiteChevronIcon} alt="go-back-icon" className="header-go-back-button" onClick={() => navigate("/")} />
+            <img width="20px" color="white" src={goBackWhiteChevronIcon} alt="go-back-icon" className="header-go-back-button" onClick={() => navigate(-1)} />
           )}
 
           <div className="header-title">{pageTitle}</div>

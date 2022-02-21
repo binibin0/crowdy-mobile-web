@@ -27,6 +27,7 @@ $primaryColor: #00705b;
 $defaultGrey: #adadad;
 $defaultRed: #ff2c65;
 $defaultBlue: #2c55ff;
+$defaultOrange: #ff9c29;
 
 * {
   font-family: "NotoSansKR-Regular";
@@ -81,8 +82,3 @@ html {
 @import "./ImageModal";
 @import "./BSheet";
 @import "./MapSearchBar";
-
-:export {
-  primaryColor: $primaryColor;
-  defaultGrey: $defaultGrey;
-}

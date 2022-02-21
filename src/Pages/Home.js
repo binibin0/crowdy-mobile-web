@@ -59,7 +59,7 @@ const Home = () => {
         <Header path={path} />
         <div className="home-container">
           <div className="home-header-container">
-            <div className="home-header-map-box">
+            <div className="home-header-map-box" onClick={() => navigate("/map")}>
               <img width="16px" src={mapIcon} alt="marker-icon"></img>
               <span className="home-header-map-text">지도에서 매장 보기</span>
             </div>
@@ -74,7 +74,7 @@ const Home = () => {
               {Object.keys(storeDatas).map((store, key) => {
                 if (storeDatas[store].active) {
                   return (
-                    <div key={key} className="home-store-item" style={key === 0 ? { marginTop: "22px" } : null}>
+                    <div key={key} className="home-store-item" style={key === 0 ? { marginTop: "22px" } : null} onClick={() => navigate(`${store}`)}>
                       <div className="store-header">
                         <div style={{ display: "flex" }}>
                           <img className="store-header-logo" src={storeDatas[store].logo} alt="Logo" />
@@ -119,7 +119,12 @@ const Home = () => {
               {Object.keys(storeDatas).map((store, key) => {
                 if (!storeDatas[store].active) {
                   return (
-                    <div key={key} className="home-store-item" style={key === activeStoreCount ? { marginTop: "22px" } : null}>
+                    <div
+                      key={key}
+                      className="home-store-item"
+                      style={key === activeStoreCount ? { marginTop: "22px" } : null}
+                      onClick={() => navigate(`${store}`)}
+                    >
                       <div className="store-header">
                         <div style={{ display: "flex" }}>
                           <img className="store-header-logo" src={storeDatas[store].logo} alt="Logo" />

@@ -8,9 +8,10 @@
 
 .admin-login-flex {
   display: flex;
-  height: 800px;
   justify-content: center;
   align-items: center;
+  height: 800px;
+  flex-direction: column;
 }
 
 .admin-login-box {
@@ -64,7 +65,18 @@
   color: white;
 }
 
+.toggle-off {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 354px;
+  height: 348px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+}
+
 .admin-control-box {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,6 +123,7 @@
   border-radius: 15px;
   background-color: $defaultGrey;
   cursor: pointer;
+  z-index: 99;
 }
 .admin-control-header-toggle-circle {
   width: 24px;

@@ -1,18 +1,47 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import whiteMinus from "../images/white-minus.svg";
 import whitePlus from "../images/white-plus.svg";
 import { storeDatas } from "../datas/storeDatas";
 import Header from "./Header";
+import CrowdyContext from "./CrowdyContext";
 
 const AdminLogin = () => {
+  const {
+    currentTime,
+    setCurrentTime,
+    currentDay,
+    setCurrentDay,
+    currentDayKorean,
+    setCurrentDayKorean,
+    openImageModal,
+    setOpenImageModal,
+    currentImageForModal,
+    setCurrentImageForModal,
+    crowdedness,
+    setCrowdedness,
+    crowdednessCount,
+    setCrowdednessCount,
+  } = useContext(CrowdyContext);
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [loginSuccess, setLoginSuccess] = useState(false);
+  const [loginSuccess, setLoginSuccess] = useState(true);
   const [toggleOn, setToggleOn] = useState(false);
 
-  const peopleCounting = useRef(0);
+  const handleCrowdedness = (store) => {
+    if (crowdednessCount <= storeDatas[store].chairNumber * 0.3) {
+      return setCrowdedness("여유로움");
+    }
+    if (crowdednessCount <= storeDatas[store].chairNumber * 0.5) {
+      return setCrowdedness("보통");
+    }
+    if (crowdednessCount <= storeDatas[store].chairNumber * 0.7) {
+      return setCrowdedness("많음");
+    } else {
+      return setCrowdedness("Crowdy!");
+    }
+  };
 
   const onChange = (event) => {
     if (event.target.id === "username") {
@@ -54,42 +83,54 @@ const AdminLogin = () => {
         <div className="page">
           <Header />
           <div className="admin-login-flex">
-            <div className="admin-control-box">
-              <div className="admin-control-header">
-                <img className="admin-control-header-logo" src={storeDatas.twosomeSeohyeonRodeo.logo} alt="Logo" />
-                <div className="admin-control-header-center">
-                  <span className="admin-control-header-title ">{storeDatas.twosomeSeohyeonRodeo.name}</span>
-                  <span className="admin-control-header-branch">{storeDatas.twosomeSeohyeonRodeo.branch}</span>
-                </div>
-                <div className="admin-control-header-space" />
-                <div
-                  className={toggleOn ? "admin-control-header-toggle-button toggle-on" : "admin-control-header-toggle-button"}
-                  onClick={() => {
-                    setToggleOn(!toggleOn);
-                  }}
-                >
-                  <div className="admin-control-header-toggle-circle"></div>
-                </div>
-              </div>
-              <div className="admin-control-main">
-                <div className="admin-control-status-box">
-                  <span className="admin-control-status-first">상태</span>
-                  <span className="admin-control-status-second">여유로움</span>
-                  <div className="admin-control-count-box background-red" onClick={() => (peopleCounting.current -= 1)}>
-                    <div className="white-minus">
-                      <img src={whiteMinus} alt="minus"></img>
+            {Object.keys(storeDatas).map((store, key) => {
+              if (storeDatas[store].active) {
+                handleCrowdedness(store);
+                return (
+                  <>
+                    <div key={key} className="admin-control-box">
+                      {toggleOn ? null : <div className="toggle-off" />}
+                      <div className="admin-control-header">
+                        <img className="admin-control-header-logo" src={storeDatas[store].logo} alt="Logo" />
+                        <div className="admin-control-header-center">
+                          <span className="admin-control-header-title ">{storeDatas[store].name}</span>
+                          <span className="admin-control-header-branch">{storeDatas[store].branch}</span>
+                        </div>
+                        <div className="admin-control-header-space" />
+                        <div
+                          className={toggleOn ? "admin-control-header-toggle-button toggle-on" : "admin-control-header-toggle-button"}
+                          onClick={() => {
+                            setToggleOn(!toggleOn);
+                          }}
+                        >
+                          <div className="admin-control-header-toggle-circle"></div>
+                        </div>
+                      </div>
+                      <div className="admin-control-main">
+                        <div className="admin-control-status-box">
+                          <span className="admin-control-status-first">상태</span>
+                          <span className="admin-control-status-second">{crowdedness}</span>
+                          <div className="admin-control-count-box background-red" onClick={() => setCrowdednessCount((current) => (current -= 1))}>
+                            <div className="white-minus">
+                              <img src={whiteMinus} alt="minus"></img>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="admin-control-status-box">
+                          <span className="admin-control-status-first">인원수</span>
+                          <span className="admin-control-status-second">{crowdednessCount}</span>
+                          <div className="admin-control-count-box background-green" onClick={() => setCrowdednessCount((current) => (current += 1))}>
+                            <img src={whitePlus} alt="plus"></img>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div className="admin-control-status-box">
-                  <span className="admin-control-status-first">인원수</span>
-                  <span className="admin-control-status-second">{peopleCounting.current}</span>
-                  <div className="admin-control-count-box background-green" onClick={() => (peopleCounting.current += 1)}>
-                    <img src={whitePlus} alt="plus"></img>
-                  </div>
-                </div>
-              </div>
-            </div>
+                  </>
+                );
+              } else {
+                return null;
+              }
+            })}
           </div>
         </div>
       ) : (

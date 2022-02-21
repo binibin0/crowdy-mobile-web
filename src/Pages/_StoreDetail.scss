@@ -10,7 +10,9 @@
   align-items: center;
   width: 334px;
   height: 42px;
-  margin: 30px 0 30px 0;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
   border-radius: 8px;
   box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.16);
 }
@@ -24,7 +26,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 24px;
 }
 
 .store-header {
@@ -47,10 +48,12 @@
 .store-header-logo {
   width: 70px;
   border-radius: 35px;
+  object-fit: cover;
 }
 .store-header-center {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 130px;
   margin-left: 18px;
 }
@@ -82,7 +85,7 @@
   height: 32px;
   border: 0.6px solid $defaultGrey;
   border-radius: 6px;
-  margin-bottom: 5px;
+  margin: 2px 0 5px 0;
 }
 .crowdy-box-active {
   border: 0.6px solid $primaryColor;
@@ -109,13 +112,26 @@
 .store-header-crowdy-status-live-text {
   font-size: 10px;
   color: $defaultGrey;
+  margin-right: 4px;
+}
+
+.crowdedness-green {
+  color: $primaryColor;
+}
+.crowdedness-blue {
+  color: $defaultBlue;
+}
+.crowdedness-orange {
+  color: $defaultOrange;
+}
+.crowdedness-red {
+  color: $defaultRed;
 }
 
 .store-sub-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
 }
 
 .store-sub-header-margin-left {

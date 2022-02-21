@@ -17,6 +17,10 @@ function App() {
   const [currentDayKorean, setCurrentDayKorean] = useState("월");
   const [openImageModal, setOpenImageModal] = useState(false);
   const [currentImageForModal, setCurrentImageForModal] = useState("");
+  const [currentBSheetStore, setCurrentBSheetStore] = useState("twosome-seohyeon-rodeo");
+  const [crowdedness, setCrowdedness] = useState("Crowdy!");
+  const [crowdednessCount, setCrowdednessCount] = useState(0);
+  const [refresh, setRefresh] = useState(true);
 
   const getCurrentTime = () => {
     const days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
@@ -64,6 +68,14 @@ function App() {
         setOpenImageModal,
         currentImageForModal,
         setCurrentImageForModal,
+        currentBSheetStore,
+        setCurrentBSheetStore,
+        crowdedness,
+        setCrowdedness,
+        crowdednessCount,
+        setCrowdednessCount,
+        refresh,
+        setRefresh,
       }}
     >
       <Router>
