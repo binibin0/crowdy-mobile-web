@@ -1,6 +1,13 @@
 import React, { useState, useRef, useCallback } from "react";
-import { GoogleMap, LoadScript, Marker, useGoogleMap } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  LoadScript,
+  Marker,
+  useGoogleMap,
+} from "@react-google-maps/api";
 import BSheet from "./BSheet";
+import DrawerP from "./Drawer";
+import "./style.css";
 
 const containerStyle = {
   width: "100vw",
@@ -10,8 +17,8 @@ const containerStyle = {
 function App() {
   const [state, setState] = useState({
     center: { lat: 37.3842, lng: 127.1224 },
-    zoom: 17,
   });
+  const [zoomLv, setzoomLv] = useState(16);
   const BSheetRef = useRef();
 
   const EventMarkerContainer = ({ position }) => {
@@ -21,6 +28,7 @@ function App() {
       <Marker
         position={position}
         onClick={(marker) => {
+          setzoomLv(17);
           map.panTo(marker.latLng);
           BSheetRef.current.snapTo(({ maxHeight }) => maxHeight);
         }}
@@ -58,15 +66,11 @@ function App() {
               lat: position.coords.latitude, // 위도
               lng: position.coords.longitude, // 경도
             },
-            zoom: 17,
           }));
+          setzoomLv(18);
         },
         (err) => {
-          setState((prev) => ({
-            ...prev,
-            errMsg: err.message,
-            isLoading: false,
-          }));
+          console.log("실패....");
         },
         {
           enableHighAccuracy: true,
@@ -83,25 +87,38 @@ function App() {
     mapTypeControl: false,
     zoomControl: false,
     streetViewControl: false,
-    minZoom: 14,
-    maxZoom: 18,
+    minZoom: 7,
+    maxZoom: 20,
   };
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyCSYjuiuUYQ2tYtEE5V26yBzQhc5M6xjPM">
-      <GoogleMap
-        options={defaultMapOptions}
-        mapContainerStyle={containerStyle}
-        center={state.center}
-        zoom={state.zoom}
-        onDragStart={() => BSheetRef.current.snapTo(({ maxHeight }) => maxHeight / 3)}
-      >
-        {data.map((value) => (
-          <EventMarkerContainer key={`EventMarkerContainer-${value.latlng.lat}-${value.latlng.lng}`} position={value.latlng} content={value.content} />
-        ))}
-        <BSheet BSheetRef={BSheetRef} userLocationButton={userLocationButton} />
-      </GoogleMap>
-    </LoadScript>
+    <div>
+      <LoadScript googleMapsApiKey="AIzaSyCSYjuiuUYQ2tYtEE5V26yBzQhc5M6xjPM">
+        <GoogleMap
+          options={defaultMapOptions}
+          mapContainerStyle={containerStyle}
+          center={state.center}
+          zoom={zoomLv}
+          onDragStart={() =>
+            BSheetRef.current.snapTo(({ maxHeight }) => maxHeight / 3)
+          }
+        >
+          {data.map((value) => (
+            <EventMarkerContainer
+              key={`EventMarkerContainer-${value.latlng.lat}-${value.latlng.lng}`}
+              position={value.latlng}
+              content={value.content}
+            />
+          ))}
+
+          <DrawerP />
+          <BSheet
+            BSheetRef={BSheetRef}
+            userLocationButton={userLocationButton}
+          />
+        </GoogleMap>
+      </LoadScript>
+    </div>
   );
 }
 

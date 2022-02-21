@@ -12,7 +12,6 @@ function getMaxSnap(maxHeight) {
 function BSheet({ userLocationButton, BSheetRef }) {
   const maxHeight = useWindowHeight();
   const maxSnap = getMaxSnap(maxHeight);
-  console.log(maxSnap);
 
   return (
     <BottomSheet
@@ -27,7 +26,10 @@ function BSheet({ userLocationButton, BSheetRef }) {
         매장 정보가 들어갈 곳
         <div className="DetailForm">
           <button id="myLocation" onClick={userLocationButton}>
-            <img src={myLocationIcon} style={{ width: "30px", height: "30px" }} />
+            <img
+              src={myLocationIcon}
+              style={{ width: "30px", height: "30px" }}
+            />
           </button>
         </div>
       </div>

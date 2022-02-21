@@ -29,7 +29,14 @@ function App() {
   const [currentImageForModal, setCurrentImageForModal] = useState("");
 
   return (
-    <CrowdyContext.Provider value={{ openImageModal, setOpenImageModal, currentImageForModal, setCurrentImageForModal }}>
+    <CrowdyContext.Provider
+      value={{
+        openImageModal,
+        setOpenImageModal,
+        currentImageForModal,
+        setCurrentImageForModal,
+      }}
+    >
       <Router>
         <Routes>
           <Route path="/" element={<Map />} />
