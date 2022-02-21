@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import goBackWhiteChevronIcon from "../images/go-back-white-chevron.svg";
+import hambergerMenu from "../images/hamberger-menu.svg";
 import { storeDatas } from "../datas/storeDatas";
 
 const Header = ({ path, page }) => {
@@ -13,6 +14,9 @@ const Header = ({ path, page }) => {
       return setPageTitle("전체 이미지");
     }
 
+    if (location.pathname === "/") {
+      return setPageTitle("서현역");
+    }
     if (location.pathname === "/crowdy") {
       return setPageTitle("Crowdy");
     }
@@ -32,14 +36,18 @@ const Header = ({ path, page }) => {
   useEffect(() => {
     checkPage();
   }, [pageTitle]);
-
   return (
     <>
       <div className="empty-header-box" />
       <div className={page ? "header-box rectangle" : "header-box "}>
         <div className="header-space" />
         <div className="header-content">
-          <img width="20px" color="white" src={goBackWhiteChevronIcon} alt="go-back-icon" className="header-back-button" onClick={() => navigate(-1)} />
+          {location.pathname === "/" ? (
+            <img width="20px" color="white" src={hambergerMenu} alt="menu" className="header-menu-button" onClick={() => navigate("/")} />
+          ) : (
+            <img width="20px" color="white" src={goBackWhiteChevronIcon} alt="go-back-icon" className="header-go-back-button" onClick={() => navigate("/")} />
+          )}
+
           <div className="header-title">{pageTitle}</div>
         </div>
       </div>

@@ -6,7 +6,7 @@ const Crowdy = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="crowdy-container">
+      <div className="page">
         <Header />
         <div className="menu-header">
           <img className="crowdy-header-logo" src={crowdyLogo} alt="crowdy-logo"></img>
@@ -34,6 +34,7 @@ const Crowdy = () => {
           <span className="menu-content-text">
             저희 <span className="primary-color font-light">Crowdy</span> 서비스를 이용해주셔서 감사합니다.
           </span>
+          <div style={{ height: "60px" }} />
         </div>
       </div>
     </>

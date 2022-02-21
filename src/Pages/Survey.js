@@ -5,7 +5,7 @@ import Header from "./Header";
 const Survey = () => {
   const navigate = useNavigate();
   return (
-    <div className="survey-container">
+    <div className="page">
       <Header />
       <div className="menu-header">
         <img className="crowdy-header-logo" src={crowdyLogo} alt="crowdy-logo"></img>
@@ -42,6 +42,7 @@ const Survey = () => {
           저희 <span className="primary-color font-light">Crowdy Team</span>에게 정말 큰 도움이 됩니다.
         </span>
         <span className="menu-content-text">감사합니다.</span>
+        <div style={{ height: "60px" }} />
       </div>
     </div>
   );

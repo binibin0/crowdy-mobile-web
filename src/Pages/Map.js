@@ -1,13 +1,15 @@
 import React, { useState, useRef, useCallback } from "react";
 import { GoogleMap, LoadScript, Marker, useGoogleMap } from "@react-google-maps/api";
 import BSheet from "./BSheet";
+import "./style.css";
+import MapSearchBar from "./MapSearchBar";
 
 const containerStyle = {
   width: "100vw",
   height: "100vh",
 };
 
-function App() {
+function Map() {
   const [state, setState] = useState({
     center: { lat: 37.3842, lng: 127.1224 },
     zoom: 17,
@@ -27,6 +29,7 @@ function App() {
       ></Marker>
     );
   };
+
   const data = [
     {
       content: <div style={{ color: "#000" }}>투썸플레이스서현로데오</div>,
@@ -75,7 +78,7 @@ function App() {
         }
       );
     } else {
-      alert("새로고침을 통해 위치 사용을 허락해주세요!..");
+      alert("새로고침을 통해 위치 사용을 허락해주세요");
     }
   };
   const defaultMapOptions = {
@@ -88,21 +91,24 @@ function App() {
   };
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyCSYjuiuUYQ2tYtEE5V26yBzQhc5M6xjPM">
-      <GoogleMap
-        options={defaultMapOptions}
-        mapContainerStyle={containerStyle}
-        center={state.center}
-        zoom={state.zoom}
-        onDragStart={() => BSheetRef.current.snapTo(({ maxHeight }) => maxHeight / 3)}
-      >
-        {data.map((value) => (
-          <EventMarkerContainer key={`EventMarkerContainer-${value.latlng.lat}-${value.latlng.lng}`} position={value.latlng} content={value.content} />
-        ))}
-        <BSheet BSheetRef={BSheetRef} userLocationButton={userLocationButton} />
-      </GoogleMap>
-    </LoadScript>
+    <>
+      <MapSearchBar />
+      <LoadScript googleMapsApiKey="AIzaSyCSYjuiuUYQ2tYtEE5V26yBzQhc5M6xjPM">
+        <GoogleMap
+          options={defaultMapOptions}
+          mapContainerStyle={containerStyle}
+          center={state.center}
+          zoom={state.zoom}
+          onDragStart={() => BSheetRef.current.snapTo(({ maxHeight }) => maxHeight / 3)}
+        >
+          {data.map((value) => (
+            <EventMarkerContainer key={`EventMarkerContainer-${value.latlng.lat}-${value.latlng.lng}`} position={value.latlng} content={value.content} />
+          ))}
+          <BSheet BSheetRef={BSheetRef} userLocationButton={userLocationButton} />
+        </GoogleMap>
+      </LoadScript>
+    </>
   );
 }
 
-export default React.memo(App);
+export default React.memo(Map);

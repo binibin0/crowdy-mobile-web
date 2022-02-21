@@ -51,7 +51,7 @@ const AdminLogin = () => {
   return (
     <>
       {loginSuccess ? (
-        <div className="admin-login-container">
+        <div className="page">
           <Header />
           <div className="admin-login-flex">
             <div className="admin-control-box">
@@ -93,7 +93,7 @@ const AdminLogin = () => {
           </div>
         </div>
       ) : (
-        <div className="admin-login-container">
+        <div className="page">
           <Header />
           <div className="admin-login-flex">
             <div className="admin-login-box">

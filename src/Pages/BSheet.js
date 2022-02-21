@@ -5,11 +5,11 @@ import "./style.css";
 import "react-spring-bottom-sheet/dist/style.css";
 import myLocationIcon from "../images/my-location.png";
 
-function getMaxSnap(maxHeight) {
+const getMaxSnap = (maxHeight) => {
   return Math.max(maxHeight - 400, maxHeight / 2);
-}
+};
 
-function BSheet({ userLocationButton, BSheetRef }) {
+const BSheet = ({ userLocationButton, BSheetRef }) => {
   const maxHeight = useWindowHeight();
   const maxSnap = getMaxSnap(maxHeight);
   console.log(maxSnap);
@@ -21,7 +21,7 @@ function BSheet({ userLocationButton, BSheetRef }) {
       ref={BSheetRef}
       blocking={false}
       defaultSnap={({ snapPoints }) => Math.min(...snapPoints)}
-      snapPoints={() => [maxSnap, maxSnap / 3]}
+      snapPoints={() => [480, maxSnap / 3]}
     >
       <div style={{ display: "flex", justifyContent: "center" }}>
         매장 정보가 들어갈 곳
@@ -33,5 +33,5 @@ function BSheet({ userLocationButton, BSheetRef }) {
       </div>
     </BottomSheet>
   );
-}
+};
 export default BSheet;

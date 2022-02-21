@@ -1,9 +1,3 @@
-.page {
-  width: 414px;
-  margin: 0 auto;
-  background-color: white;
-}
-
 .detail-container {
   width: 334px;
   margin: 0 auto;
@@ -16,7 +10,7 @@
   align-items: center;
   width: 334px;
   height: 42px;
-  margin: 24px 0 24px 0;
+  margin: 30px 0 30px 0;
   border-radius: 8px;
   box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.16);
 }
@@ -26,14 +20,19 @@
   font-size: 16px;
 }
 
-.detail-header {
-  position: relative;
+.store-header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.store-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 310px;
   margin: 0 auto;
-  margin-bottom: 24px;
 }
 .back-button {
   position: absolute;
@@ -45,37 +44,37 @@
   margin-left: 10px;
 }
 
-.detail-header-logo {
+.store-header-logo {
   width: 70px;
   border-radius: 35px;
 }
-.detail-header-center {
+.store-header-center {
   display: flex;
   flex-direction: column;
   width: 130px;
   margin-left: 18px;
 }
 
-.detail-header-hashtag {
+.store-header-hashtag {
   font-size: 9px;
   color: $primaryColor;
   margin-bottom: -2px;
 }
 
-.detail-header-title {
-  font-family: "NotoSantsKR-Medium";
+.store-header-title {
+  font-family: "NotoSansKR-Medium";
   margin-bottom: 3px;
   font-size: 18px;
 }
-.detail-header-review {
+.store-header-review {
   display: flex;
   align-items: center;
 }
-.detail-header-review-text {
+.store-header-review-text {
   font-size: 12px;
 }
 
-.detail-header-crowdy-box-default {
+.store-header-crowdy-box-default {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,86 +88,88 @@
   border: 0.6px solid $primaryColor;
 }
 
-.detail-header-crowdy-open {
+.store-header-crowdy-open {
+  font-family: "NotoSansKR-Bold";
   color: $primaryColor;
   font-size: 15px;
 }
 
-.detail-header-crowdy-close {
+.store-header-crowdy-close {
+  font-family: "NotoSansKR-Bold";
   color: $defaultGrey;
   font-size: 15px;
 }
 
-.detail-header-crowdy-status-live {
+.store-header-crowdy-status-live {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.detail-header-crowdy-status-live-text {
+.store-header-crowdy-status-live-text {
   font-size: 10px;
   color: $defaultGrey;
 }
 
-.detail-sub-header {
+.store-sub-header {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
 }
 
-.detail-sub-header-margin-left {
+.store-sub-header-margin-left {
   margin-left: 8px;
 }
 
-.detail-default-text {
+.store-default-text {
   font-size: 14px;
 }
 
-.detail-sub-header-first {
+.store-sub-header-first {
   display: flex;
   justify-content: space-between;
   width: 310px;
   height: 20px;
   margin-bottom: 10px;
 }
-.detail-sub-header-phone {
+.store-sub-header-phone {
   display: flex;
   align-items: center;
 }
 
-.detail-sub-header-second {
+.store-sub-header-second {
   width: 310px;
   height: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.detail-sub-header-address {
+.store-sub-header-address {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.detail-sub-header-open {
+.store-sub-header-open {
   display: flex;
   align-items: center;
 }
-.detail-sub-header-open-text-box {
+.store-sub-header-open-text-box {
   font-size: 14px;
   margin-left: 6px;
 }
 
-.detail-sub-header-open-text {
+.store-sub-header-open-text {
   margin-left: 4px;
 }
 
-.detail-images-box {
+.store-images-box {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
 }
-.detail-images {
+.store-images {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -177,7 +178,7 @@
   height: 308px;
 }
 
-.detail-image {
+.store-image {
   width: 154px;
   height: 144px;
   background-color: white;
@@ -193,8 +194,9 @@
 }
 
 .detail-see-more-image-text {
-  margin-right: 4px;
+  font-family: "NotoSansKR-Medium";
   font-size: 12px;
+  margin-right: 4px;
   color: $defaultGrey;
 }
 

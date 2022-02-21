@@ -1,35 +1,35 @@
 @font-face {
-  font-family: "NotoSantsKR-Thin";
+  font-family: "NotoSansKR-Thin";
   src: url(../fonts/NotoSansKR/NotoSansKR-Thin.otf) format("opentype");
 }
 
 @font-face {
-  font-family: "NotoSantsKR-Light";
+  font-family: "NotoSansKR-Light";
   src: url(../fonts/NotoSansKR/NotoSansKR-Light.otf) format("opentype");
 }
 
 @font-face {
-  font-family: "NotoSantsKR-Regular";
+  font-family: "NotoSansKR-Regular";
   src: url(../fonts/NotoSansKR/NotoSansKR-Regular.otf) format("opentype");
 }
 
 @font-face {
-  font-family: "NotoSantsKR-Medium";
+  font-family: "NotoSansKR-Medium";
   src: url(../fonts/NotoSansKR/NotoSansKR-Medium.otf) format("opentype");
 }
 
 @font-face {
-  font-family: "NotoSantsKR-Bold";
+  font-family: "NotoSansKR-Bold";
   src: url(../fonts/NotoSansKR/NotoSansKR-Bold.otf) format("opentype");
 }
 
 @font-face {
-  font-family: "NotoSantsKR-Black";
+  font-family: "NotoSansKR-Black";
   src: url(../fonts/NotoSansKR/NotoSansKR-Black.otf) format("opentype");
 }
 
 * {
-  font-family: "NotoSantsKR-Regular";
+  font-family: "NotoSansKR-Regular";
   overscroll-behavior: none;
 }
 
@@ -37,9 +37,21 @@
   scroll-behavior: smooth;
 }
 
+html {
+  background-color: #1bab90;
+}
+
 #root {
+  width: 100vw;
+  height: 100vh;
   overscroll-behavior: none;
-  background-color: #00705bb9;
+  background-color: #1bab90;
+}
+
+.page {
+  width: 414px;
+  margin: 0 auto;
+  background-color: white;
 }
 
 .primary-color {
@@ -47,19 +59,19 @@
 }
 
 .font-light {
-  font-family: "NotoSantsKR-Light";
+  font-family: "NotoSansKR-Light";
 }
 
 .font-regular {
-  font-family: "NotoSantsKR-Regular";
+  font-family: "NotoSansKR-Regular";
 }
 
 .font-semibold {
-  font-family: "NotoSantsKR-Medium";
+  font-family: "NotoSansKR-Medium";
 }
 
 .font-bold {
-  font-family: "NotoSantsKR-Bold";
+  font-family: "NotoSansKR-Bold";
 }
 
 .empty-header-box {
@@ -95,9 +107,16 @@
           align-items: center;
 }
 
-.header-back-button {
+.header-go-back-button {
   position: absolute;
-  top: 0px;
+  top: 1px;
+  left: 46px;
+  color: white;
+}
+
+.header-menu-button {
+  position: absolute;
+  top: 6px;
   left: 46px;
   color: white;
 }
@@ -109,10 +128,92 @@
   margin: 0 auto;
 }
 
-.page {
-  width: 414px;
+.home-container {
   margin: 0 auto;
-  background-color: white;
+  padding: 0 10px;
+}
+
+.home-header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 354px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.home-header-map-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+  height: 42px;
+  border-radius: 8px;
+  -webkit-box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.16);
+          box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.16);
+}
+
+.home-header-filter-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 94px;
+  height: 42px;
+  border-radius: 8px;
+  -webkit-box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.16);
+          box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.16);
+}
+
+.home-header-map-text {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.home-store-container {
+  width: 354px;
+  margin: 0 auto;
+}
+
+.home-store-title {
+  font-size: 13px;
+  color: #00705b;
+}
+
+.home-store-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 354px;
+  height: 98px;
+  margin-top: 26px;
+  border-radius: 8px;
+  -webkit-box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.16);
+          box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.16);
 }
 
 .detail-container {
@@ -133,7 +234,7 @@
           align-items: center;
   width: 334px;
   height: 42px;
-  margin: 24px 0 24px 0;
+  margin: 30px 0 30px 0;
   border-radius: 8px;
   -webkit-box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.16);
           box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.16);
@@ -144,8 +245,20 @@
   font-size: 16px;
 }
 
-.detail-header {
-  position: relative;
+.store-header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 24px;
+}
+
+.store-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,7 +270,6 @@
           align-items: center;
   width: 310px;
   margin: 0 auto;
-  margin-bottom: 24px;
 }
 
 .back-button {
@@ -170,12 +282,12 @@
   margin-left: 10px;
 }
 
-.detail-header-logo {
+.store-header-logo {
   width: 70px;
   border-radius: 35px;
 }
 
-.detail-header-center {
+.store-header-center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -187,19 +299,19 @@
   margin-left: 18px;
 }
 
-.detail-header-hashtag {
+.store-header-hashtag {
   font-size: 9px;
   color: #00705b;
   margin-bottom: -2px;
 }
 
-.detail-header-title {
-  font-family: "NotoSantsKR-Medium";
+.store-header-title {
+  font-family: "NotoSansKR-Medium";
   margin-bottom: 3px;
   font-size: 18px;
 }
 
-.detail-header-review {
+.store-header-review {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -208,11 +320,11 @@
           align-items: center;
 }
 
-.detail-header-review-text {
+.store-header-review-text {
   font-size: 12px;
 }
 
-.detail-header-crowdy-box-default {
+.store-header-crowdy-box-default {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -233,17 +345,19 @@
   border: 0.6px solid #00705b;
 }
 
-.detail-header-crowdy-open {
+.store-header-crowdy-open {
+  font-family: "NotoSansKR-Bold";
   color: #00705b;
   font-size: 15px;
 }
 
-.detail-header-crowdy-close {
+.store-header-crowdy-close {
+  font-family: "NotoSansKR-Bold";
   color: #adadad;
   font-size: 15px;
 }
 
-.detail-header-crowdy-status-live {
+.store-header-crowdy-status-live {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -255,12 +369,12 @@
           align-items: center;
 }
 
-.detail-header-crowdy-status-live-text {
+.store-header-crowdy-status-live-text {
   font-size: 10px;
   color: #adadad;
 }
 
-.detail-sub-header {
+.store-sub-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -274,15 +388,15 @@
   margin-bottom: 30px;
 }
 
-.detail-sub-header-margin-left {
+.store-sub-header-margin-left {
   margin-left: 8px;
 }
 
-.detail-default-text {
+.store-default-text {
   font-size: 14px;
 }
 
-.detail-sub-header-first {
+.store-sub-header-first {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -294,7 +408,7 @@
   margin-bottom: 10px;
 }
 
-.detail-sub-header-phone {
+.store-sub-header-phone {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -303,7 +417,7 @@
           align-items: center;
 }
 
-.detail-sub-header-second {
+.store-sub-header-second {
   width: 310px;
   height: 20px;
   display: -webkit-box;
@@ -317,7 +431,7 @@
           align-items: center;
 }
 
-.detail-sub-header-address {
+.store-sub-header-address {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -329,7 +443,7 @@
           align-items: center;
 }
 
-.detail-sub-header-open {
+.store-sub-header-open {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -338,16 +452,16 @@
           align-items: center;
 }
 
-.detail-sub-header-open-text-box {
+.store-sub-header-open-text-box {
   font-size: 14px;
   margin-left: 6px;
 }
 
-.detail-sub-header-open-text {
+.store-sub-header-open-text {
   margin-left: 4px;
 }
 
-.detail-images-box {
+.store-images-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -357,7 +471,7 @@
   margin-bottom: 10px;
 }
 
-.detail-images {
+.store-images {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -372,7 +486,7 @@
   height: 308px;
 }
 
-.detail-image {
+.store-image {
   width: 154px;
   height: 144px;
   background-color: white;
@@ -395,8 +509,9 @@
 }
 
 .detail-see-more-image-text {
-  margin-right: 4px;
+  font-family: "NotoSansKR-Medium";
   font-size: 12px;
+  margin-right: 4px;
   color: #adadad;
 }
 
@@ -529,7 +644,7 @@
 }
 
 .tab-title {
-  font-family: "NotoSantsKR-Bold";
+  font-family: "NotoSansKR-Bold";
   font-size: 20px;
   color: #00705b;
 }
@@ -588,7 +703,7 @@
 }
 
 .store-title {
-  font-family: "NotoSantsKR-Medium";
+  font-family: "NotoSansKR-Medium";
   font-size: 20px;
   color: #00705b;
 }
@@ -631,7 +746,7 @@
 
 .store-furniture-text {
   font-size: 16px;
-  font-family: "NotoSantsKR-Medium";
+  font-family: "NotoSansKR-Medium";
 }
 
 .store-table {
@@ -711,7 +826,7 @@
 }
 
 .review-text {
-  font-family: "NotoSantsKR-Medium";
+  font-family: "NotoSansKR-Medium";
   font-size: 14px;
   color: #00705b;
 }
@@ -776,12 +891,12 @@
 }
 
 .menu-content-title {
-  font-family: "NotoSantsKR-Medium";
+  font-family: "NotoSansKR-Medium";
   font-size: 18px;
 }
 
 .menu-content-text {
-  font-family: "NotoSantsKR-Light";
+  font-family: "NotoSansKR-Light";
   font-size: 16px;
 }
 
@@ -890,7 +1005,7 @@
 
 .admin-login-button-text {
   font-size: 16px;
-  font-family: "NotoSantsKR-Bold";
+  font-family: "NotoSansKR-Bold";
   color: white;
 }
 
@@ -939,13 +1054,13 @@
 }
 
 .admin-control-header-title {
-  font-family: "NotoSantsKR-Medium";
+  font-family: "NotoSansKR-Medium";
   margin-bottom: 4px;
   font-size: 16px;
 }
 
 .admin-control-header-branch {
-  font-family: "NotoSantsKR-Regular";
+  font-family: "NotoSansKR-Regular";
   font-size: 10px;
 }
 
@@ -1017,7 +1132,7 @@
 }
 
 .admin-control-status-second {
-  font-family: "NotoSantsKR-Bold";
+  font-family: "NotoSansKR-Bold";
   font-size: 22px;
   color: #00705b;
   margin-bottom: 42px;
@@ -1109,6 +1224,30 @@
 .detail-form {
   position: absolute;
   right: 15px;
+}
+
+.map-search-bar-container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 334px;
+  height: 41px;
+  top: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 8px;
+  background-color: white;
+  z-index: 99;
+}
+
+.map-search-bar-text {
+  color: #adadad;
+  margin-left: 22px;
 }
 
 :export {
