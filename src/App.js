@@ -2,6 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
+import StoreList from "./Pages/StoreList";
 import Map from "./Pages/Map";
 import StoreDetail from "./Pages/StoreDetail";
 import Crowdy from "./Pages/Crowdy";
@@ -17,11 +18,23 @@ function App() {
   const [currentDayKorean, setCurrentDayKorean] = useState("월");
   const [openImageModal, setOpenImageModal] = useState(false);
   const [currentImageForModal, setCurrentImageForModal] = useState("");
-  const [currentBSheetStore, setCurrentBSheetStore] = useState("twosome-seohyeon-rodeo");
+  const [currentStore, setCurrentStore] = useState("twosome-seohyeon-rodeo");
   const [crowdedness, setCrowdedness] = useState("Crowdy!");
   const [crowdednessCount, setCrowdednessCount] = useState(0);
   const [refresh, setRefresh] = useState(true);
   const [drawereVisible, setDrawereVisible] = useState(false);
+  const [currentFilter, setCurrentFilter] = useState("전체");
+  const [storeOpen, setStoreOpen] = useState(null);
+
+  const checkStoreOpen = (store) => {
+    if (store) {
+      if (currentTime >= storeDatas[store].openHours[currentDay][0] && currentTime <= storeDatas[store].openHours[currentDay][1]) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  };
 
   const getCurrentTime = () => {
     const days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
@@ -69,8 +82,8 @@ function App() {
         setOpenImageModal,
         currentImageForModal,
         setCurrentImageForModal,
-        currentBSheetStore,
-        setCurrentBSheetStore,
+        currentStore,
+        setCurrentStore,
         crowdedness,
         setCrowdedness,
         crowdednessCount,
@@ -79,11 +92,17 @@ function App() {
         setRefresh,
         drawereVisible,
         setDrawereVisible,
+        currentFilter,
+        setCurrentFilter,
+        storeOpen,
+        setStoreOpen,
+        checkStoreOpen,
       }}
     >
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/store-list" element={<StoreList />} />
           <Route path="/map" element={<Map />} />
           <Route path="/crowdy" element={<Crowdy />} />
           <Route path="/survey" element={<Survey />} />

@@ -27,8 +27,8 @@ const StoreHeader = ({ store, storeOpen }) => {
     setOpenImageModal,
     currentImageForModal,
     setCurrentImageForModal,
-    currentBSheetStore,
-    setCurrentBSheetStore,
+    currentStore,
+    setCurrentStore,
     crowdedness,
     setCrowdedness,
     crowdednessCount,
@@ -37,16 +37,17 @@ const StoreHeader = ({ store, storeOpen }) => {
     setRefresh,
     drawereVisible,
     setDrawereVisible,
+    currentFilter,
+    setCurrentFilter,
   } = useContext(CrowdyContext);
   const handleCrowdednessColor = () => {
     if (crowdedness === "여유로움") {
-      console.log("heo");
       return "crowdedness-green";
     }
     if (crowdedness === "보통") {
       return "crowdedness-blue";
     }
-    if (crowdedness === "많음") {
+    if (crowdedness === "인기") {
       return "crowdedness-orange";
     }
     if (crowdedness === "Crowdy!") {
@@ -101,8 +102,8 @@ const StoreSubHeader = ({ store }) => {
     setOpenImageModal,
     currentImageForModal,
     setCurrentImageForModal,
-    currentBSheetStore,
-    setCurrentBSheetStore,
+    currentStore,
+    setCurrentStore,
     crowdedness,
     setCrowdedness,
     crowdednessCount,
@@ -111,6 +112,11 @@ const StoreSubHeader = ({ store }) => {
     setRefresh,
     drawereVisible,
     setDrawereVisible,
+    currentFilter,
+    setCurrentFilter,
+    storeOpen,
+    setStoreOpen,
+    checkStoreOpen,
   } = useContext(CrowdyContext);
   return (
     <div className="store-sub-header">
@@ -155,8 +161,8 @@ const StoreDetail = () => {
     setOpenImageModal,
     currentImageForModal,
     setCurrentImageForModal,
-    currentBSheetStore,
-    setCurrentBSheetStore,
+    currentStore,
+    setCurrentStore,
     crowdedness,
     setCrowdedness,
     crowdednessCount,
@@ -165,9 +171,12 @@ const StoreDetail = () => {
     setRefresh,
     drawereVisible,
     setDrawereVisible,
+    currentFilter,
+    setCurrentFilter,
+    storeOpen,
+    setStoreOpen,
+    checkStoreOpen,
   } = useContext(CrowdyContext);
-
-  const [storeOpen, setStoreOpen] = useState(null);
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => {
@@ -184,14 +193,8 @@ const StoreDetail = () => {
   }, []);
 
   useEffect(() => {
-    if (currentTime >= storeDatas[path].openHours[currentDay][0] && currentTime <= storeDatas[path].openHours[currentDay][1]) {
-      setStoreOpen(true);
-    } else {
-      setStoreOpen(false);
-    }
+    checkStoreOpen();
   }, [currentDay, currentTime]);
-
-  console.log(crowdedness);
 
   return (
     <>

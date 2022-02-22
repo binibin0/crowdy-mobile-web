@@ -7,11 +7,9 @@ import { storeDatas } from "../datas/storeDatas";
 import storePin from "../images/crowdy/crowdy-store-pin.png";
 import { useWindowHeight } from "@react-hook/window-size";
 import CrowdyContext from "./CrowdyContext";
-
 const storePinSizeConverter = (width) => {
   return (width * 1080) / 662;
 };
-
 const Map = () => {
   const {
     currentTime,
@@ -24,8 +22,8 @@ const Map = () => {
     setOpenImageModal,
     currentImageForModal,
     setCurrentImageForModal,
-    currentBSheetStore,
-    setCurrentBSheetStore,
+    currentStore,
+    setCurrentStore,
     crowdedness,
     setCrowdedness,
     crowdednessCount,
@@ -36,28 +34,25 @@ const Map = () => {
     setDrawereVisible,
   } = useContext(CrowdyContext);
   const windowHeight = useWindowHeight();
-
-  const [userCurrentLocation, setUserCurrentLocation] = useState({
+  const [mapView, setMapView] = useState({
     //
     center: { lat: 37.3842, lng: 127.1224 },
-    zoom: 17,
   });
-  const mapRefRef = useRef(null);
+  const [zoomLv, setZoomLv] = useState(15);
   const BSheetRef = useRef();
-
   const userLocationButton = () => {
     if (navigator.geolocation) {
       // GeoLocation을 이용해서 접속 위치를 얻어옵니다
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          setUserCurrentLocation((currentCenter) => ({
+          setMapView((currentCenter) => ({
             ...currentCenter,
             center: {
               lat: position.coords.latitude, // 위도
               lng: position.coords.longitude, // 경도
             },
-            zoom: 17,
           }));
+          setZoomLv(17);
         },
         (err) => {
           alert("새로고침을 통해 위치 사용을 허락해주세요. 그래도 되지 않는다면 브라우저 설정에서 위치 권한을 허용해주세요");
@@ -70,27 +65,35 @@ const Map = () => {
       );
     }
   };
-  console.log(currentBSheetStore);
+
   const MarkerList = () => {
     const map = useGoogleMap();
-
     return (
       <>
         {Object.keys(storeDatas).map((store, key) => {
           let storePinWidth = 32;
-          if (currentBSheetStore === store) {
+          if (currentStore === store) {
             storePinWidth = 42;
           }
-
-          const icon = { url: storePin, scaledSize: { width: storePinWidth, height: storePinSizeConverter(storePinWidth) } };
+          const icon = {
+            url: storePin,
+            scaledSize: {
+              width: storePinWidth,
+              height: storePinSizeConverter(storePinWidth),
+            },
+          };
           return (
             <Marker
               key={key}
               position={storeDatas[store].latlng}
               icon={icon}
               onClick={() => {
-                setCurrentBSheetStore(store);
-                map.panTo({ lat: storeDatas[store].latlng.lat - 0.003, lng: storeDatas[store].latlng.lng });
+                setCurrentStore(store);
+                setZoomLv(16);
+                map.panTo({
+                  lat: storeDatas[store].latlng.lat - 0.0032,
+                  lng: storeDatas[store].latlng.lng,
+                });
                 BSheetRef.current.snapTo(({ maxHeight }) => maxHeight);
               }}
             />
@@ -99,30 +102,27 @@ const Map = () => {
       </>
     );
   };
-
   const defaultMapOptions = {
     fullscreenControl: false,
     mapTypeControl: false,
     zoomControl: false,
     streetViewControl: false,
-    minZoom: 14,
-    maxZoom: 18,
+    minZoom: 7,
+    maxZoom: 20,
     gestureHandling: "greedy",
   };
-
   return (
     <>
       <MapSearchBar />
       <LoadScript googleMapsApiKey="AIzaSyCSYjuiuUYQ2tYtEE5V26yBzQhc5M6xjPM">
         <GoogleMap
-          ref={mapRefRef}
           options={defaultMapOptions}
           mapContainerStyle={{
             width: "100vw",
             height: "100vh",
           }}
-          center={userCurrentLocation.center}
-          zoom={userCurrentLocation.zoom}
+          center={storeDatas[currentStore].latlng}
+          zoom={zoomLv}
           onDragStart={() => BSheetRef.current.snapTo(({ maxHeight }) => maxHeight / 3)}
         >
           <MarkerList />
@@ -132,5 +132,4 @@ const Map = () => {
     </>
   );
 };
-
 export default React.memo(Map);

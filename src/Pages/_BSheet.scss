@@ -1,6 +1,10 @@
 .bottom-sheet {
   position: relative;
 }
+.bottom-sheet-store-container {
+  width: 414px;
+  top: 18px;
+}
 
 .bottom-sheet-store-list-button {
   position: absolute;
@@ -13,6 +17,7 @@
   height: 42px;
   border-radius: 8px;
   background-color: white;
+  z-index: 99;
 }
 .bottom-sheet-store-list-button-text {
   margin-left: 10px;
@@ -28,6 +33,7 @@
   height: 44px;
   border-radius: 20px;
   background-color: white;
+  z-index: 99;
 }
 
 .bottom-sheet-store-images-box {

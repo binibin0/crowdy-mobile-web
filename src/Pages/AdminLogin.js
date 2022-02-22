@@ -18,8 +18,8 @@ const AdminLogin = () => {
     setOpenImageModal,
     currentImageForModal,
     setCurrentImageForModal,
-    currentBSheetStore,
-    setCurrentBSheetStore,
+    currentStore,
+    setCurrentStore,
     crowdedness,
     setCrowdedness,
     crowdednessCount,
@@ -43,7 +43,7 @@ const AdminLogin = () => {
       return setCrowdedness("보통");
     }
     if (crowdednessCount <= storeDatas[store].chairNumber * 0.7) {
-      return setCrowdedness("많음");
+      return setCrowdedness("인기");
     } else {
       return setCrowdedness("Crowdy!");
     }

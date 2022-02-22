@@ -5,7 +5,7 @@
 
 .fixed-active {
   position: fixed;
-  top: 80px;
+  top: 51px;
   width: 414px;
   padding-top: 10px;
   background-color: white;
@@ -121,13 +121,14 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: 110px;
-  padding-left: 40px;
+  width: 414px;
+  padding: 0 40px;
   border-bottom: 1px solid $defaultGrey;
 }
 .menu-name {
-  font-family: "NotoSansKR-Medium";
+  font-family: "NotoSansKR-Bold";
   font-size: 14px;
+  padding: 30px 0;
 }
 .menu-price {
   margin-left: 30px;
@@ -135,10 +136,9 @@
   color: $defaultGrey;
 }
 .menu-image {
-  position: absolute;
-  right: 40px;
   width: 80px;
   height: 72px;
+  margin: 19px 0;
   object-fit: cover;
   object-position: center;
   border-radius: 10px;
@@ -221,11 +221,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 795px;
   padding: 374px 0 370px 0;
 }
 
 .review-text {
   font-family: "NotoSansKR-Medium";
   font-size: 14px;
+  height: 80px;
   color: $primaryColor;
 }

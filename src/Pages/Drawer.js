@@ -5,7 +5,6 @@ import "antd/dist/antd.css";
 import CrowdyContext from "./CrowdyContext";
 import "./style.css";
 import goBackChevronIcon from "../images/go-back-chevron.svg";
-import { AiOutlineFontSize } from "react-icons/ai";
 
 const DrawerP = () => {
   const {
@@ -19,8 +18,8 @@ const DrawerP = () => {
     setOpenImageModal,
     currentImageForModal,
     setCurrentImageForModal,
-    currentBSheetStore,
-    setCurrentBSheetStore,
+    currentStore,
+    setCurrentStore,
     crowdedness,
     setCrowdedness,
     crowdednessCount,
@@ -42,9 +41,9 @@ const DrawerP = () => {
 
   return (
     <Drawer
-      closeIcon={<img src={goBackChevronIcon} width="18px" />}
+      closeIcon={<img src={goBackChevronIcon} alt="close-drawer" width="18px" />}
       headerStyle={{ padding: "28px 30px 0 30px" }}
-      bodyStyle={{ padding: "40px 30px 30px 30px" }}
+      bodyStyle={{ padding: "40px 0 0 0" }}
       placement={"left"}
       width={250}
       onClose={closeDrawer}
@@ -77,7 +76,7 @@ const DrawerP = () => {
         </span>
       </div>
       <div
-        style={{ position: "absolute", bottom: "20px", color: "grey" }}
+        style={{ position: "absolute", left: "30px", bottom: "20px", color: "grey" }}
         onClick={() => {
           setDrawereVisible(false);
           navigate("/admin-login");
