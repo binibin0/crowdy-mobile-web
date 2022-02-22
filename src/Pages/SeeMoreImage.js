@@ -10,7 +10,7 @@ export default function SeeMoreImage() {
   const { openImageModal, setOpenImageModal, currentImageForModal, setCurrentImageForModal } = useContext(CrowdyContext);
 
   return (
-    <>
+    <div className="page">
       <Header path={path} page={page} />
       {openImageModal ? <ImageModal /> : null}
       <div
@@ -34,6 +34,6 @@ export default function SeeMoreImage() {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 }

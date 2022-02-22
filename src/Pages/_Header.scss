@@ -25,9 +25,15 @@
   align-items: center;
 }
 
-.header-back-button {
+.header-go-back-button {
   position: absolute;
-  top: 0px;
+  top: 1px;
+  left: 46px;
+  color: white;
+}
+.header-menu-button {
+  position: absolute;
+  top: 6px;
   left: 46px;
   color: white;
 }

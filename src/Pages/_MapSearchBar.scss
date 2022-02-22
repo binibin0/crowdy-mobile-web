@@ -1,0 +1,20 @@
+.map-search-bar-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 334px;
+  height: 41px;
+  top: 10px;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+  border-radius: 8px;
+  background-color: white;
+  z-index: 99;
+}
+
+.map-search-bar-text {
+  color: $defaultGrey;
+  margin-left: 22px;
+}
