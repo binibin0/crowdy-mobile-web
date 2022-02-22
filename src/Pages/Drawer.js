@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Drawer, Button, Space, Radio } from "antd";
+import { Drawer, Button, Space } from "antd";
 import "antd/dist/antd.css";
 
 const DrawerP = () => {
