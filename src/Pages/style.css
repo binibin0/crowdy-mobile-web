@@ -1364,4 +1364,18 @@ html {
   color: #adadad;
   margin-left: 22px;
 }
+
+.drawer-item-box {
+  margin-bottom: 20px;
+}
+
+.drawer-item-text {
+  font-size: 18px;
+}
+
+.drawer-item-text-expression {
+  font-family: "NotoSansKR-Medium";
+  font-size: 20px;
+  color: #00705b;
+}
 /*# sourceMappingURL=style.css.map */

@@ -27,12 +27,16 @@ const StoreHeader = ({ store, storeOpen }) => {
     setOpenImageModal,
     currentImageForModal,
     setCurrentImageForModal,
+    currentBSheetStore,
+    setCurrentBSheetStore,
     crowdedness,
     setCrowdedness,
     crowdednessCount,
     setCrowdednessCount,
     refresh,
     setRefresh,
+    drawereVisible,
+    setDrawereVisible,
   } = useContext(CrowdyContext);
   const handleCrowdednessColor = () => {
     if (crowdedness === "여유로움") {
@@ -97,10 +101,16 @@ const StoreSubHeader = ({ store }) => {
     setOpenImageModal,
     currentImageForModal,
     setCurrentImageForModal,
+    currentBSheetStore,
+    setCurrentBSheetStore,
     crowdedness,
     setCrowdedness,
     crowdednessCount,
     setCrowdednessCount,
+    refresh,
+    setRefresh,
+    drawereVisible,
+    setDrawereVisible,
   } = useContext(CrowdyContext);
   return (
     <div className="store-sub-header">
@@ -145,10 +155,16 @@ const StoreDetail = () => {
     setOpenImageModal,
     currentImageForModal,
     setCurrentImageForModal,
+    currentBSheetStore,
+    setCurrentBSheetStore,
     crowdedness,
     setCrowdedness,
     crowdednessCount,
     setCrowdednessCount,
+    refresh,
+    setRefresh,
+    drawereVisible,
+    setDrawereVisible,
   } = useContext(CrowdyContext);
 
   const [storeOpen, setStoreOpen] = useState(null);

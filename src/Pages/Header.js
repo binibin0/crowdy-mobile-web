@@ -1,10 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import goBackWhiteChevronIcon from "../images/go-back-white-chevron.svg";
 import hambergerMenu from "../images/hamberger-menu.svg";
 import { storeDatas } from "../datas/storeDatas";
+import CrowdyContext from "./CrowdyContext";
 
 const Header = ({ path, page }) => {
+  const {
+    currentTime,
+    setCurrentTime,
+    currentDay,
+    setCurrentDay,
+    currentDayKorean,
+    setCurrentDayKorean,
+    openImageModal,
+    setOpenImageModal,
+    currentImageForModal,
+    setCurrentImageForModal,
+    currentBSheetStore,
+    setCurrentBSheetStore,
+    crowdedness,
+    setCrowdedness,
+    crowdednessCount,
+    setCrowdednessCount,
+    refresh,
+    setRefresh,
+    drawereVisible,
+    setDrawereVisible,
+  } = useContext(CrowdyContext);
   const navigate = useNavigate();
   const location = useLocation();
   const [pageTitle, setPageTitle] = useState("");
@@ -43,7 +66,7 @@ const Header = ({ path, page }) => {
         <div className="header-space" />
         <div className="header-content">
           {location.pathname === "/" ? (
-            <img width="20px" color="white" src={hambergerMenu} alt="menu" className="header-menu-button" onClick={() => navigate("/")} />
+            <img width="20px" color="white" src={hambergerMenu} alt="menu" className="header-menu-button" onClick={() => setDrawereVisible(true)} />
           ) : (
             <img width="20px" color="white" src={goBackWhiteChevronIcon} alt="go-back-icon" className="header-go-back-button" onClick={() => navigate(-1)} />
           )}

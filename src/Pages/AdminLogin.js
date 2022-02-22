@@ -18,10 +18,16 @@ const AdminLogin = () => {
     setOpenImageModal,
     currentImageForModal,
     setCurrentImageForModal,
+    currentBSheetStore,
+    setCurrentBSheetStore,
     crowdedness,
     setCrowdedness,
     crowdednessCount,
     setCrowdednessCount,
+    refresh,
+    setRefresh,
+    drawereVisible,
+    setDrawereVisible,
   } = useContext(CrowdyContext);
   const navigate = useNavigate();
   const [username, setUsername] = useState("");

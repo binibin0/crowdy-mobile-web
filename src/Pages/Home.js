@@ -13,6 +13,7 @@ import { storeDatas } from "../datas/storeDatas";
 import Header from "./Header";
 import ImageModal from "./ImageModal";
 import CrowdyContext from "./CrowdyContext";
+import DrawerP from "./Drawer";
 
 const Home = () => {
   const {
@@ -26,6 +27,16 @@ const Home = () => {
     setOpenImageModal,
     currentImageForModal,
     setCurrentImageForModal,
+    currentBSheetStore,
+    setCurrentBSheetStore,
+    crowdedness,
+    setCrowdedness,
+    crowdednessCount,
+    setCrowdednessCount,
+    refresh,
+    setRefresh,
+    drawereVisible,
+    setDrawereVisible,
   } = useContext(CrowdyContext);
 
   const navigate = useNavigate();
@@ -56,6 +67,7 @@ const Home = () => {
   return (
     <>
       <div className="page">
+        <DrawerP />
         <Header path={path} />
         <div className="home-container">
           <div className="home-header-container">
