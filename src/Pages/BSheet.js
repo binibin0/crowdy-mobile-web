@@ -42,21 +42,19 @@ const BSheet = ({ userLocationButton, BSheetRef }) => {
         className="bottom-sheet"
         open
         expandOnContentDrag={true}
-        data-body-scroll-lock-ignore={true}
-        scrollLocking={true}
         ref={BSheetRef}
         blocking={false}
         defaultSnap={({ snapPoints }) => Math.min(...snapPoints)}
         snapPoints={() => [480, 120]}
       >
+        <div className="bottom-sheet-store-list-button" onClick={() => navigate("/store-list")}>
+          <img src={storeListMenu} style={{ width: "20px" }} />
+          <span className="bottom-sheet-store-list-button-text">매장 보기</span>
+        </div>
+        <div className="bottom-sheet-current-location-button" onClick={userLocationButton}>
+          <img src={userCurrentLocationIcon} style={{ width: "32px" }} />
+        </div>
         <div className="bottom-sheet-store-container">
-          <div className="bottom-sheet-store-list-button" onClick={() => navigate("/store-list")}>
-            <img src={storeListMenu} style={{ width: "20px" }} />
-            <span className="bottom-sheet-store-list-button-text">매장 보기</span>
-          </div>
-          <div className="bottom-sheet-current-location-button" onClick={userLocationButton}>
-            <img src={userCurrentLocationIcon} style={{ width: "32px" }} />
-          </div>
           <div style={{ height: "10px" }} />
           <StoreHeader store={currentStore} />
           <div style={{ height: "20px" }} />

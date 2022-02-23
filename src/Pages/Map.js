@@ -91,7 +91,7 @@ const Map = () => {
                 setCurrentStore(store);
                 setZoomLv(16);
                 map.panTo({
-                  lat: storeDatas[store].latlng.lat - 0.0032,
+                  lat: storeDatas[store].latlng.lat - 0.0028,
                   lng: storeDatas[store].latlng.lng,
                 });
                 BSheetRef.current.snapTo(({ maxHeight }) => maxHeight);
