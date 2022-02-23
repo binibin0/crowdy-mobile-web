@@ -15,7 +15,7 @@ import Header from "./Header";
 import ImageModal from "./ImageModal";
 import CrowdyContext from "./CrowdyContext";
 
-const StoreHeader = ({ store, storeOpen }) => {
+const StoreHeader = ({ store }) => {
   const {
     currentTime,
     setCurrentTime,
@@ -39,21 +39,14 @@ const StoreHeader = ({ store, storeOpen }) => {
     setDrawereVisible,
     currentFilter,
     setCurrentFilter,
+    storeOpen,
+    setStoreOpen,
+    checkStoreOpen,
+    handleCrowdedness,
+    handleCrowdednessColor,
   } = useContext(CrowdyContext);
-  const handleCrowdednessColor = () => {
-    if (crowdedness === "여유로움") {
-      return "crowdedness-green";
-    }
-    if (crowdedness === "보통") {
-      return "crowdedness-blue";
-    }
-    if (crowdedness === "인기") {
-      return "crowdedness-orange";
-    }
-    if (crowdedness === "Crowdy!") {
-      return "crowdedness-red";
-    }
-  };
+
+  handleCrowdedness(store);
   return (
     <div className="store-header-container">
       <div className="store-header">
@@ -73,15 +66,20 @@ const StoreHeader = ({ store, storeOpen }) => {
           </div>
         </div>
         <div className="store-header-crowdy-container">
-          <div className={storeOpen ? "store-header-crowdy-box-default crowdy-box-active" : "store-header-crowdy-box-default "}>
-            {storeOpen ? (
+          <div className={checkStoreOpen ? "store-header-crowdy-box-default crowdy-box-active" : "store-header-crowdy-box-default "}>
+            {checkStoreOpen ? (
               <span className="store-header-crowdy-open crowdy-text-active ">영업중</span>
             ) : (
               <span className="store-header-crowdy-close ">영업종료</span>
             )}
           </div>
           <div className="store-header-crowdy-status-live" onClick={() => setRefresh((current) => !current)}>
-            <span className={`store-header-crowdy-status-live-text ${handleCrowdednessColor()}`}>상태: {crowdedness}</span>
+            {storeDatas[store].active ? (
+              <span className={`store-header-crowdy-status-live-text ${handleCrowdednessColor()}`}>상태: {crowdedness}</span>
+            ) : (
+              <span className={"store-header-crowdy-status-live-text"}>상태: 제공 예정</span>
+            )}
+
             <img width="14px" src={crowdednessReload} alt="marker-icon"></img>
           </div>
         </div>
@@ -117,6 +115,7 @@ const StoreSubHeader = ({ store }) => {
     storeOpen,
     setStoreOpen,
     checkStoreOpen,
+    handleCrowdedness,
   } = useContext(CrowdyContext);
   return (
     <div className="store-sub-header">
@@ -211,7 +210,7 @@ const StoreDetail = () => {
             <img width="16px" src={mapIcon} alt="marker-icon"></img>
             <span className="detail-see-map-text">지도에서 매장 보기</span>
           </div>
-          <StoreHeader store={path} storeOpen={storeOpen} />
+          <StoreHeader store={path} />
           <div style={{ height: "24px" }} />
           <StoreSubHeader store={path} />
           <div style={{ height: "30px" }} />

@@ -5,6 +5,8 @@ import whitePlus from "../images/white-plus.svg";
 import { storeDatas } from "../datas/storeDatas";
 import Header from "./Header";
 import CrowdyContext from "./CrowdyContext";
+import { onSnapShot, collection, setDoc, doc } from "firebase/firestore";
+import db from "../firebase";
 
 const AdminLogin = () => {
   const {
@@ -28,6 +30,7 @@ const AdminLogin = () => {
     setRefresh,
     drawereVisible,
     setDrawereVisible,
+    handleCrowdedness,
   } = useContext(CrowdyContext);
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
@@ -35,18 +38,16 @@ const AdminLogin = () => {
   const [loginSuccess, setLoginSuccess] = useState(true);
   const [toggleOn, setToggleOn] = useState(false);
 
-  const handleCrowdedness = (store) => {
-    if (crowdednessCount <= storeDatas[store].chairNumber * 0.3) {
-      return setCrowdedness("여유로움");
+  const crowdednessUpdateToDb = async (operator) => {
+    const docRef = doc(db, "active-store", "seohyeon170");
+    let payload = null;
+    if (operator === "plus") {
+      payload = { count: parseInt(crowdednessCount) + 1 };
     }
-    if (crowdednessCount <= storeDatas[store].chairNumber * 0.5) {
-      return setCrowdedness("보통");
+    if (operator === "minus") {
+      payload = { count: parseInt(crowdednessCount) - 1 };
     }
-    if (crowdednessCount <= storeDatas[store].chairNumber * 0.7) {
-      return setCrowdedness("인기");
-    } else {
-      return setCrowdedness("Crowdy!");
-    }
+    await setDoc(docRef, payload);
   };
 
   const onChange = (event) => {
@@ -82,7 +83,6 @@ const AdminLogin = () => {
       setLoginSuccess(true);
     }
   };
-
   return (
     <>
       {loginSuccess ? (
@@ -116,7 +116,7 @@ const AdminLogin = () => {
                         <div className="admin-control-status-box">
                           <span className="admin-control-status-first">상태</span>
                           <span className="admin-control-status-second">{crowdedness}</span>
-                          <div className="admin-control-count-box background-red" onClick={() => setCrowdednessCount((current) => (current -= 1))}>
+                          <div className="admin-control-count-box background-red" onClick={() => crowdednessUpdateToDb("minus")}>
                             <div className="white-minus">
                               <img src={whiteMinus} alt="minus"></img>
                             </div>
@@ -125,7 +125,7 @@ const AdminLogin = () => {
                         <div className="admin-control-status-box">
                           <span className="admin-control-status-first">인원수</span>
                           <span className="admin-control-status-second">{crowdednessCount}</span>
-                          <div className="admin-control-count-box background-green" onClick={() => setCrowdednessCount((current) => (current += 1))}>
+                          <div className="admin-control-count-box background-green" onClick={() => crowdednessUpdateToDb("plus")}>
                             <img src={whitePlus} alt="plus"></img>
                           </div>
                         </div>

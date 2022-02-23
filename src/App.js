@@ -11,8 +11,47 @@ import AdminLogin from "./Pages/AdminLogin";
 import CrowdyContext from "./Pages/CrowdyContext";
 import SeeMoreImage from "./Pages/SeeMoreImage";
 import { storeDatas } from "./datas/storeDatas";
+import db from "./firebase";
+import { onSnapshot, collection } from "firebase/firestore";
 
 function App() {
+  useEffect(() => {
+    onSnapshot(collection(db, "active-store"), (snapshot) => {
+      snapshot.docs.map((doc) => {
+        setCrowdednessCount(doc.data().count);
+      });
+    });
+  }, []);
+  const handleCrowdednessColor = () => {
+    if (crowdedness === "여유로움") {
+      return "crowdedness-green";
+    }
+    if (crowdedness === "보통") {
+      return "crowdedness-blue";
+    }
+    if (crowdedness === "인기") {
+      return "crowdedness-orange";
+    }
+    if (crowdedness === "Crowdy!") {
+      return "crowdedness-red";
+    }
+  };
+
+  const handleCrowdedness = (store) => {
+    if (crowdednessCount <= storeDatas[store].chairNumber * 0.3) {
+      return setCrowdedness("여유로움");
+    }
+    if (crowdednessCount <= storeDatas[store].chairNumber * 0.5) {
+      return setCrowdedness("보통");
+    }
+    if (crowdednessCount <= storeDatas[store].chairNumber * 0.7) {
+      return setCrowdedness("인기");
+    } else {
+      return setCrowdedness("Crowdy!");
+    }
+  };
+
+  const [crowdednessCount, setCrowdednessCount] = useState(0);
   const [currentTime, setCurrentTime] = useState("900");
   const [currentDay, setCurrentDay] = useState("mon");
   const [currentDayKorean, setCurrentDayKorean] = useState("월");
@@ -20,11 +59,9 @@ function App() {
   const [currentImageForModal, setCurrentImageForModal] = useState("");
   const [currentStore, setCurrentStore] = useState("twosome-seohyeon-rodeo");
   const [crowdedness, setCrowdedness] = useState("Crowdy!");
-  const [crowdednessCount, setCrowdednessCount] = useState(0);
   const [refresh, setRefresh] = useState(true);
   const [drawereVisible, setDrawereVisible] = useState(false);
   const [currentFilter, setCurrentFilter] = useState("전체");
-  const [storeOpen, setStoreOpen] = useState(null);
 
   const checkStoreOpen = (store) => {
     if (store) {
@@ -94,9 +131,9 @@ function App() {
         setDrawereVisible,
         currentFilter,
         setCurrentFilter,
-        storeOpen,
-        setStoreOpen,
         checkStoreOpen,
+        handleCrowdedness,
+        handleCrowdednessColor,
       }}
     >
       <Router>

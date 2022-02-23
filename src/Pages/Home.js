@@ -47,6 +47,7 @@ const Home = () => {
     storeOpen,
     setStoreOpen,
     checkStoreOpen,
+    handleCrowdednessColor,
   } = useContext(CrowdyContext);
 
   const navigate = useNavigate();
@@ -101,7 +102,11 @@ const Home = () => {
                         )}
                       </div>
                       <div className="store-header-crowdy-status-live">
-                        <span className="store-header-crowdy-status-live-text">상태: 없음</span>
+                        {storeDatas[store].active ? (
+                          <span className={`store-header-crowdy-status-live-text ${handleCrowdednessColor()}`}>상태: {crowdedness}</span>
+                        ) : (
+                          <span className={"store-header-crowdy-status-live-text"}>상태: 제공 예정</span>
+                        )}
                       </div>
                     </div>
                   </div>

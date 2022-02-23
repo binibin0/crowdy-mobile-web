@@ -10,6 +10,7 @@ import { useWindowHeight } from "@react-hook/window-size";
 import CrowdyContext from "./CrowdyContext";
 import userCurrentLocationIcon from "../images/crowdy/user-current-location.png";
 import storeListMenu from "../images/store-list-menu.svg";
+import { convertLegacyProps } from "antd/lib/button/button";
 
 const Map = () => {
   const {
@@ -162,7 +163,6 @@ const Map = () => {
       <div className="ispinner-blade"></div>/
     </div>
   );
-
   return (
     <>
       <MapSearchBar />

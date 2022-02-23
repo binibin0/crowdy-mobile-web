@@ -35,7 +35,7 @@ const DropDownMenu = () => {
 
   const menu = (
     <Menu>
-      {["전체", "프렌차이즈", "동네카페"].map((category, key) =>
+      {["전체", "프랜차이즈", "동네카페"].map((category, key) =>
         category !== currentFilter ? (
           <Menu.Item style={{ textAlign: "center" }} key={key} onClick={() => setCurrentFilter(category)}>
             {category}

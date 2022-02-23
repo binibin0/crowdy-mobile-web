@@ -52,7 +52,6 @@ const StoreList = () => {
 
   useEffect(() => {
     Object.keys(storeDatas).map((store) => {
-      console.log(storeDatas[store].active);
       if (storeDatas[store].active) {
         return setActiveStoreCount((current) => (current += 1));
       } else {
