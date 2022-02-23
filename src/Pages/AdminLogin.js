@@ -31,12 +31,13 @@ const AdminLogin = () => {
     drawereVisible,
     setDrawereVisible,
     handleCrowdedness,
+    storeOnActive,
+    setStoreOnActive,
   } = useContext(CrowdyContext);
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [loginSuccess, setLoginSuccess] = useState(true);
-  const [toggleOn, setToggleOn] = useState(false);
+  const [loginSuccess, setLoginSuccess] = useState(false);
 
   const crowdednessUpdateToDb = async (operator) => {
     const docRef = doc(db, "active-store", "seohyeon170");
@@ -47,6 +48,12 @@ const AdminLogin = () => {
     if (operator === "minus") {
       payload = { count: parseInt(crowdednessCount) - 1 };
     }
+    await setDoc(docRef, payload);
+  };
+
+  const switchActiveStatus = async () => {
+    const docRef = doc(db, "active-status", "seohyeon170");
+    const payload = { active: !storeOnActive };
     await setDoc(docRef, payload);
   };
 
@@ -95,7 +102,7 @@ const AdminLogin = () => {
                 return (
                   <>
                     <div key={key} className="admin-control-box">
-                      {toggleOn ? null : <div className="toggle-off" />}
+                      {storeOnActive ? null : <div className="toggle-off" />}
                       <div className="admin-control-header">
                         <img className="admin-control-header-logo" src={storeDatas[store].logo} alt="Logo" />
                         <div className="admin-control-header-center">
@@ -104,9 +111,11 @@ const AdminLogin = () => {
                         </div>
                         <div className="admin-control-header-space" />
                         <div
-                          className={toggleOn ? "admin-control-header-toggle-button toggle-on" : "admin-control-header-toggle-button"}
+                          className={storeOnActive ? "admin-control-header-toggle-button toggle-on" : "admin-control-header-toggle-button"}
                           onClick={() => {
-                            setToggleOn(!toggleOn);
+                            switchActiveStatus();
+                            setStoreOnActive((current) => !current);
+                            console.log(storeOnActive);
                           }}
                         >
                           <div className="admin-control-header-toggle-circle"></div>

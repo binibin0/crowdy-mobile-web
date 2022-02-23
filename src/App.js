@@ -16,9 +16,18 @@ import { onSnapshot, collection } from "firebase/firestore";
 
 function App() {
   useEffect(() => {
-    onSnapshot(collection(db, "active-store"), (snapshot) => {
+    onSnapshot(
+      collection(db, "active-store"),
+      (snapshot) => {
+        snapshot.docs.map((doc) => {
+          setCrowdednessCount(doc.data().count);
+        });
+      },
+      []
+    );
+    onSnapshot(collection(db, "active-status"), (snapshot) => {
       snapshot.docs.map((doc) => {
-        setCrowdednessCount(doc.data().count);
+        setStoreOnActive(doc.data().active);
       });
     });
   }, []);
@@ -57,11 +66,12 @@ function App() {
   const [currentDayKorean, setCurrentDayKorean] = useState("월");
   const [openImageModal, setOpenImageModal] = useState(false);
   const [currentImageForModal, setCurrentImageForModal] = useState("");
-  const [currentStore, setCurrentStore] = useState("twosome-seohyeon-rodeo");
+  const [currentStore, setCurrentStore] = useState("seohyeon-170");
   const [crowdedness, setCrowdedness] = useState("Crowdy!");
   const [refresh, setRefresh] = useState(true);
   const [drawereVisible, setDrawereVisible] = useState(false);
   const [currentFilter, setCurrentFilter] = useState("전체");
+  const [storeOnActive, setStoreOnActive] = useState(false);
 
   const checkStoreOpen = (store) => {
     if (store) {
@@ -130,6 +140,8 @@ function App() {
         drawereVisible,
         setDrawereVisible,
         currentFilter,
+        storeOnActive,
+        setStoreOnActive,
         setCurrentFilter,
         checkStoreOpen,
         handleCrowdedness,
@@ -139,6 +151,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/store-list" element={<StoreList />} />
           <Route path="/map" element={<Map />} />
           <Route path="/crowdy" element={<Crowdy />} />

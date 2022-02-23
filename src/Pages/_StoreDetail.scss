@@ -48,6 +48,7 @@
   width: 70px;
   height: 70px;
   border-radius: 35px;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.12);
   object-fit: contain;
 }
 .store-header-center {
@@ -139,7 +140,21 @@
 }
 
 .store-default-text {
+  text-decoration: none;
   font-size: 14px;
+  color: black;
+  &:visited {
+    color: black;
+  }
+  &:focus {
+    color: black;
+  }
+  &:hover {
+    color: black;
+  }
+  &:active {
+    color: black;
+  }
 }
 
 .store-sub-header-first {

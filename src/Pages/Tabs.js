@@ -46,7 +46,6 @@ function Tabs({ path, scrollPosition, setScrollPosition }) {
   };
 
   const { openImageModal, setOpenImageModal, currentImageForModal, setCurrentImageForModal } = useContext(CrowdyContext);
-
   return (
     <>
       {openImageModal ? <ImageModal /> : null}
@@ -54,13 +53,31 @@ function Tabs({ path, scrollPosition, setScrollPosition }) {
         {checkNeedAnchor(activeTab) && scrollPosition > 626 ? <div className="empty-tab-buttons"></div> : null}
         <div className={checkNeedAnchor(activeTab) && scrollPosition > 626 ? "fixed-active" : null}>
           <div className="tab-buttons">
-            <div className={activeTab === "menu" ? "tab-button tab-button-active" : "tab-button"} onClick={() => setActiveTab("menu")}>
+            <div
+              className={activeTab === "menu" ? "tab-button tab-button-active" : "tab-button"}
+              onClick={() => {
+                goToAnchor(0);
+                setActiveTab("menu");
+              }}
+            >
               <span className={activeTab === "menu" ? "tab-button-text tab-button-text-active" : "tab-button-text"}>메뉴</span>
             </div>
-            <div className={activeTab === "store" ? "tab-button tab-button-active" : "tab-button"} onClick={() => setActiveTab("store")}>
-              <span className={activeTab === "store" ? "tab-button-text tab-button-text-active" : "tab-button-text"}>매장 정보</span>
+            <div
+              className={activeTab === "store" ? "tab-button tab-button-active" : "tab-button"}
+              onClick={() => {
+                goToAnchor(0);
+                setActiveTab("store");
+              }}
+            >
+              <span className={activeTab === "store" ? "tab-button-text tab-button-text-active" : "tab-button-text"}>매장 및 좌석 정보</span>
             </div>
-            <div className={activeTab === "review" ? "tab-button tab-button-active" : "tab-button"} onClick={() => setActiveTab("review")}>
+            <div
+              className={activeTab === "review" ? "tab-button tab-button-active" : "tab-button"}
+              onClick={() => {
+                goToAnchor(0);
+                setActiveTab("review");
+              }}
+            >
               <span className={activeTab === "review" ? "tab-button-text tab-button-text-active" : "tab-button-text"}>후기(0)</span>
             </div>
           </div>
@@ -80,7 +97,7 @@ function Tabs({ path, scrollPosition, setScrollPosition }) {
         <div className={activeTab === "menu" ? "menu-tab" : "menu-tab deactivated"}>
           <div className="tab-content-title-box ">
             <span className="tab-title">음료 {storeDatas[path].menu.drinks.length}</span>
-            <span className="menu-size">사이즈 규격: Regular / Large</span>
+            {storeDatas[path].menu.drinkSize === "" ? null : <span className="menu-size">사이즈 규격: {storeDatas[path].menu.drinkSize}</span>}
           </div>
           {storeDatas[path].menu.drinks.map((item, key) => (
             <div key={key} className="menu-map">
@@ -89,7 +106,14 @@ function Tabs({ path, scrollPosition, setScrollPosition }) {
               {item.image === "" ? null : (
                 <>
                   <div style={{ flex: 1 }} />
-                  <img src={item.image} className="menu-image" />
+                  <img
+                    src={item.image}
+                    className="menu-image"
+                    onClick={(event) => {
+                      setOpenImageModal(true);
+                      setCurrentImageForModal(event.target.src);
+                    }}
+                  />
                 </>
               )}
             </div>
@@ -99,12 +123,28 @@ function Tabs({ path, scrollPosition, setScrollPosition }) {
           </div>
           {storeDatas[path].menu.bakerys.map((item, key) => (
             <div key={key} className="menu-map">
-              <span className="menu-name">{item.bakery.length > 10 ? item.bakery.substring(0, 10) + "..." : item.bakery}</span>
+              {item.bakery.length > 10 ? (
+                <span className="menu-name menu-two-line-name">
+                  {item.bakery.substring(0, 8)}
+                  <br />
+                  {item.bakery.substring(8)}
+                </span>
+              ) : (
+                <span className="menu-name">{item.bakery}</span>
+              )}
+
               <span className="menu-price">{item.price}</span>
               {item.image === "" ? null : (
                 <>
                   <div style={{ flex: 1 }} />
-                  <img src={item.image} className="menu-image" />
+                  <img
+                    src={item.image}
+                    className="menu-image"
+                    onClick={(event) => {
+                      setOpenImageModal(true);
+                      setCurrentImageForModal(event.target.src);
+                    }}
+                  />
                 </>
               )}
             </div>
@@ -166,7 +206,12 @@ function Tabs({ path, scrollPosition, setScrollPosition }) {
         </div>
         <div className={activeTab === "review" ? "review-tab" : "review-tab deactivated"}>
           <div className="review-box">
-            <span className="review-text">현재 후기 서비스를 지원하지 않고 있습니다</span>
+            <span className="review-text" style={{ marginBottom: "40px" }}>
+              현재 후기 서비스를 지원하지 않고 있습니다.
+            </span>
+            <a className="review-text clicked-tag" style={{ textDecoration: "none", borderBottom: "0.2px solid #00705b" }} href={storeDatas[path].naverLink}>
+              네이버 블로그에 검색하기
+            </a>
           </div>
         </div>
       </div>

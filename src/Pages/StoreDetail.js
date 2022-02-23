@@ -44,8 +44,9 @@ const StoreHeader = ({ store }) => {
     checkStoreOpen,
     handleCrowdedness,
     handleCrowdednessColor,
+    storeOnActive,
+    setStoreOnActive,
   } = useContext(CrowdyContext);
-
   handleCrowdedness(store);
   return (
     <div className="store-header-container">
@@ -66,8 +67,8 @@ const StoreHeader = ({ store }) => {
           </div>
         </div>
         <div className="store-header-crowdy-container">
-          <div className={checkStoreOpen ? "store-header-crowdy-box-default crowdy-box-active" : "store-header-crowdy-box-default "}>
-            {checkStoreOpen ? (
+          <div className={checkStoreOpen(store) ? "store-header-crowdy-box-default crowdy-box-active" : "store-header-crowdy-box-default "}>
+            {checkStoreOpen(store) ? (
               <span className="store-header-crowdy-open crowdy-text-active ">영업중</span>
             ) : (
               <span className="store-header-crowdy-close ">영업종료</span>
@@ -75,12 +76,15 @@ const StoreHeader = ({ store }) => {
           </div>
           <div className="store-header-crowdy-status-live" onClick={() => setRefresh((current) => !current)}>
             {storeDatas[store].active ? (
-              <span className={`store-header-crowdy-status-live-text ${handleCrowdednessColor()}`}>상태: {crowdedness}</span>
+              storeOnActive ? (
+                <span className={`store-header-crowdy-status-live-text ${handleCrowdednessColor()}`}>상태: {crowdedness}</span>
+              ) : (
+                <span className={"store-header-crowdy-status-live-text"}>상태: 없음</span>
+              )
             ) : (
               <span className={"store-header-crowdy-status-live-text"}>상태: 제공 예정</span>
             )}
-
-            <img width="14px" src={crowdednessReload} alt="marker-icon"></img>
+            {storeOnActive ? <img width="14px" src={crowdednessReload} alt="marker-icon" /> : null}
           </div>
         </div>
       </div>
@@ -126,7 +130,9 @@ const StoreSubHeader = ({ store }) => {
         </div>
         <div className="store-sub-header-phone">
           <img width="14px" src={phoneIcon} alt="phone-icon"></img>
-          <span className="store-sub-header-margin-left store-default-text">{storeDatas[store].phone}</span>
+          <a className="store-sub-header-margin-left store-default-text" href={`tel:${storeDatas[store].phone}`}>
+            {storeDatas[store].phone}
+          </a>
         </div>
       </div>
       <div className="store-sub-header-second">
@@ -204,11 +210,12 @@ const StoreDetail = () => {
           <div
             className="detail-see-map"
             onClick={() => {
+              setCurrentStore(path);
               navigate("/map");
             }}
           >
             <img width="16px" src={mapIcon} alt="marker-icon"></img>
-            <span className="detail-see-map-text">지도에서 매장 보기</span>
+            <span className="detail-see-map-text">지도 보기</span>
           </div>
           <StoreHeader store={path} />
           <div style={{ height: "24px" }} />

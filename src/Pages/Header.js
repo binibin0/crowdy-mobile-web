@@ -47,7 +47,7 @@ const Header = ({ path, page }) => {
       return setPageTitle("Crowdy");
     }
     if (location.pathname === "/survey") {
-      return setPageTitle("설문조사 및 피드백");
+      return setPageTitle("설문조사");
     }
     if (location.pathname === "/admin-login") {
       return setPageTitle("관리자 페이지");

@@ -67,11 +67,9 @@ const DrawerP = () => {
           navigate("/survey");
         }}
       >
-        <span className="drawer-item-text">
-          설문조사 <span className="drawer-item-text-expression">&</span> 피드백
-        </span>
+        <span className="drawer-item-text">설문조사</span>
         <br />
-        <span className="drawer-item-text" style={{ fontSize: "14px" }}>
+        <span className="drawer-item-text" style={{ fontSize: "12px" }}>
           (기프티콘 추첨!)
         </span>
       </div>

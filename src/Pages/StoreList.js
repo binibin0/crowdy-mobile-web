@@ -43,6 +43,9 @@ const StoreList = () => {
     storeOpen,
     setStoreOpen,
     checkStoreOpen,
+    handleCrowdednessColor,
+    storeOnActive,
+    setStoreOnActive,
   } = useContext(CrowdyContext);
 
   const navigate = useNavigate();
@@ -69,7 +72,7 @@ const StoreList = () => {
     });
     return check;
   };
-
+  console.log(currentFilter);
   return (
     <>
       <div className="page">
@@ -83,44 +86,52 @@ const StoreList = () => {
             </div>
             <DropDownMenu />
           </div>
-
-          <div className="store-list-store-container">
-            <span className="store-list-store-title">혼잡도 제공 매장</span>
-            <div className="store-list-store-box">
-              {Object.keys(storeDatas).map((store, key) => {
-                if (storeDatas[store].active && checkFilterForStore(storeDatas[store].hashtag)) {
-                  return (
-                    <div key={key} className="store-list-store-item" style={key === 0 ? { marginTop: "22px" } : null} onClick={() => navigate(`/${store}`)}>
-                      <div className="store-header">
-                        <div style={{ display: "flex" }}>
-                          <img className="store-header-logo" src={storeDatas[store].logo} alt="Logo" />
-                          <div className="store-header-center">
-                            <span className="store-header-hashtag ">#{storeDatas[store].hashtag[1]}</span>
-                            <span className="store-header-title ">{storeDatas[store].name}</span>
-                            <span className="store-header-review-compact">{storeDatas[store].branch}</span>
+          {currentFilter === "프랜차이즈" ? null : (
+            <div className="store-list-store-container">
+              <span className="store-list-store-title">혼잡도 제공 매장</span>
+              <div className="store-list-store-box">
+                {Object.keys(storeDatas).map((store, key) => {
+                  if (storeDatas[store].active && checkFilterForStore(storeDatas[store].hashtag)) {
+                    return (
+                      <div key={key} className="store-list-store-item" style={key === 0 ? { marginTop: "22px" } : null} onClick={() => navigate(`/${store}`)}>
+                        <div className="store-header">
+                          <div style={{ display: "flex" }}>
+                            <img className="store-header-logo" src={storeDatas[store].logo} alt="Logo" />
+                            <div className="store-header-center">
+                              <span className="store-header-hashtag ">#{storeDatas[store].hashtag[1]}</span>
+                              <span className="store-header-title ">{storeDatas[store].name}</span>
+                              <span className="store-header-review-compact">{storeDatas[store].branch}</span>
+                            </div>
                           </div>
-                        </div>
-                        <div className="store-header-crowdy-container">
-                          <div className={checkStoreOpen(store) ? "store-header-crowdy-box-default crowdy-box-active" : "store-header-crowdy-box-default "}>
-                            {checkStoreOpen(store) ? (
-                              <span className="store-header-crowdy-open crowdy-text-active ">영업중</span>
-                            ) : (
-                              <span className="store-header-crowdy-close ">영업종료</span>
-                            )}
-                          </div>
-                          <div className="store-header-crowdy-status-live">
-                            <span className="store-header-crowdy-status-live-text">상태: 없음</span>
+                          <div className="store-header-crowdy-container">
+                            <div className={checkStoreOpen(store) ? "store-header-crowdy-box-default crowdy-box-active" : "store-header-crowdy-box-default "}>
+                              {checkStoreOpen(store) ? (
+                                <span className="store-header-crowdy-open crowdy-text-active ">영업중</span>
+                              ) : (
+                                <span className="store-header-crowdy-close ">영업종료</span>
+                              )}
+                            </div>
+                            <div className="store-header-crowdy-status-live">
+                              {storeDatas[store].active ? (
+                                storeOnActive ? (
+                                  <span className={`store-header-crowdy-status-live-text ${handleCrowdednessColor()}`}>상태: {crowdedness}</span>
+                                ) : (
+                                  <span className={"store-header-crowdy-status-live-text"}>상태: 없음</span>
+                                )
+                              ) : null}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                } else {
-                  return null;
-                }
-              })}
+                    );
+                  } else {
+                    return null;
+                  }
+                })}
+              </div>
             </div>
-          </div>
+          )}
+
           <div style={{ marginTop: "32px" }} />
           <div className="store-list-store-container">
             <span className="store-list-store-title">일반 매장</span>
@@ -152,7 +163,7 @@ const StoreList = () => {
                             )}
                           </div>
                           <div className="store-header-crowdy-status-live">
-                            <span className="store-header-crowdy-status-live-text">상태: 없음</span>
+                            <span className="store-header-crowdy-status-live-text">상태: -</span>
                           </div>
                         </div>
                       </div>
@@ -164,7 +175,7 @@ const StoreList = () => {
               })}
             </div>
           </div>
-          <div style={{ height: "60px" }}></div>
+          <div style={{ height: "80px" }}></div>
         </div>
       </div>
     </>

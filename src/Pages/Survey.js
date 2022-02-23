@@ -28,21 +28,40 @@ const Survey = () => {
         <span className="menu-content-title menu-content-title-space">
           설문조사 <span className="primary-color font-bold">.</span>
         </span>
-        <span className="menu-content-text menu-content-text-space">구글 설문지 링크</span>
+        <a
+          style={{ fontSize: "18px", fontWeight: "700" }}
+          className="menu-content-text menu-content-text-space"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSe7dd9w4IFrBJiJhNE22q7YxAaBPB3RFenBVYplfwMVA8NHVw/formResponse"
+        >
+          구글 설문지 링크
+        </a>
         <span className="menu-content-text menu-content-text-space">
           <span className="primary-color font-light">Crowdy</span>는 일상 속에서의 작은 불편함을 개선하고자 하는 사람들이 모여 만든 서비스입니다.
         </span>
         <span className="menu-content-text menu-content-text-space">
-          설문지를 작성해주시는 분들은 자동으로 <br />
-          <span className="primary-color font-light">스타벅스 기프티콘</span>에 응모가 되십니다!
+          설문지를 작성해주시는 분들은{" "}
+          <span className="primary-color font-light">
+            서현170 <br />
+            아메리카노 교환권{" "}
+          </span>
+          또는{" "}
+          <span className="primary-color font-light">
+            스타벅스 아메리카노 <br />
+            교환권
+          </span>
+          에 응모를 하실 수 있으십니다!
         </span>
-        <span className="menu-content-text menu-content-text-space">(총 10분을 추첨! 응모 마감: ~2022년 02월 20일(일))</span>
         <span className="menu-content-text menu-content-text-space">
-          사용자 여러분들이 적어주시는 설문지와 피드백은 <br />
+          총 10분을 추첨할 예정이니 많은 참여 <br />
+          부탁드립니다!
+        </span>
+        <span className="menu-content-text menu-content-text-space">응모 마감: 2022년 03월 04일(금)</span>
+        <span className="menu-content-text menu-content-text-space">
+          사용자 여러분들이 적어주시는 설문지는 <br />
           저희 <span className="primary-color font-light">Crowdy Team</span>에게 정말 큰 도움이 됩니다.
         </span>
         <span className="menu-content-text">감사합니다.</span>
-        <div style={{ height: "60px" }} />
+        <div style={{ height: "80px" }} />
       </div>
     </div>
   );

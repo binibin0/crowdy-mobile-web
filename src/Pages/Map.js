@@ -5,6 +5,7 @@ import BSheet from "./BSheet";
 import "./style.css";
 import MapSearchBar from "./MapSearchBar";
 import { storeDatas } from "../datas/storeDatas";
+import activeStorePin from "../images/crowdy/crowdy-active-store-pin.png";
 import storePin from "../images/crowdy/crowdy-store-pin.png";
 import { useWindowHeight } from "@react-hook/window-size";
 import CrowdyContext from "./CrowdyContext";
@@ -104,17 +105,26 @@ const Map = () => {
     return (
       <>
         {Object.keys(storeDatas).map((store, key) => {
-          let storePinWidth = 32;
+          let storePinWidth = 22;
           if (currentStore === store) {
-            storePinWidth = 42;
+            storePinWidth = 28;
           }
-          const icon = {
-            url: storePin,
-            scaledSize: {
-              width: storePinWidth,
-              height: storePinSizeConverter(storePinWidth),
-            },
-          };
+          const icon =
+            currentStore === store
+              ? {
+                  url: activeStorePin,
+                  scaledSize: {
+                    width: storePinWidth,
+                    height: storePinSizeConverter(storePinWidth),
+                  },
+                }
+              : {
+                  url: storePin,
+                  scaledSize: {
+                    width: storePinWidth,
+                    height: storePinSizeConverter(storePinWidth),
+                  },
+                };
 
           return (
             <Marker
@@ -124,8 +134,8 @@ const Map = () => {
               optimized={false}
               onClick={() => {
                 setCurrentStore(store);
-                setZoomLv(15.99);
-                setZoomLv(16);
+                setZoomLv(15.49);
+                setZoomLv(15.5);
                 map.panTo({
                   lat: storeDatas[store].latlng.lat - 0.0031,
                   lng: storeDatas[store].latlng.lng,
@@ -159,8 +169,8 @@ const Map = () => {
   };
 
   const mapLoadingScreen = (
-    <div className="ispinner white large animating">
-      <div className="ispinner-blade"></div>/
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%", height: "100%" }}>
+      <span style={{ color: "white", fontSize: "16px", fontWeight: "bold" }}>Loading...</span>
     </div>
   );
   return (
@@ -169,7 +179,6 @@ const Map = () => {
       <StoreListButton />
       <LoadScript googleMapsApiKey="AIzaSyCSYjuiuUYQ2tYtEE5V26yBzQhc5M6xjPM" loadingElement={mapLoadingScreen}>
         <GoogleMap
-          onLoad={(e) => <div style={{ width: "100px", height: "100px", backgroundColor: "white" }}>HEooooooooo</div>}
           options={defaultMapOptions}
           mapContainerStyle={{
             width: "100vw",
@@ -177,7 +186,7 @@ const Map = () => {
           }}
           center={storeDatas[currentStore].latlng}
           zoom={zoomLv}
-          onDragStart={() => BSheetRef.current.snapTo(({ maxHeight }) => maxHeight / 3)}
+          onDragStart={() => BSheetRef.current.snapTo(() => 0)}
         >
           <MarkerList />
           <UserLocation />

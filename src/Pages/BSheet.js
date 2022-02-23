@@ -30,6 +30,8 @@ const BSheet = ({ userLocationButton, BSheetRef }) => {
     setRefresh,
     drawereVisible,
     setDrawereVisible,
+    setStoreOpen,
+    checkStoreOpen,
   } = useContext(CrowdyContext);
 
   const navigate = useNavigate();
@@ -43,29 +45,18 @@ const BSheet = ({ userLocationButton, BSheetRef }) => {
         ref={BSheetRef}
         blocking={false}
         defaultSnap={({ snapPoints }) => Math.min(...snapPoints)}
-        snapPoints={() => [480, 120]}
+        snapPoints={() => [480, 116]}
       >
         <div className="bottom-sheet-store-container">
           <div style={{ height: "10px" }} />
           <StoreHeader store={currentStore} />
-          <div style={{ height: "20px" }} />
+          <div style={{ height: "14px" }} />
           <StoreSubHeader store={currentStore} />
-          <div style={{ height: "20px" }} />
+          <div style={{ height: "14px" }} />
           <div className="bottom-sheet-store-images-box">
             <div className="bottom-sheet-store-images">
               {storeDatas[currentStore].mainImages.map((image, key) => {
-                return (
-                  <img
-                    key={key}
-                    className="bottom-sheet-store-image"
-                    src={image}
-                    alt="seat-table"
-                    onClick={(event) => {
-                      setOpenImageModal(true);
-                      setCurrentImageForModal(event.target.src);
-                    }}
-                  />
-                );
+                return <img key={key} className="bottom-sheet-store-image" src={image} alt="seat-table" />;
               })}
             </div>
           </div>

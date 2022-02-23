@@ -22,6 +22,20 @@ export default function SeeMoreImage() {
           margin: "0 auto",
         }}
       >
+        <a href={storeDatas[path].instagramLink}>
+          <div style={{ position: "relative" }}>
+            <img
+              src="https://www.xda-developers.com/files/2020/12/Instagram-Lite-Feature-Image.jpg"
+              style={{ width: "138px", height: "138px", objectFit: "cover", marginTop: "-10px" }}
+            />
+            <span
+              className="instagram-text"
+              style={{ position: "absolute", bottom: "14px", left: "18px", fontSize: "10px", fontWeight: "500", color: "#e13867" }}
+            >
+              인스타그램에서 검색하기
+            </span>
+          </div>
+        </a>
         {storeDatas[path].images.map((image, key) => (
           <img
             key={key}
