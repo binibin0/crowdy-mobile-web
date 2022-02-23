@@ -4,8 +4,6 @@ import { BottomSheet } from "react-spring-bottom-sheet";
 import "./style.css";
 import "react-spring-bottom-sheet/dist/style.css";
 import myLocationIcon from "../images/my-location.png";
-import userCurrentLocationIcon from "../images/crowdy/user-current-location.png";
-import storeListMenu from "../images/store-list-menu.svg";
 import StoreDetail, { StoreHeader, StoreSubHeader } from "./StoreDetail";
 import CrowdyContext from "./CrowdyContext";
 import { storeDatas } from "../datas/storeDatas";
@@ -47,13 +45,6 @@ const BSheet = ({ userLocationButton, BSheetRef }) => {
         defaultSnap={({ snapPoints }) => Math.min(...snapPoints)}
         snapPoints={() => [480, 120]}
       >
-        <div className="bottom-sheet-store-list-button" onClick={() => navigate("/store-list")}>
-          <img src={storeListMenu} style={{ width: "20px" }} />
-          <span className="bottom-sheet-store-list-button-text">매장 보기</span>
-        </div>
-        <div className="bottom-sheet-current-location-button" onClick={userLocationButton}>
-          <img src={userCurrentLocationIcon} style={{ width: "32px" }} />
-        </div>
         <div className="bottom-sheet-store-container">
           <div style={{ height: "10px" }} />
           <StoreHeader store={currentStore} />

@@ -7,7 +7,7 @@ import twosomeFurnitureFour from "../images/twosome/twosome-rodeo-funiture-4.svg
 
 export const storeDatas = {
   "twosome-seohyeon-rodeo": {
-    active: true,
+    active: false,
     name: "투썸플레이스",
     branch: "서현로데오점",
     hashtag: ["전체", "프렌차이즈"],
@@ -407,7 +407,7 @@ export const storeDatas = {
     ],
   },
   "elgrop-seohyeon": {
-    active: false,
+    active: true,
     name: "엘그롭카페",
     branch: "본점",
     hashtag: ["전체", "동네카페"],
