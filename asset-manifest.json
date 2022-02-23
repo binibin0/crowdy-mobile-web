@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.9edc2be4.css",
-    "main.js": "/static/js/main.605c96aa.js",
+    "main.css": "/static/css/main.0785054c.css",
+    "main.js": "/static/js/main.0a0493d0.js",
     "static/js/787.6034394b.chunk.js": "/static/js/787.6034394b.chunk.js",
     "static/media/NotoSansKR-Black.otf": "/static/media/NotoSansKR-Black.dba005b6b1bed712b472.otf",
     "static/media/NotoSansKR-Bold.otf": "/static/media/NotoSansKR-Bold.c252383c4f70753be0e7.otf",
@@ -21,6 +21,7 @@
     "static/media/address.png": "/static/media/address.539137d47cce46fdd472.png",
     "static/media/survey-white.png": "/static/media/survey-white.9d188416f6f90910d197.png",
     "static/media/crowdy-store-pin.png": "/static/media/crowdy-store-pin.6d5e92f152e0e6488edd.png",
+    "static/media/crowdy-active-store-pin.png": "/static/media/crowdy-active-store-pin.a8d70533f53a03a52274.png",
     "static/media/crowdy-alone.png": "/static/media/crowdy-alone.c7ddd9bbef17cb502480.png",
     "static/media/see-more-image-chevron.png": "/static/media/see-more-image-chevron.745769940fc6da6314eb.png",
     "static/media/table.png": "/static/media/table.9326bc40811ef058e66c.png",
@@ -32,12 +33,12 @@
     "static/media/go-back-chevron.svg": "/static/media/go-back-chevron.541b856c06e660b3eec53cfc7712345f.svg",
     "static/media/white-plus.svg": "/static/media/white-plus.5be9ba6a5e74b07262d0969393c1868f.svg",
     "static/media/white-minus.svg": "/static/media/white-minus.883065225a646239763b8d40bd08eef1.svg",
-    "main.9edc2be4.css.map": "/static/css/main.9edc2be4.css.map",
-    "main.605c96aa.js.map": "/static/js/main.605c96aa.js.map",
+    "main.0785054c.css.map": "/static/css/main.0785054c.css.map",
+    "main.0a0493d0.js.map": "/static/js/main.0a0493d0.js.map",
     "787.6034394b.chunk.js.map": "/static/js/787.6034394b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9edc2be4.css",
-    "static/js/main.605c96aa.js"
+    "static/css/main.0785054c.css",
+    "static/js/main.0a0493d0.js"
   ]
 }
