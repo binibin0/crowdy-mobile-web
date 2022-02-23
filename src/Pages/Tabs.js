@@ -20,7 +20,7 @@ function Tabs({ path, scrollPosition, setScrollPosition }) {
 
   const goToAnchor = (key) => {
     if (key === 0) {
-      window.scroll(0, 619.5);
+      window.scroll(0, 628.5);
     }
     if (key === 1) {
       if (activeTab === "menu") {
@@ -51,8 +51,8 @@ function Tabs({ path, scrollPosition, setScrollPosition }) {
     <>
       {openImageModal ? <ImageModal /> : null}
       <div className="tab-container">
-        {checkNeedAnchor(activeTab) && scrollPosition > 620 ? <div className="empty-tab-buttons"></div> : null}
-        <div className={checkNeedAnchor(activeTab) && scrollPosition > 620 ? "fixed-active" : null}>
+        {checkNeedAnchor(activeTab) && scrollPosition > 626 ? <div className="empty-tab-buttons"></div> : null}
+        <div className={checkNeedAnchor(activeTab) && scrollPosition > 626 ? "fixed-active" : null}>
           <div className="tab-buttons">
             <div className={activeTab === "menu" ? "tab-button tab-button-active" : "tab-button"} onClick={() => setActiveTab("menu")}>
               <span className={activeTab === "menu" ? "tab-button-text tab-button-text-active" : "tab-button-text"}>메뉴</span>
@@ -86,7 +86,12 @@ function Tabs({ path, scrollPosition, setScrollPosition }) {
             <div key={key} className="menu-map">
               <span className="menu-name">{item.drink}</span>
               <span className="menu-price">{item.price}</span>
-              <img src={item.image} className="menu-image" />
+              {item.image === "" ? null : (
+                <>
+                  <div style={{ flex: 1 }} />
+                  <img src={item.image} className="menu-image" />
+                </>
+              )}
             </div>
           ))}
           <div className="tab-content-title-box" style={{ borderTop: "none" }}>
@@ -96,7 +101,12 @@ function Tabs({ path, scrollPosition, setScrollPosition }) {
             <div key={key} className="menu-map">
               <span className="menu-name">{item.bakery.length > 10 ? item.bakery.substring(0, 10) + "..." : item.bakery}</span>
               <span className="menu-price">{item.price}</span>
-              <img src={item.image} className="menu-image" />
+              {item.image === "" ? null : (
+                <>
+                  <div style={{ flex: 1 }} />
+                  <img src={item.image} className="menu-image" />
+                </>
+              )}
             </div>
           ))}
         </div>
