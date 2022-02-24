@@ -80,6 +80,29 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <div style={{ height: "30px" }} />
+      <div className="home-crowdedness-explain-container">
+        <span className="home-crowdedness-explain-title">혼잡도는 무엇인가요?</span>
+        <span className="home-crowdedness-explain-text">해당 매장에 얼마나 많은 방문객이 있는지 알려주는 Crowdy만의 지표입니다.</span>
+        <span className="home-crowdedness-explain-medium">총 4단계로</span>
+        <div className="home-crowdedness-explain-level">
+          <span className="home-crowdedness-explain-empty">"여유로움"</span>
+          <span className="home-crowdedness-explain-colon">:</span>
+          <span className="home-crowdedness-explain-normal">"보통"</span>
+          <span className="home-crowdedness-explain-colon">:</span>
+          <span className="home-crowdedness-explain-popular">"인기"</span>
+          <span className="home-crowdedness-explain-colon">:</span>
+          <span className="home-crowdedness-explain-crowdy">"Crowdy!"</span>
+        </div>
+        <span className="home-crowdedness-explain-medium" style={{ marginLeft: "262px", marginBottom: "20px" }}>
+          가 있습니다.
+        </span>
+        <span className="home-crowdedness-explain-text-small">
+          *혼잡도 단계는 최대한 사용자들이 매장을 방문했을 때 <br />
+          느끼는 감정을 바탕으로 만들었으며 이 혼잡도는 <br />
+          실시간으로 자동 반영됩니다.
+        </span>
+      </div>
       <div className="home-active-store-container">
         <span className="home-active-store-title">현재 혼잡도 확인 가능 매장</span>
         <div className="store-list-store-box">

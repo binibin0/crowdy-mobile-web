@@ -61,6 +61,7 @@ const StoreList = () => {
         return null;
       }
     });
+    setCurrentFilter("전체");
   }, []);
 
   const checkFilterForStore = (list) => {
@@ -90,7 +91,7 @@ const StoreList = () => {
           <div className="store-list-header-container">
             <div className="store-list-header-map-box" onClick={() => navigate("/map")}>
               <img width="16px" src={mapIcon} alt="marker-icon"></img>
-              <span className="store-list-header-map-text">지도에서 매장 보기</span>
+              <span className="store-list-header-map-text">지도 보기</span>
             </div>
             <DropDownMenu />
           </div>

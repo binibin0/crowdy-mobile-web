@@ -23,7 +23,7 @@
   width: 90px;
   height: 90px;
   border-radius: 18px;
-  box-shadow: 2px 3px 3px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   background-color: white;
 }
 .home-location-item-text {
@@ -34,7 +34,85 @@
 }
 .home-location-item-disabled {
   background-color: #fafafa;
-  box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.home-crowdedness-explain-container {
+  position: relative;
+  width: 374px;
+  padding: 30px 0;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  border-radius: 18px;
+  border: 1px solid $primaryColor;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.home-crowdedness-explain-title {
+  display: block;
+  font-family: "NotoSansKR-Bold";
+  font-size: 18px;
+  margin-left: 40px;
+  margin-bottom: 14px;
+  color: $primaryColor;
+}
+
+.home-crowdedness-explain-text {
+  display: block;
+  font-family: "NotoSansKR-Light";
+  font-size: 14px;
+  margin-left: 40px;
+  margin-bottom: 14px;
+}
+.home-crowdedness-explain-medium {
+  display: block;
+  font-family: "NotoSansKR-Medium";
+  font-size: 14px;
+  margin-left: 40px;
+  margin-bottom: 14px;
+}
+
+.home-crowdedness-explain-level {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 314px;
+  font-family: "NotoSansKR-Medium";
+  font-size: 16px;
+  margin: 0 auto;
+  margin-bottom: 14px;
+}
+.home-crowdedness-explain-empty {
+  font-family: "NotoSansKR-Medium";
+  font-size: 16px;
+  color: $primaryColor;
+}
+.home-crowdedness-explain-normal {
+  font-family: "NotoSansKR-Medium";
+  font-size: 16px;
+  color: $defaultBlue;
+}
+.home-crowdedness-explain-popular {
+  font-family: "NotoSansKR-Medium";
+  font-size: 16px;
+  color: $defaultOrange;
+}
+.home-crowdedness-explain-crowdy {
+  font-family: "NotoSansKR-Medium";
+  font-size: 16px;
+  color: $defaultRed;
+}
+.home-crowdedness-explain-colon {
+  font-family: "NotoSansKR-Medium";
+  font-size: 16px;
+  color: black;
+}
+
+.home-crowdedness-explain-text-small {
+  display: block;
+  font-family: "NotoSansKR-Light";
+  font-size: 12px;
+  margin-left: 40px;
 }
 
 .home-active-store-container {
@@ -45,6 +123,7 @@
 .home-active-store-title {
   font-family: "NotoSansKR-Bold";
   font-size: 18px;
+  margin-left: 10px;
   color: $primaryColor;
 }
 .home-survey-container {
@@ -55,7 +134,7 @@
   margin: 0 auto;
   border-radius: 12px;
   background-color: $primaryColor;
-  box-shadow: 2px 3px 10px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
 }
 .home-survey-title {
   display: block;
@@ -82,7 +161,7 @@
   margin: 0 auto;
   margin-bottom: 50px;
   border-radius: 18px;
-  box-shadow: 2px 3px 10px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
 .home-crowdy-intro-see-more-container {
   position: absolute;

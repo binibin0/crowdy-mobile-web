@@ -16,8 +16,8 @@ const Survey = () => {
           설문조사를 진행하는 이유는 무엇인가요 <span className="primary-color font-bold">?</span>
         </span>
         <span className="menu-content-text menu-content-text-space">
-          지금의 <span className="primary-color font-light">Crowdy</span>는 <span className="primary-color font-light">Crowdy Team</span> 멤버들이 느낀 불편함을
-          바탕으로 구현되었습니다.
+          지금의 <span className="primary-color font-light">Crowdy</span>는 <span className="primary-color font-light">Crowdy Team</span> 멤버들이 느낀 <br />
+          불편함을 바탕으로 구현되었습니다.
         </span>
         <span className="menu-content-text menu-content-paragraph-space">
           저희는 보다 더 나은 서비스를 제공하기 위해 <br />
@@ -36,10 +36,7 @@ const Survey = () => {
           구글 설문지 링크
         </a>
         <span className="menu-content-text menu-content-text-space">
-          <span className="primary-color font-light">Crowdy</span>는 일상 속에서의 작은 불편함을 개선하고자 하는 사람들이 모여 만든 서비스입니다.
-        </span>
-        <span className="menu-content-text menu-content-text-space">
-          설문지를 작성해주시는 분들은{" "}
+          설문지를 작성해주시는 분은{" "}
           <span className="primary-color font-light">
             서현170 <br />
             아메리카노 교환권{" "}
@@ -49,7 +46,7 @@ const Survey = () => {
             스타벅스 아메리카노 <br />
             교환권
           </span>
-          에 응모를 하실 수 있으십니다!
+          에 응모를 하실 수 있습니다!
         </span>
         <span className="menu-content-text menu-content-text-space">
           총 10분을 추첨할 예정이니 많은 참여 <br />

@@ -85,3 +85,11 @@ html {
 @import "./MapSearchBar";
 @import "./Drawer";
 @import "./Map";
+
+:export {
+  primaryColor: $primaryColor;
+  defaultGrey: $defaultGrey;
+  defaultRed: $defaultRed;
+  defaultBlue: $defaultBlue;
+  defaultOrange: $defaultOrange;
+}
