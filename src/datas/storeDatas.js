@@ -961,7 +961,7 @@ export const storeDatas = {
       drinkSize: "R / L",
       drinks: [
         {
-          drink: "메누판",
+          drink: "메뉴판",
           price: "",
           image:
             "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODA0MzBfMjIg%2FMDAxNTI1MDYwMzU2Mjkw.vFcyEpwqkiQhQ6QyVTNTsdoSHI4MeJA9s44BKGKOx6Ig.9C184L-m9K52si1VvKAvaM6flOdDqKwmN6JjFmeNpKwg.JPEG.ellieciao%2Foutput_172103515.jpg",
