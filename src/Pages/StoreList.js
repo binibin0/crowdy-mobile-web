@@ -163,7 +163,7 @@ const StoreList = () => {
                             )}
                           </div>
                           <div className="store-header-crowdy-status-live">
-                            <span className="store-header-crowdy-status-live-text">상태: -</span>
+                            <span className="store-header-crowdy-status-live-text">상태: 제공 예정</span>
                           </div>
                         </div>
                       </div>

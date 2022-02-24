@@ -48,6 +48,7 @@ const StoreHeader = ({ store }) => {
     setStoreOnActive,
   } = useContext(CrowdyContext);
   handleCrowdedness(store);
+  console.log(storeOnActive);
   return (
     <div className="store-header-container">
       <div className="store-header">
@@ -84,7 +85,7 @@ const StoreHeader = ({ store }) => {
             ) : (
               <span className={"store-header-crowdy-status-live-text"}>상태: 제공 예정</span>
             )}
-            {storeOnActive ? <img width="14px" src={crowdednessReload} alt="marker-icon" /> : null}
+            {storeDatas[store].active ? <img width="14px" src={crowdednessReload} alt="marker-icon" /> : null}
           </div>
         </div>
       </div>

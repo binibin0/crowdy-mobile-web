@@ -1026,7 +1026,7 @@ export const storeDatas = {
     hashtag: ["전체", "동네카페"],
     latlng: { lat: 37.386714197801695, lng: 127.12195204232654 },
     logo: "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200517_132%2F1589705359060OY3tF_JPEG%2F-ddFpxjvb7nFVeRrIHCVZRgP.jpg",
-    phone: "엘그롭카톡플친",
+    phone: "인스타그램 문의",
     tableNumber: "22",
     chairNumber: "56",
     address: "서현동 261-5 엔타운빌딩 2층",
