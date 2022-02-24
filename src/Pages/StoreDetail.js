@@ -49,7 +49,7 @@ const StoreHeader = ({ store }) => {
     goToAnchor,
   } = useContext(CrowdyContext);
   handleCrowdedness(store);
-  console.log(storeOnActive);
+  console.log("storedetail", crowdedness);
   return (
     <div className="store-header-container">
       <div className="store-header">

@@ -47,11 +47,11 @@ const Home = () => {
     storeOpen,
     setStoreOpen,
     checkStoreOpen,
+    handleCrowdedness,
     handleCrowdednessColor,
     storeOnActive,
     setStoreOnActive,
   } = useContext(CrowdyContext);
-
   const navigate = useNavigate();
   const { path } = useParams();
 
@@ -85,6 +85,7 @@ const Home = () => {
         <div className="store-list-store-box">
           {Object.keys(storeDatas).map((store, key) => {
             if (storeDatas[store].active) {
+              handleCrowdedness(store);
               return (
                 <div
                   key={key}

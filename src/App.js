@@ -31,6 +31,7 @@ function App() {
       });
     });
   }, []);
+
   const handleCrowdednessColor = () => {
     if (crowdedness === "여유로움") {
       return "crowdedness-green";
@@ -67,12 +68,12 @@ function App() {
   const [openImageModal, setOpenImageModal] = useState(false);
   const [currentImageForModal, setCurrentImageForModal] = useState("");
   const [currentStore, setCurrentStore] = useState("seohyeon-170");
-  const [crowdedness, setCrowdedness] = useState("Crowdy!");
+  const [crowdedness, setCrowdedness] = useState("여유로움");
   const [refresh, setRefresh] = useState(true);
   const [drawereVisible, setDrawereVisible] = useState(false);
   const [currentFilter, setCurrentFilter] = useState("전체");
   const [storeOnActive, setStoreOnActive] = useState(false);
-
+  console.log(crowdednessCount);
   const checkStoreOpen = (store) => {
     if (store) {
       if (currentTime >= storeDatas[store].openHours[currentDay][0] && currentTime <= storeDatas[store].openHours[currentDay][1]) {
