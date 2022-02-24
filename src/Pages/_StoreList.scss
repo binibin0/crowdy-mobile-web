@@ -3,6 +3,13 @@
   padding: 0 10px;
 }
 
+.page-height-low {
+  height: 900px;
+}
+.page-height-high {
+  height: 1000px;
+}
+
 .store-list-header-container {
   display: flex;
   justify-content: space-between;
@@ -19,7 +26,7 @@
   width: 200px;
   height: 42px;
   border-radius: 8px;
-  box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 2px 3px 3px 0px rgba(0, 0, 0, 0.13);
 }
 .store-list-header-filter-box {
   display: flex;
@@ -28,7 +35,7 @@
   width: 112px;
   height: 42px;
   border-radius: 8px;
-  box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 2px 3px 3px 0px rgba(0, 0, 0, 0.13);
 }
 
 .store-list-header-map-text {
@@ -53,7 +60,7 @@
   height: 98px;
   margin-top: 26px;
   border-radius: 8px;
-  box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.16);
 }
 
 .store-header-review-compact {

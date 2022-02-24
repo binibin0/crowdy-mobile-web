@@ -63,7 +63,13 @@ const Home = () => {
       <div className="home-location-container">
         <div style={{ height: "10px" }} />
         <div className="home-location-box">
-          <div className="home-location-item" onClick={() => navigate("/store-list")}>
+          <div
+            className="home-location-item"
+            onClick={() => {
+              navigate("/store-list");
+              window.scroll(0, 0);
+            }}
+          >
             <img src={crowdyStorePin} alt="pin" width="18px" />
             <span className="home-location-item-text">서현역</span>
           </div>
@@ -84,7 +90,10 @@ const Home = () => {
                   key={key}
                   className="store-list-store-item"
                   style={key === 0 ? { marginTop: "22px", borderRadius: "18px" } : null}
-                  onClick={() => navigate(`/${store}`)}
+                  onClick={() => {
+                    navigate(`/${store}`);
+                    window.scroll(0, 0);
+                  }}
                 >
                   <div className="store-header">
                     <div style={{ display: "flex" }}>
@@ -123,7 +132,13 @@ const Home = () => {
         </div>
       </div>
       <div style={{ height: "40px" }} />
-      <div className="home-survey-container" onClick={() => navigate("/survey")}>
+      <div
+        className="home-survey-container"
+        onClick={() => {
+          navigate("/survey");
+          window.scroll(0, 0);
+        }}
+      >
         <img className="home-survey-icon" src={surveyWhiteIcon} alt="survey" width="44px" />
         <span className="home-survey-title">설문조사 & 피드백 (기프티콘 추첨!)</span>
         <span className="home-survey-text">
@@ -132,7 +147,13 @@ const Home = () => {
         </span>
       </div>
       <div style={{ height: "40px" }} />
-      <div className="home-crowdy-intro-container" onClick={() => navigate("/crowdy")}>
+      <div
+        className="home-crowdy-intro-container"
+        onClick={() => {
+          navigate("/crowdy");
+          window.scroll(0, 0);
+        }}
+      >
         <div className="home-crowdy-intro-see-more-container">
           <span className="home-crowdy-intro-see-more-text">자세히 보기</span>
           <img className="home-crowdy-intro-see-more-icon" src={goBackChevron} alt="go-back" width="4px" />

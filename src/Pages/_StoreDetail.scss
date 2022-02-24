@@ -7,18 +7,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 324px;
+  width: 180px;
   height: 42px;
-  margin: 0 auto;
   margin-bottom: 30px;
   margin-top: 30px;
   border-radius: 8px;
-  box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 2px 3px 3px 0px rgba(0, 0, 0, 0.13);
 }
 
 .detail-see-map-text {
   margin-left: 10px;
   font-size: 16px;
+}
+
+.map-store-list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.store-detail-list-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 42px;
+  margin-left: 42px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 2px 3px 3px 0px rgba(0, 0, 0, 0.13);
+}
+.store-detail-list-button-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-left: 10px;
 }
 
 .store-header-container {

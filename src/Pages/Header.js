@@ -71,7 +71,17 @@ const Header = ({ path, page }) => {
           {location.pathname === "/" ? (
             <img width="20px" color="white" src={squareMenu} alt="menu" className="header-menu-button" onClick={() => setDrawereVisible(true)} />
           ) : (
-            <img width="20px" color="white" src={goBackWhiteChevronIcon} alt="go-back-icon" className="header-go-back-button" onClick={() => navigate(-1)} />
+            <img
+              width="12px"
+              color="white"
+              src={goBackWhiteChevronIcon}
+              alt="go-back-icon"
+              className="header-go-back-button"
+              onClick={() => {
+                navigate(-1);
+                window.scroll(0, 0);
+              }}
+            />
           )}
 
           <div className="header-title">{pageTitle}</div>

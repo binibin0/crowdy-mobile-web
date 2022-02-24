@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AiOutlineStar } from "react-icons/ai";
+import { FiInstagram } from "react-icons/fi";
 import "./style.css";
 import mapIcon from "../images/map.png";
 import markerIcon from "../images/marker.png";
@@ -14,6 +15,7 @@ import { storeDatas } from "../datas/storeDatas";
 import Header from "./Header";
 import ImageModal from "./ImageModal";
 import CrowdyContext from "./CrowdyContext";
+import storeListMenu from "../images/store-list-menu.svg";
 
 const StoreHeader = ({ store }) => {
   const {
@@ -38,14 +40,13 @@ const StoreHeader = ({ store }) => {
     drawereVisible,
     setDrawereVisible,
     currentFilter,
+    storeOnActive,
+    setStoreOnActive,
     setCurrentFilter,
-    storeOpen,
-    setStoreOpen,
     checkStoreOpen,
     handleCrowdedness,
     handleCrowdednessColor,
-    storeOnActive,
-    setStoreOnActive,
+    goToAnchor,
   } = useContext(CrowdyContext);
   handleCrowdedness(store);
   console.log(storeOnActive);
@@ -126,19 +127,23 @@ const StoreSubHeader = ({ store }) => {
     <div className="store-sub-header">
       <div className="store-sub-header-first">
         <div className="store-sub-header-phone">
-          <img width="14px" src={markerIcon} alt="marker-icon"></img>
+          <img width="14px" src={markerIcon} alt="marker-icon" />
           <span className="store-sub-header-margin-left store-default-text">{storeDatas[store].branch}</span>
         </div>
         <div className="store-sub-header-phone">
-          <img width="14px" src={phoneIcon} alt="phone-icon"></img>
-          <a className="store-sub-header-margin-left store-default-text" href={`tel:${storeDatas[store].phone}`}>
+          {store === "elglop-cafe" ? <FiInstagram /> : <img width="14px" src={phoneIcon} alt="phone-icon" />}
+
+          <a
+            className="store-sub-header-margin-left store-default-text"
+            href={store === "elglop-cafe" ? storeDatas[store].instagramLink : `tel:${storeDatas[store].phone}`}
+          >
             {storeDatas[store].phone}
           </a>
         </div>
       </div>
       <div className="store-sub-header-second">
         <div className="store-sub-header-address">
-          <img width="14px" src={addressIcon} alt="address-icon"></img>
+          <img width="14px" src={addressIcon} alt="address-icon" />
           <span className="store-sub-header-margin-left store-default-text">{storeDatas[store].address}</span>
         </div>
         <div className="store-sub-header-open">
@@ -202,21 +207,33 @@ const StoreDetail = () => {
     checkStoreOpen();
   }, [currentDay, currentTime]);
 
+  const StoreListButton = () => {
+    return (
+      <div className="store-detail-list-button" onClick={() => navigate("/store-list")}>
+        <img src={storeListMenu} style={{ width: "20px" }} />
+        <span className="store-detail-list-button-text">매장 보기</span>
+      </div>
+    );
+  };
+
   return (
     <>
       <div className="page">
         <Header path={path} />
         {openImageModal ? <ImageModal setOpenImageModal={setOpenImageModal} currentImage={currentImageForModal} /> : null}
         <div className="detail-container">
-          <div
-            className="detail-see-map"
-            onClick={() => {
-              setCurrentStore(path);
-              navigate("/map");
-            }}
-          >
-            <img width="16px" src={mapIcon} alt="marker-icon"></img>
-            <span className="detail-see-map-text">지도 보기</span>
+          <div className="map-store-list-container">
+            <div
+              className="detail-see-map"
+              onClick={() => {
+                setCurrentStore(path);
+                navigate("/map");
+              }}
+            >
+              <img width="16px" src={mapIcon} alt="marker-icon"></img>
+              <span className="detail-see-map-text">지도 보기</span>
+            </div>
+            <StoreListButton />
           </div>
           <StoreHeader store={path} />
           <div style={{ height: "24px" }} />
@@ -241,7 +258,13 @@ const StoreDetail = () => {
             </div>
           </div>
           <div className="detail-see-more-image">
-            <span className="detail-see-more-image-text detail-default-text" onClick={() => navigate("/" + path + "/see-more-image")}>
+            <span
+              className="detail-see-more-image-text detail-default-text"
+              onClick={() => {
+                navigate("/" + path + "/see-more-image");
+                window.scroll(0, 0);
+              }}
+            >
               사진 더보기
             </span>
             <img width="6px" src={moreImageChevronIcon} alt="phone-icon" className="detail-see-more-image-icon"></img>

@@ -101,7 +101,15 @@ function Tabs({ path, scrollPosition, setScrollPosition }) {
           </div>
           {storeDatas[path].menu.drinks.map((item, key) => (
             <div key={key} className="menu-map">
-              <span className="menu-name">{item.drink}</span>
+              {item.drink.length > 10 ? (
+                <span className="menu-name menu-two-line-name">
+                  {item.drink.substring(0, 8)}
+                  <br />
+                  {item.drink.substring(8)}
+                </span>
+              ) : (
+                <span className="menu-name">{item.drink}</span>
+              )}
               <span className="menu-price">{item.price}</span>
               {item.image === "" ? null : (
                 <>

@@ -72,13 +72,21 @@ const StoreList = () => {
     });
     return check;
   };
-  console.log(currentFilter);
+
+  const handleContainerHeightByFilter = () => {
+    if (currentFilter === "전체") {
+      return "page-height-low";
+    } else {
+      return "page-height-high";
+    }
+  };
+
   return (
     <>
       <div className="page">
         <DrawerP />
         <Header path={path} />
-        <div className="store-list-container">
+        <div className={currentFilter === "전체" ? "store-list-container" : "store-list-container page-height-high"}>
           <div className="store-list-header-container">
             <div className="store-list-header-map-box" onClick={() => navigate("/map")}>
               <img width="16px" src={mapIcon} alt="marker-icon"></img>
@@ -93,7 +101,15 @@ const StoreList = () => {
                 {Object.keys(storeDatas).map((store, key) => {
                   if (storeDatas[store].active && checkFilterForStore(storeDatas[store].hashtag)) {
                     return (
-                      <div key={key} className="store-list-store-item" style={key === 0 ? { marginTop: "22px" } : null} onClick={() => navigate(`/${store}`)}>
+                      <div
+                        key={key}
+                        className="store-list-store-item"
+                        style={key === 0 ? { marginTop: "22px" } : null}
+                        onClick={() => {
+                          navigate(`/${store}`);
+                          window.scroll(0, 0);
+                        }}
+                      >
                         <div className="store-header">
                           <div style={{ display: "flex" }}>
                             <img className="store-header-logo" src={storeDatas[store].logo} alt="Logo" />
@@ -143,7 +159,10 @@ const StoreList = () => {
                       key={key}
                       className="store-list-store-item"
                       style={key === activeStoreCount ? { marginTop: "22px" } : null}
-                      onClick={() => navigate(`/${store}`)}
+                      onClick={() => {
+                        navigate(`/${store}`);
+                        window.scroll(0, 0);
+                      }}
                     >
                       <div className="store-header">
                         <div style={{ display: "flex" }}>
