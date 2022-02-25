@@ -132,11 +132,14 @@
   color: $defaultGrey;
   font-size: 15px;
 }
-
+.store-header-crowdy-container {
+  width: 92px;
+}
 .store-header-crowdy-status-live {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 19px;
 }
 
 .store-header-crowdy-status-live-text {

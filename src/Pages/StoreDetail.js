@@ -7,7 +7,6 @@ import mapIcon from "../images/map.png";
 import markerIcon from "../images/marker.png";
 import phoneIcon from "../images/phone.png";
 import moreImageChevronIcon from "../images/see-more-image-chevron.png";
-import crowdednessReload from "../images/crowdedness-reload.png";
 import { BsClock } from "react-icons/bs";
 import Tabs from "./Tabs";
 import { storeDatas } from "../datas/storeDatas";
@@ -15,6 +14,8 @@ import Header from "./Header";
 import ImageModal from "./ImageModal";
 import CrowdyContext from "./CrowdyContext";
 import storeListMenu from "../images/store-list-menu.svg";
+import { Space } from "antd";
+import { LoadingOutlined, ReloadOutlined } from "@ant-design/icons";
 
 const StoreHeader = ({ store }) => {
   const {
@@ -34,8 +35,6 @@ const StoreHeader = ({ store }) => {
     setCrowdedness,
     crowdednessCount,
     setCrowdednessCount,
-    refresh,
-    setRefresh,
     drawereVisible,
     setDrawereVisible,
     currentFilter,
@@ -47,8 +46,13 @@ const StoreHeader = ({ store }) => {
     handleCrowdednessColor,
     goToAnchor,
   } = useContext(CrowdyContext);
+
+  const [crowdednessLoading, setCrowdednessLoading] = useState(false);
+  const [openTimeLoading, setOpenTimeLoading] = useState(false);
+
   handleCrowdedness(store);
   console.log("storedetail", crowdedness);
+
   return (
     <div className="store-header-container">
       <div className="store-header">
@@ -68,24 +72,54 @@ const StoreHeader = ({ store }) => {
           </div>
         </div>
         <div className="store-header-crowdy-container">
-          <div className={checkStoreOpen(store) ? "store-header-crowdy-box-default crowdy-box-active" : "store-header-crowdy-box-default "}>
-            {checkStoreOpen(store) ? (
+          <div
+            className={checkStoreOpen(store) ? "store-header-crowdy-box-default crowdy-box-active" : "store-header-crowdy-box-default "}
+            onClick={() => {
+              setOpenTimeLoading(true);
+              setTimeout(() => {
+                setOpenTimeLoading(false);
+              }, 1000);
+            }}
+          >
+            {openTimeLoading ? (
+              <Space>
+                <LoadingOutlined style={{ fontSize: "12px" }} />
+              </Space>
+            ) : checkStoreOpen(store) ? (
               <span className="store-header-crowdy-open crowdy-text-active ">영업중</span>
             ) : (
               <span className="store-header-crowdy-close ">영업종료</span>
             )}
           </div>
-          <div className="store-header-crowdy-status-live" onClick={() => setRefresh((current) => !current)}>
+          <div
+            className="store-header-crowdy-status-live"
+            onClick={() => {
+              setCrowdednessLoading(true);
+              setTimeout(() => {
+                setCrowdednessLoading(false);
+              }, 1000);
+            }}
+          >
             {storeDatas[store].active ? (
               storeOnActive ? (
-                <span className={`store-header-crowdy-status-live-text ${handleCrowdednessColor()}`}>상태: {crowdedness}</span>
+                crowdednessLoading ? (
+                  <Space>
+                    <LoadingOutlined style={{ fontSize: "12px" }} />
+                  </Space>
+                ) : (
+                  <>
+                    <span className={`store-header-crowdy-status-live-text ${handleCrowdednessColor()}`}>상태: {crowdedness}</span>
+                    <ReloadOutlined style={{ fontSize: "10px" }} />
+                  </>
+                )
               ) : (
                 <span className={"store-header-crowdy-status-live-text"}>상태: 없음</span>
               )
             ) : (
               <span className={"store-header-crowdy-status-live-text"}>상태: 제공 예정</span>
             )}
-            {storeDatas[store].active ? <img width="14px" src={crowdednessReload} alt="marker-icon" /> : null}
+
+            {/* {storeDatas[store].active ? <img width="14px" src={crowdednessReload} alt="marker-icon" /> : null} */}
           </div>
         </div>
       </div>

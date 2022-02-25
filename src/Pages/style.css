@@ -689,6 +689,10 @@ html {
   font-size: 15px;
 }
 
+.store-header-crowdy-container {
+  width: 92px;
+}
+
 .store-header-crowdy-status-live {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -699,6 +703,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 19px;
 }
 
 .store-header-crowdy-status-live-text {
