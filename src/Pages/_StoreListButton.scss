@@ -1,0 +1,19 @@
+.store-list-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 112px;
+  height: 42px;
+  border-radius: 8px;
+  background-color: white;
+  border: 0.1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.1);
+}
+
+.store-list-button-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-left: 8px;
+}

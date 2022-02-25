@@ -70,7 +70,12 @@ const Header = ({ path, page }) => {
         <div className="header-space" />
         <div className="header-content">
           {location.pathname === "/" ? (
-            <img width="20px" color="white" src={squareMenu} alt="menu" className="header-menu-button" onClick={() => setDrawereVisible(true)} />
+            <>
+              <img width="20px" color="white" src={squareMenu} alt="menu" className="header-menu-button" onClick={() => setDrawereVisible(true)} />
+              <div className="header-home-button">
+                <span>설문조사</span>
+              </div>
+            </>
           ) : (
             <>
               <img

@@ -13,9 +13,9 @@ import { storeDatas } from "../datas/storeDatas";
 import Header from "./Header";
 import ImageModal from "./ImageModal";
 import CrowdyContext from "./CrowdyContext";
-import storeListMenu from "../images/store-list-menu.svg";
 import { Space } from "antd";
 import { LoadingOutlined, ReloadOutlined } from "@ant-design/icons";
+import StoreListButton from "./StoreListButton";
 
 const StoreHeader = ({ store }) => {
   const {
@@ -239,15 +239,6 @@ const StoreDetail = () => {
   useEffect(() => {
     checkStoreOpen();
   }, [currentDay, currentTime]);
-
-  const StoreListButton = () => {
-    return (
-      <div className="store-detail-list-button" onClick={() => navigate("/store-list")}>
-        <img src={storeListMenu} style={{ width: "16px" }} />
-        <span className="store-detail-list-button-text">매장 보기</span>
-      </div>
-    );
-  };
 
   return (
     <>

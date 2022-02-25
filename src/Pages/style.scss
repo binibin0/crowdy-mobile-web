@@ -85,11 +85,12 @@ html {
 @import "./MapSearchBar";
 @import "./Drawer";
 @import "./Map";
+@import "./StoreListButton";
 
 :export {
-  primaryColor: $primaryColor;
-  defaultGrey: $defaultGrey;
-  defaultRed: $defaultRed;
-  defaultBlue: $defaultBlue;
-  defaultOrange: $defaultOrange;
+  primarycolor: $primaryColor;
+  defaultgrey: $defaultGrey;
+  defaultred: $defaultRed;
+  defaultblue: $defaultBlue;
+  defaultorange: $defaultOrange;
 }

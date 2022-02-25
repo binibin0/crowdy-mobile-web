@@ -69,7 +69,7 @@ function App() {
   const [currentImageForModal, setCurrentImageForModal] = useState("");
   const [currentStore, setCurrentStore] = useState("seohyeon-170");
   const [crowdedness, setCrowdedness] = useState("여유로움");
-  const [refresh, setRefresh] = useState(true);
+
   const [drawereVisible, setDrawereVisible] = useState(false);
   const [currentFilter, setCurrentFilter] = useState("전체");
   const [storeOnActive, setStoreOnActive] = useState(false);
@@ -136,8 +136,6 @@ function App() {
         setCrowdedness,
         crowdednessCount,
         setCrowdednessCount,
-        refresh,
-        setRefresh,
         drawereVisible,
         setDrawereVisible,
         currentFilter,

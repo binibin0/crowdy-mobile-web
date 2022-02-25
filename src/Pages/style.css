@@ -536,39 +536,6 @@ html {
   margin-bottom: 30px;
 }
 
-.store-detail-list-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 112px;
-  height: 42px;
-  border-radius: 8px;
-  background-color: white;
-  border: 0.1px solid rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.1);
-}
-
-.store-detail-list-button-text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: white;
-  margin-left: 8px;
-}
-
 .store-header-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1828,11 +1795,44 @@ html {
   z-index: 99;
 }
 
+.store-list-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 112px;
+  height: 42px;
+  border-radius: 8px;
+  background-color: white;
+  border: 0.1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.1);
+}
+
+.store-list-button-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  margin-left: 8px;
+}
+
 :export {
-  primaryColor: #00705b;
-  defaultGrey: #adadad;
-  defaultRed: #ff2c65;
-  defaultBlue: #2c55ff;
-  defaultOrange: #ff9c29;
+  primarycolor: #00705b;
+  defaultgrey: #adadad;
+  defaultred: #ff2c65;
+  defaultblue: #2c55ff;
+  defaultorange: #ff9c29;
 }
 /*# sourceMappingURL=style.css.map */

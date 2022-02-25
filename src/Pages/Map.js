@@ -12,6 +12,7 @@ import CrowdyContext from "./CrowdyContext";
 import userCurrentLocationIcon from "../images/crowdy/user-current-location.png";
 import storeListMenu from "../images/store-list-menu.svg";
 import { convertLegacyProps } from "antd/lib/button/button";
+import StoreListButton from "./StoreListButton";
 
 const Map = () => {
   const {
@@ -72,7 +73,7 @@ const Map = () => {
           }
         },
         (err) => {
-          alert("새로고침을 통해 위치 사용을 허락해주세요. 그래도 되지 않는다면 브라우저 설정에서 위치 권한을 허용해주세요");
+          alert("내 위치 기능을 이용하시려면 새로고침을 통해 위치 사용을 허락해주세요.");
         },
         {
           enableHighAccuracy: true,
@@ -159,15 +160,6 @@ const Map = () => {
     gestureHandling: "greedy",
   };
 
-  const StoreListButton = () => {
-    return (
-      <div className="map-store-list-button" onClick={() => navigate("/store-list")}>
-        <img src={storeListMenu} style={{ width: "20px" }} />
-        <span className="bottom-sheet-store-list-button-text">매장 보기</span>
-      </div>
-    );
-  };
-
   const mapLoadingScreen = (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%", height: "100%" }}>
       <span style={{ color: "white", fontSize: "16px", fontWeight: "bold" }}>Loading...</span>
@@ -176,7 +168,9 @@ const Map = () => {
   return (
     <>
       <MapSearchBar />
-      <StoreListButton />
+      <div style={{ position: "absolute", top: "60px", right: "22px", zIndex: "99" }}>
+        <StoreListButton />
+      </div>
       <LoadScript googleMapsApiKey="AIzaSyCSYjuiuUYQ2tYtEE5V26yBzQhc5M6xjPM" loadingElement={mapLoadingScreen}>
         <GoogleMap
           options={defaultMapOptions}
