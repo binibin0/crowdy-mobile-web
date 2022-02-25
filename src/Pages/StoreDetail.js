@@ -6,7 +6,6 @@ import "./style.css";
 import mapIcon from "../images/map.png";
 import markerIcon from "../images/marker.png";
 import phoneIcon from "../images/phone.png";
-import addressIcon from "../images/address.png";
 import moreImageChevronIcon from "../images/see-more-image-chevron.png";
 import crowdednessReload from "../images/crowdedness-reload.png";
 import { BsClock } from "react-icons/bs";
@@ -127,7 +126,7 @@ const StoreSubHeader = ({ store }) => {
     <div className="store-sub-header">
       <div className="store-sub-header-first">
         <div className="store-sub-header-phone">
-          <img width="14px" src={markerIcon} alt="marker-icon" />
+          <div style={{ width: "6px", height: "6px", borderRadius: "7px", margin: "0 4px", backgroundColor: "black" }} />
           <span className="store-sub-header-margin-left store-default-text">{storeDatas[store].branch}</span>
         </div>
         <div className="store-sub-header-phone">
@@ -143,7 +142,7 @@ const StoreSubHeader = ({ store }) => {
       </div>
       <div className="store-sub-header-second">
         <div className="store-sub-header-address">
-          <img width="14px" src={addressIcon} alt="address-icon" />
+          <img width="14px" src={markerIcon} alt="address-icon" />
           <span className="store-sub-header-margin-left store-default-text">{storeDatas[store].address}</span>
         </div>
         <div className="store-sub-header-open">
@@ -210,7 +209,7 @@ const StoreDetail = () => {
   const StoreListButton = () => {
     return (
       <div className="store-detail-list-button" onClick={() => navigate("/store-list")}>
-        <img src={storeListMenu} style={{ width: "20px" }} />
+        <img src={storeListMenu} style={{ width: "16px" }} />
         <span className="store-detail-list-button-text">매장 보기</span>
       </div>
     );

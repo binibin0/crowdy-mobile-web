@@ -5,8 +5,6 @@ import "./style.css";
 import mapIcon from "../images/map.png";
 import markerIcon from "../images/marker.png";
 import phoneIcon from "../images/phone.png";
-import addressIcon from "../images/address.png";
-
 import { BsClock, BsEmojiSmileUpsideDownFill } from "react-icons/bs";
 import Tabs from "./Tabs";
 import { storeDatas } from "../datas/storeDatas";

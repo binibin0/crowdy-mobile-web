@@ -5,7 +5,6 @@ import "./style.css";
 import mapIcon from "../images/map.png";
 import markerIcon from "../images/marker.png";
 import phoneIcon from "../images/phone.png";
-import addressIcon from "../images/address.png";
 
 import { BsClock, BsEmojiSmileUpsideDownFill } from "react-icons/bs";
 import Tabs from "./Tabs";
@@ -73,18 +72,18 @@ const Home = () => {
             <img src={crowdyStorePin} alt="pin" width="18px" />
             <span className="home-location-item-text">서현역</span>
           </div>
-          {[1, 2, 3, 4, 5].map((key) => (
+          {/* {[1, 2].map((key) => (
             <div key={key} className="home-location-item home-location-item-disabled">
               <img src={greyCircle} alt="pin" width="4px" />
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
       <div style={{ height: "30px" }} />
       <div className="home-crowdedness-explain-container">
         <span className="home-crowdedness-explain-title">혼잡도는 무엇인가요?</span>
         <span className="home-crowdedness-explain-text">해당 매장에 얼마나 많은 방문객이 있는지 알려주는 Crowdy만의 지표입니다.</span>
-        <span className="home-crowdedness-explain-medium">총 4단계로</span>
+        <span className="home-crowdedness-explain-medium">총 4단계가 있습니다</span>
         <div className="home-crowdedness-explain-level">
           <span className="home-crowdedness-explain-empty">"여유로움"</span>
           <span className="home-crowdedness-explain-colon">:</span>
@@ -94,9 +93,6 @@ const Home = () => {
           <span className="home-crowdedness-explain-colon">:</span>
           <span className="home-crowdedness-explain-crowdy">"Crowdy!"</span>
         </div>
-        <span className="home-crowdedness-explain-medium" style={{ marginLeft: "262px", marginBottom: "20px" }}>
-          가 있습니다.
-        </span>
         <span className="home-crowdedness-explain-text-small">
           *혼잡도 단계는 최대한 사용자들이 매장을 방문했을 때 <br />
           느끼는 감정을 바탕으로 만들었으며 이 혼잡도는 <br />

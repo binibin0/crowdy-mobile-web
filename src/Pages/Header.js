@@ -4,6 +4,7 @@ import goBackWhiteChevronIcon from "../images/go-back-white-chevron.svg";
 import squareMenu from "../images/square-menu.svg";
 import { storeDatas } from "../datas/storeDatas";
 import CrowdyContext from "./CrowdyContext";
+import homeIcon from "../images/home-white.png";
 
 const Header = ({ path, page }) => {
   const {
@@ -71,19 +72,31 @@ const Header = ({ path, page }) => {
           {location.pathname === "/" ? (
             <img width="20px" color="white" src={squareMenu} alt="menu" className="header-menu-button" onClick={() => setDrawereVisible(true)} />
           ) : (
-            <img
-              width="12px"
-              color="white"
-              src={goBackWhiteChevronIcon}
-              alt="go-back-icon"
-              className="header-go-back-button"
-              onClick={() => {
-                navigate(-1);
-                window.scroll(0, 0);
-              }}
-            />
+            <>
+              <img
+                width="12px"
+                color="white"
+                src={goBackWhiteChevronIcon}
+                alt="go-back-icon"
+                className="header-go-back-button"
+                onClick={() => {
+                  navigate(-1);
+                  window.scroll(0, 0);
+                }}
+              />
+              <img
+                width="20px"
+                color="white"
+                src={homeIcon}
+                alt="home"
+                className="header-home-button"
+                onClick={() => {
+                  navigate("/");
+                  window.scroll(0, 0);
+                }}
+              />
+            </>
           )}
-
           <div className="header-title">{pageTitle}</div>
         </div>
       </div>
