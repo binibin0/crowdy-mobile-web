@@ -79,7 +79,7 @@ const Home = () => {
           ))} */}
         </div>
       </div>
-      <div style={{ height: "30px" }} />
+      <div style={{ height: "50px" }} />
       <div className="home-crowdedness-explain-container">
         <span className="home-crowdedness-explain-title">혼잡도는 무엇인가요?</span>
         <span className="home-crowdedness-explain-text">해당 매장에 얼마나 많은 방문객이 있는지 알려주는 Crowdy만의 지표입니다.</span>

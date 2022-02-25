@@ -72,8 +72,8 @@ const Header = ({ path, page }) => {
           {location.pathname === "/" ? (
             <>
               <img width="20px" color="white" src={squareMenu} alt="menu" className="header-menu-button" onClick={() => setDrawereVisible(true)} />
-              <div className="header-home-button">
-                <span>설문조사</span>
+              <div className="header-home-button" onClick={() => navigate("/survey")}>
+                <span style={{ fontFamily: "NotoSansKR-Medium", fontSize: "14px" }}>설문조사</span>
               </div>
             </>
           ) : (
