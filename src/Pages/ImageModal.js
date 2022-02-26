@@ -17,7 +17,7 @@ const ImageModal = () => {
         setCrop((crop) => ({ ...crop, x: dx, y: dy }));
       },
       onPinch: ({ offset: [d] }) => {
-        setCrop((crop) => ({ ...crop, scale: 1 + d / 100 }));
+        setCrop((crop) => ({ ...crop, scale: 1 + d / 200 }));
       },
     },
     { domTarget: imageRef, eventOptions: { passive: false } }
