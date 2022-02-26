@@ -51,7 +51,6 @@ const StoreHeader = ({ store }) => {
   const [openTimeLoading, setOpenTimeLoading] = useState(false);
 
   handleCrowdedness(store);
-  console.log("storedetail", crowdedness);
 
   return (
     <div className="store-header-container">
@@ -156,15 +155,26 @@ const StoreSubHeader = ({ store }) => {
     checkStoreOpen,
     handleCrowdedness,
   } = useContext(CrowdyContext);
+  //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
   return (
     <div className="store-sub-header">
-      <div className="store-sub-header-first">
-        <div className="store-sub-header-phone">
-          <div style={{ width: "6px", height: "6px", borderRadius: "7px", margin: "0 4px", backgroundColor: "black" }} />
+      <div className="grey-line" />
+      <div className="store-sub-header-container">
+        <div className="store-sub-header-item">
+          <div style={{ width: "8px", height: "8px", borderRadius: "7px", margin: "0 4px", backgroundColor: "black" }} />
           <span className="store-sub-header-margin-left store-default-text">{storeDatas[store].branch}</span>
         </div>
-        <div className="store-sub-header-phone">
-          {store === "elglop-cafe" ? <FiInstagram /> : <img width="14px" src={phoneIcon} alt="phone-icon" />}
+        <div className="grey-line" />
+        <div className="store-sub-header-item">
+          {store === "elglop-cafe" ? <FiInstagram /> : <img width="16px" src={phoneIcon} alt="phone-icon" />}
 
           <a
             className="store-sub-header-margin-left store-default-text"
@@ -173,19 +183,36 @@ const StoreSubHeader = ({ store }) => {
             {storeDatas[store].phone}
           </a>
         </div>
-      </div>
-      <div className="store-sub-header-second">
-        <div className="store-sub-header-address">
-          <img width="14px" src={markerIcon} alt="address-icon" />
-          <span className="store-sub-header-margin-left store-default-text">{storeDatas[store].address}</span>
+        <div className="grey-line" />
+        <div className="store-sub-header-item" style={{ width: "310px", justifyContent: "space-between" }}>
+          <div className="flex-center-center">
+            <img width="16px" src={markerIcon} alt="address-icon" />
+            <span className="store-sub-header-margin-left store-default-text">{storeDatas[store].address}</span>
+          </div>
+          <a
+            href={`http://m.map.naver.com/route.nhn?menu=route&sname=&sx=&sy=&ename=${storeDatas[store].name} ${storeDatas[store].branch}&ex=${storeDatas[store].latlng.lng}&ey=${storeDatas[store].latlng.lat}&pathType=1&showMap=true`}
+          >
+            <div className="flex-center-center store-sub-header-directions">
+              <span className="store-sub-header-directions-text">길찾기</span>
+            </div>
+          </a>
         </div>
-        <div className="store-sub-header-open">
-          <BsClock size="14" style={{ marginTop: "2px" }} />
-          <div className=" store-sub-header-open-text-box">
-            {currentDayKorean} <span className="store-sub-header-open-text">9AM ~ 9PM</span>
+        <div className="grey-line" />
+        <div className="store-sub-header-item">
+          <BsClock size="16" style={{ marginTop: "2px" }} />
+          <div className="store-sub-header-margin-left">
+            <span className="store-default-text">{currentDayKorean}</span>
+            <span className="store-default-text" style={{ marginLeft: "10px" }}>
+              {`${storeDatas[store].openHours[currentDay][0].toString().slice(0, -2)}:${storeDatas[store].openHours[currentDay][0]
+                .toString()
+                .slice(-2)} ~ ${storeDatas[store].openHours[currentDay][1].toString().slice(0, -2)}:${storeDatas[store].openHours[currentDay][0]
+                .toString()
+                .slice(-2)}`}
+            </span>
           </div>
         </div>
       </div>
+      <div className="grey-line" />
     </div>
   );
 };
@@ -259,10 +286,12 @@ const StoreDetail = () => {
             </div>
             <StoreListButton />
           </div>
+          <div className="grey-line" />
+          <div style={{ height: "20px" }} />
           <StoreHeader store={path} />
-          <div style={{ height: "24px" }} />
+          <div style={{ height: "20px" }} />
           <StoreSubHeader store={path} />
-          <div style={{ height: "30px" }} />
+          <div style={{ height: "24px" }} />
           <div className="store-images-box">
             <div className="store-images">
               {storeDatas[path].mainImages.map((image, key) => {
@@ -289,7 +318,7 @@ const StoreDetail = () => {
                 window.scroll(0, 0);
               }}
             >
-              사진 더보기
+              전체 사진 보기
             </span>
             <img width="6px" src={moreImageChevronIcon} alt="phone-icon" className="detail-see-more-image-icon"></img>
           </div>

@@ -41,8 +41,9 @@
   position: absolute;
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 414px;
-  height: 236px;
+  height: 250px;
   background-color: rgba(0, 0, 0, 0.03);
 }
 .bottom-sheet-store-images {
@@ -52,7 +53,6 @@
   align-content: space-between;
   width: 292px;
   height: 208px;
-  margin-top: 14px;
 }
 .bottom-sheet-store-image {
   width: 142px;

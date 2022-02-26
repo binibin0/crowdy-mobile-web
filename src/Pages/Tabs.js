@@ -20,17 +20,27 @@ function Tabs({ path, scrollPosition, setScrollPosition }) {
 
   const goToAnchor = (key) => {
     if (key === 0) {
-      window.scroll(0, 628.5);
+      window.scroll(0, 742);
     }
     if (key === 1) {
+      let checkItemWithoutImage = 0;
+
       if (activeTab === "menu") {
-        const list = storeDatas[path].menu.drinks;
-        const scrollY = 620 + 82 + 111 * list.length - 2.6;
+        storeDatas[path].menu.drinks.map((item, key) => {
+          if (item.image === "") {
+            checkItemWithoutImage += 1;
+          }
+        });
+        const checkItemWithImage = storeDatas[path].menu.drinks.length - checkItemWithoutImage;
+        const widthImage = storeDatas[path].menu.drinks;
+        const scrollY = 742 + 80 + 111 * checkItemWithImage + 79.84 * checkItemWithoutImage;
+        console.log("with Image", checkItemWithImage);
+        console.log("without Image", checkItemWithoutImage);
         window.scroll(0, scrollY);
       }
       if (activeTab === "store") {
-        const list = storeDatas[path].storeViews;
-        const scrollY = 620 + 82 + 40 + 10 + 194 * list.length - 2;
+        const widthImage = storeDatas[path].storeViews;
+        const scrollY = 742 + 80 + 40 + 10 + 194 * widthImage.length - 1.2;
         window.scroll(0, scrollY);
       }
     }
@@ -50,8 +60,8 @@ function Tabs({ path, scrollPosition, setScrollPosition }) {
     <>
       {openImageModal ? <ImageModal /> : null}
       <div className="tab-container">
-        {checkNeedAnchor(activeTab) && scrollPosition > 626 ? <div className="empty-tab-buttons"></div> : null}
-        <div className={checkNeedAnchor(activeTab) && scrollPosition > 626 ? "fixed-active" : null}>
+        {checkNeedAnchor(activeTab) && scrollPosition > 742 ? <div className="empty-tab-buttons"></div> : null}
+        <div className={checkNeedAnchor(activeTab) && scrollPosition > 742 ? "fixed-active" : null}>
           <div className="tab-buttons">
             <div
               className={activeTab === "menu" ? "tab-button tab-button-active" : "tab-button"}

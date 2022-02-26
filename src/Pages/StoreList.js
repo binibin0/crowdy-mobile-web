@@ -50,6 +50,7 @@ const StoreList = () => {
   const { path } = useParams();
 
   const [activeStoreCount, setActiveStoreCount] = useState(0);
+  const [activeStoreForCurrentFilter, setActiveStoreForCurrentFilter] = useState({ 전체: 1, 프랜차이즈: 1, 동네카페: 1 });
 
   useEffect(() => {
     Object.keys(storeDatas).map((store) => {
@@ -72,20 +73,21 @@ const StoreList = () => {
     return check;
   };
 
-  const handleContainerHeightByFilter = () => {
-    if (currentFilter === "전체") {
-      return "page-height-low";
-    } else {
-      return "page-height-high";
-    }
+  const checkActiveStoreList = () => {
+    let activeStoreList = [];
+    Object.keys(storeDatas).map((store) => {
+      if (storeDatas[store].active) {
+        activeStoreList.push(store);
+      }
+    });
+    return activeStoreList;
   };
-
   return (
     <>
       <div className="page">
         <DrawerP />
         <Header path={path} />
-        <div className={currentFilter === "전체" ? "store-list-container" : "store-list-container page-height-high"}>
+        <div className={currentFilter === "동네카페" ? "store-list-container page-height-high" : "store-list-container "}>
           <div className="store-list-header-container">
             <div className="store-list-header-map-box" onClick={() => navigate("/map")}>
               <img width="16px" src={mapIcon} alt="marker-icon"></img>
@@ -93,7 +95,7 @@ const StoreList = () => {
             </div>
             <DropDownMenu />
           </div>
-          {currentFilter === "프랜차이즈" ? null : (
+          {checkActiveStoreList().length !== 0 ? (
             <div className="store-list-store-container">
               <span className="store-list-store-title">혼잡도 제공 매장</span>
               <div className="store-list-store-box">
@@ -139,14 +141,11 @@ const StoreList = () => {
                         </div>
                       </div>
                     );
-                  } else {
-                    return null;
                   }
                 })}
               </div>
             </div>
-          )}
-
+          ) : null}
           <div style={{ marginTop: "32px" }} />
           <div className="store-list-store-container">
             <span className="store-list-store-title">일반 매장</span>

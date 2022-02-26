@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import StoreList from "./Pages/StoreList";
@@ -66,6 +66,7 @@ function App() {
   const [currentDay, setCurrentDay] = useState("mon");
   const [currentDayKorean, setCurrentDayKorean] = useState("월");
   const [openImageModal, setOpenImageModal] = useState(false);
+  const imageModalRef = useRef();
   const [currentImageForModal, setCurrentImageForModal] = useState("");
   const [currentStore, setCurrentStore] = useState("seohyeon-170");
   const [crowdedness, setCrowdedness] = useState("여유로움");
@@ -73,7 +74,6 @@ function App() {
   const [drawereVisible, setDrawereVisible] = useState(false);
   const [currentFilter, setCurrentFilter] = useState("전체");
   const [storeOnActive, setStoreOnActive] = useState(false);
-  console.log(crowdednessCount);
   const checkStoreOpen = (store) => {
     if (store) {
       if (currentTime >= storeDatas[store].openHours[currentDay][0] && currentTime <= storeDatas[store].openHours[currentDay][1]) {
@@ -145,6 +145,7 @@ function App() {
         checkStoreOpen,
         handleCrowdedness,
         handleCrowdednessColor,
+        imageModalRef,
       }}
     >
       <Router>

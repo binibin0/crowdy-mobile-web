@@ -52,6 +52,11 @@ html {
   margin: 0 auto;
   background-color: white;
 }
+.flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .primary-color {
   color: $primaryColor;

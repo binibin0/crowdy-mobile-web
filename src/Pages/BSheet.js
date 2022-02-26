@@ -7,6 +7,7 @@ import myLocationIcon from "../images/my-location.png";
 import StoreDetail, { StoreHeader, StoreSubHeader } from "./StoreDetail";
 import CrowdyContext from "./CrowdyContext";
 import { storeDatas } from "../datas/storeDatas";
+import ImageModal from "./ImageModal";
 
 const BSheet = ({ userLocationButton, BSheetRef }) => {
   const {
@@ -38,6 +39,7 @@ const BSheet = ({ userLocationButton, BSheetRef }) => {
 
   return (
     <div>
+      {openImageModal ? <ImageModal setOpenImageModal={setOpenImageModal} currentImage={currentImageForModal} /> : null}
       <BottomSheet
         className="bottom-sheet"
         open
@@ -45,22 +47,31 @@ const BSheet = ({ userLocationButton, BSheetRef }) => {
         ref={BSheetRef}
         blocking={false}
         defaultSnap={({ snapPoints }) => Math.min(...snapPoints)}
-        snapPoints={() => [480, 116]}
+        snapPoints={() => [434, 116]}
       >
         <div className="bottom-sheet-store-container">
           <div style={{ height: "10px" }} />
           <StoreHeader store={currentStore} />
-          <div style={{ height: "14px" }} />
-          <StoreSubHeader store={currentStore} />
-          <div style={{ height: "14px" }} />
+          <div style={{ height: "20px" }} />
           <div className="bottom-sheet-store-images-box">
             <div className="bottom-sheet-store-images">
               {storeDatas[currentStore].mainImages.map((image, key) => {
-                return <img key={key} className="bottom-sheet-store-image" src={image} alt="seat-table" />;
+                return (
+                  <img
+                    key={key}
+                    className="bottom-sheet-store-image"
+                    src={image}
+                    alt="seat-table"
+                    onClick={(event) => {
+                      setOpenImageModal(true);
+                      setCurrentImageForModal(event.target.src);
+                    }}
+                  />
+                );
               })}
             </div>
           </div>
-          <div style={{ height: "18px" }} />
+          <div style={{ height: "30px" }} />
           <div
             className="bottom-sheet-detail-button"
             onClick={() => {

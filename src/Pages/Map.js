@@ -92,7 +92,7 @@ const Map = () => {
           map.panTo(currentUserLocation.latlng);
           setZoomLv(14.99);
           setZoomLv(15);
-          BSheetRef.current.snapTo(({ maxHeight }) => maxHeight / 3);
+          BSheetRef.current.snapTo(({ maxHeight }) => maxHeight);
         }}
       >
         <img src={userCurrentLocationIcon} style={{ width: "26px" }} />
@@ -165,13 +165,14 @@ const Map = () => {
       <span style={{ color: "white", fontSize: "16px", fontWeight: "bold" }}>Loading...</span>
     </div>
   );
+
   return (
     <>
       <MapSearchBar />
       <div style={{ position: "absolute", top: "60px", right: "22px", zIndex: "99" }}>
         <StoreListButton />
       </div>
-      <LoadScript googleMapsApiKey="AIzaSyCSYjuiuUYQ2tYtEE5V26yBzQhc5M6xjPM" loadingElement={mapLoadingScreen}>
+      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_API_KEY} loadingElement={mapLoadingScreen}>
         <GoogleMap
           options={defaultMapOptions}
           mapContainerStyle={{
