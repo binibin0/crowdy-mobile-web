@@ -11,12 +11,6 @@
   z-index: 99;
 }
 
-.image-modal-container {
-  width: 100%;
-  height: 90%;
-  object-fit: contain;
-  z-index: 100;
-}
 .image-modal-close {
   position: absolute;
   top: 46px;
@@ -24,4 +18,20 @@
   width: 30px;
   transform: rotate(45deg);
   z-index: 101;
+}
+
+.image-modal-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 100;
+}
+
+.image-modal-image {
+  position: absolute;
+  width: 100%;
+  height: 90%;
+  object-fit: contain;
+  z-index: 100;
 }

@@ -17,12 +17,18 @@ const ImageModal = () => {
         setCrop((crop) => ({ ...crop, x: dx, y: dy }));
       },
       onPinch: ({ offset: [d] }) => {
-        setCrop((crop) => ({ ...crop, scale: 1 + d / 200 }));
+        if (crop.scale > 1) {
+          setCrop((crop) => ({ ...crop, scale: 1 + d / 300 }));
+        }
+        if (d > 0) {
+          setCrop((crop) => ({ ...crop, scale: 1 + d / 300 }));
+        }
       },
     },
     { domTarget: imageRef, eventOptions: { passive: false } }
   );
 
+  console.log(crop);
   //스크롤 방지 스크립트 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
   const safeDocument = typeof document !== "undefined" ? document : {};
   const scrollBlocked = useRef();
@@ -76,12 +82,13 @@ const ImageModal = () => {
           setOpenImageModal(false);
         }}
       />
-      <img
-        src={currentImageForModal}
+      <div
+        className="image-modal-container flex-center-center"
         ref={imageRef}
-        className="image-modal-container"
-        style={{ left: crop.x, right: crop.y, transform: `scale(${crop.scale})`, touchAction: "none" }}
-      />
+        style={{ left: crop.x, top: crop.y, transform: `scale(${crop.scale})`, touchAction: "none" }}
+      >
+        <img src={currentImageForModal} className="image-modal-image" />
+      </div>
     </div>
   );
 };
