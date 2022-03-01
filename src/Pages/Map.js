@@ -92,7 +92,6 @@ const Map = () => {
           map.panTo(currentUserLocation.latlng);
           setZoomLv(14.99);
           setZoomLv(15);
-          BSheetRef.current.snapTo(({ maxHeight }) => maxHeight);
         }}
       >
         <img src={userCurrentLocationIcon} style={{ width: "26px" }} />

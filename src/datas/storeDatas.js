@@ -1234,7 +1234,7 @@ export const storeDatas = {
     branch: "본점",
     hashtag: ["전체", "동네카페"],
     latlng: { lat: 37.38698852901557, lng: 127.12425359711828 },
-    logo: "https://lh3.googleusercontent.com/7GlnCs7Siyic9aLFomnigoioTcfAy7fa-qy0O7Sf-lmpuRvve3UtFkXf-OVDeZPHDGORzosVtuIyzc6yeXaqLycx393_5ceA4RBaGjTa",
+    logo: "https://imgs.jobkorea.co.kr/img1/_thumb/200X80/Co_Logo/Logo/2019/6/25/JK_CO_cafegoodweather.jpeg",
     phone: "031-698-2331",
     tableNumber: "23",
     chairNumber: "96",
@@ -1902,7 +1902,7 @@ export const storeDatas = {
     branch: "본점",
     hashtag: ["전체", "동네카페"],
     latlng: { lat: 37.385826775141375, lng: 127.12141666721519 },
-    logo: "https://lh3.googleusercontent.com/fDYZB_795NDngd42sgjVSYWvrOJz_jBTPbKlC5ipKAsalkj7UfJd1AovERsyB9JsCoPM6QO9cpQXYZ-sABaHkqcck-P3FPpiSrVpiheX",
+    logo: "https://blog.kakaocdn.net/dn/TNpb2/btq2rxPJyAt/KegR6oqVt7WXwheAS4ubyK/img.jpg",
     phone: "031-706-1122",
     tableNumber: "21",
     chairNumber: "49",
@@ -5447,13 +5447,13 @@ export const storeDatas = {
     ],
   },
 
-  "RENDEJA-VOUS": {
+  "rendeja-vous": {
     active: false,
     name: "랑데자뷰",
     branch: "서현점",
     hashtag: ["전체", "프랜차이즈"],
     latlng: { lat: 37.386556112137335, lng: 127.125887665039 },
-    logo: "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200525_17%2F1590407085427q1vfg_JPEG%2FPQv816Yt7MSKD2cbNZRO7ZCc.jpg",
+    logo: "http://rendejavous.cafe24.com/web/upload/itsme/logo.png",
     phone: "031-709-3740",
     tableNumber: "43",
     chairNumber: "145",
@@ -5518,6 +5518,7 @@ export const storeDatas = {
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEwMjhfMjQ0%2FMDAxNjAzODE1MTI5NjM4.bqdUvoDtod4G3-8z7GuUPUErg-5BaeSEk6Cnr4Avr6kg.Ha6StKSslgfeZh3qja57knLSj-dNSmoBkHk1IA6WzKEg.JPEG.2biniru3%2FIMG_1768.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDA1MjlfMTk5%2FMDAxNTkwNzQ3NjI5MDEw.ZvQcYQZjtwlV767tU1rUit2PCXebR3tCFoF2ABUfy0Qg.JKeUqBfnFpj-SBArH1DIXevb2HDGpC6MD98-lyfMa3sg.JPEG.bongja814%2F17.jpeg",
 
+      "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbD5sjX%2FbtrupIK3W6k%2Fdi3Cb0NTKvLxGvFzCUx1L0%2Fimg.png",
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDA3MjFfOTUg%2FMDAxNTk1MzEzODAwNTQ2.y1rxV3Kuir5jq56_jfJRdXHeHEwtdrC-IOXDCHzXxZ4g.KGEwk_Kr4-zk9gb569usjt-xJQ3wu2eYlviAgE9ngpAg.JPEG.j_bonnie%2FIMG_4715.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDExMTJfMTUw%2FMDAxNjA1MTg0NzY4NDYw.kCRlBFxJrmqj6ZeUqM3Q_z4PqcAFs5Wk3MLY28ihNR8g.NDQRSaIm17wLTMovL_dLoN4E7HUWIrzR1ufF_qOK9Vsg.JPEG.skql813%2F1605184734895.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEwMDdfMzAw%2FMDAxNjMzNTg3NDExMzgz.ABqdBPtr2K5bwrmgvPo1l0kKsro5sW70YwnC9u9ViScg.j9xKoeAoj-5-pssnc8DgjWhJIoo6uXlbSCIkHRX2AOEg.JPEG.ea1513%2F20211005_175136.jpg",
@@ -5675,6 +5676,7 @@ export const storeDatas = {
       ],
     },
     storeViews: [
+      "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbD5sjX%2FbtrupIK3W6k%2Fdi3Cb0NTKvLxGvFzCUx1L0%2Fimg.png",
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDA3MjFfOTUg%2FMDAxNTk1MzEzODAwNTQ2.y1rxV3Kuir5jq56_jfJRdXHeHEwtdrC-IOXDCHzXxZ4g.KGEwk_Kr4-zk9gb569usjt-xJQ3wu2eYlviAgE9ngpAg.JPEG.j_bonnie%2FIMG_4715.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDExMTJfMTUw%2FMDAxNjA1MTg0NzY4NDYw.kCRlBFxJrmqj6ZeUqM3Q_z4PqcAFs5Wk3MLY28ihNR8g.NDQRSaIm17wLTMovL_dLoN4E7HUWIrzR1ufF_qOK9Vsg.JPEG.skql813%2F1605184734895.jpg",
       "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEwMDdfMzAw%2FMDAxNjMzNTg3NDExMzgz.ABqdBPtr2K5bwrmgvPo1l0kKsro5sW70YwnC9u9ViScg.j9xKoeAoj-5-pssnc8DgjWhJIoo6uXlbSCIkHRX2AOEg.JPEG.ea1513%2F20211005_175136.jpg",
